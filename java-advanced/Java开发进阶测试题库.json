@@ -1,0 +1,6744 @@
+{
+  "schemaVersion": "1.0.0",
+  "title": "Java 开发进阶 200 题测试题库",
+  "authoringMethod": "逐题人工编写，脚本仅负责编号和格式导出",
+  "generatedFrom": [
+    "JAVA进阶课程培训 v0.1.pdf"
+  ],
+  "counts": {
+    "total": 200,
+    "single": 100,
+    "multiple": 60,
+    "judge": 40
+  },
+  "questions": [
+    {
+      "lecture": 1,
+      "topics": [
+        "类命名"
+      ],
+      "difficulty": "易",
+      "type": "single",
+      "stem": "新建一个处理 XML 报文的服务类，哪个名称最符合课件命名规约？",
+      "code": "",
+      "explanation": "普通类名采用大驼峰，缩写也应作为单词处理。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 6
+        }
+      ],
+      "officialRefs": [
+        "https://github.com/alibaba/p3c"
+      ],
+      "options": [
+        "XmlMessageService",
+        "xml_message_service",
+        "XMLMESSAGESERVICE",
+        "xmlMessageService"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。符合 UpperCamelCase。",
+        "B": "错误。下划线风格不用于 Java 类名。",
+        "C": "错误。全大写更像常量。",
+        "D": "错误。小驼峰用于方法或变量。"
+      },
+      "id": "JAVA-ADV-001"
+    },
+    {
+      "lecture": 1,
+      "topics": [
+        "常量命名"
+      ],
+      "difficulty": "易",
+      "type": "single",
+      "stem": "表示缓存过期秒数的常量，哪个名称更合适？",
+      "code": "",
+      "explanation": "常量名全部大写，单词间使用下划线。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 6
+        }
+      ],
+      "officialRefs": [
+        "https://github.com/alibaba/p3c"
+      ],
+      "options": [
+        "CACHE_EXPIRED_SECONDS",
+        "cacheExpiredSeconds",
+        "CacheExpiredSeconds",
+        "cache_expired_seconds"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。符合常量规则。",
+        "B": "错误。是变量风格。",
+        "C": "错误。是类名风格。",
+        "D": "错误。未使用大写。"
+      },
+      "id": "JAVA-ADV-002"
+    },
+    {
+      "lecture": 1,
+      "topics": [
+        "布尔属性命名"
+      ],
+      "difficulty": "易",
+      "type": "single",
+      "stem": "POJO 需要表达“已删除”状态，为减少序列化框架属性名歧义，字段优先怎样声明？",
+      "code": "",
+      "explanation": "课件要求 POJO 布尔字段避免 is 前缀，以免某些框架反向解析为不同属性名。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 6
+        }
+      ],
+      "officialRefs": [
+        "https://github.com/alibaba/p3c"
+      ],
+      "options": [
+        "private Boolean deleted;",
+        "private Boolean isDeleted;",
+        "private Boolean getDeleted;",
+        "private Boolean has_is_deleted;"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。字段名清晰且便于生成访问器。",
+        "B": "错误。可能被框架解析为 deleted。",
+        "C": "错误。字段名不应伪装成方法。",
+        "D": "错误。混合风格且含下划线。"
+      },
+      "id": "JAVA-ADV-003"
+    },
+    {
+      "lecture": 1,
+      "topics": [
+        "代码缩进"
+      ],
+      "difficulty": "易",
+      "type": "single",
+      "stem": "团队项目统一格式化时，课件要求采用哪种缩进？",
+      "code": "",
+      "explanation": "统一四空格可避免不同编辑器对 Tab 展示不一致。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 7
+        }
+      ],
+      "officialRefs": [
+        "https://github.com/alibaba/p3c"
+      ],
+      "options": [
+        "4 个空格",
+        "1 个 Tab",
+        "2 个 Tab",
+        "按开发者喜好混用"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。符合课件强制规约。",
+        "B": "错误。课件明确禁止 Tab。",
+        "C": "错误。同样使用了 Tab。",
+        "D": "错误。混用会破坏对齐。"
+      },
+      "id": "JAVA-ADV-004"
+    },
+    {
+      "lecture": 1,
+      "topics": [
+        "Override 注解"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "子类方法看似覆写父类，但方法名中误把字母 O 写成数字 0。哪项措施能最早发现问题？",
+      "code": "",
+      "explanation": "@Override 让编译器校验覆写关系，可发现签名拼写错误。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 8
+        }
+      ],
+      "officialRefs": [
+        "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Override.html"
+      ],
+      "options": [
+        "添加 @Override",
+        "只添加注释",
+        "在方法内打印日志",
+        "把方法改成 static"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。能在编译期暴露问题。",
+        "B": "错误。注释不参与校验。",
+        "C": "错误。日志只能运行后观察。",
+        "D": "错误。static 方法不能覆写实例方法。"
+      },
+      "id": "JAVA-ADV-005"
+    },
+    {
+      "lecture": 1,
+      "topics": [
+        "BigDecimal 比较"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "`new BigDecimal(\"1.0\")` 与 `new BigDecimal(\"1.00\")` 只比较数值大小时，应使用什么？",
+      "code": "",
+      "explanation": "BigDecimal.equals 同时考虑数值和 scale，compareTo 为 0 表示数值相等。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 8
+        }
+      ],
+      "officialRefs": [
+        "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/math/BigDecimal.html"
+      ],
+      "options": [
+        "compareTo(...) == 0",
+        "equals(...) 为 true",
+        "==",
+        "hashCode 相等"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。符合仅比较数值的需求。",
+        "B": "错误。两者 scale 不同，equals 为 false。",
+        "C": "错误。比较引用。",
+        "D": "错误。散列值不是数值比较 API。"
+      },
+      "id": "JAVA-ADV-006"
+    },
+    {
+      "lecture": 1,
+      "topics": [
+        "金额存储"
+      ],
+      "difficulty": "难",
+      "type": "single",
+      "stem": "账户余额需要精确到分，且主要做加减和数据库持久化。课件优先建议哪种存储模型？",
+      "code": "",
+      "explanation": "整数最小单位避免二进制浮点误差，适合精确金额。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 8
+        }
+      ],
+      "officialRefs": [
+        "https://github.com/alibaba/p3c"
+      ],
+      "options": [
+        "用 long 保存最小货币单位分",
+        "用 double 保存元",
+        "用 float 保存元",
+        "用 String 保存并依赖字符串拼接"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。能精确表达分。",
+        "B": "错误。double 无法精确表示许多十进制小数。",
+        "C": "错误。float 精度更低。",
+        "D": "错误。字符串不适合算术。"
+      },
+      "id": "JAVA-ADV-007"
+    },
+    {
+      "lecture": 1,
+      "topics": [
+        "equals 与 hashCode"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "把自定义 Customer 作为 HashMap 键，已经按 customerId 覆写 equals。还必须做什么？",
+      "code": "",
+      "explanation": "相等对象必须具有相同 hashCode，散列容器才能正确定位。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 9
+        }
+      ],
+      "officialRefs": [
+        "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Object.html#hashCode()"
+      ],
+      "options": [
+        "按一致字段覆写 hashCode",
+        "覆写 finalize",
+        "实现 Runnable",
+        "把所有字段改成 static"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。维护哈希契约。",
+        "B": "错误。资源终结与键相等无关。",
+        "C": "错误。线程接口无关。",
+        "D": "错误。会破坏对象模型。"
+      },
+      "id": "JAVA-ADV-008"
+    },
+    {
+      "lecture": 1,
+      "topics": [
+        "Collectors.toMap"
+      ],
+      "difficulty": "难",
+      "type": "single",
+      "stem": "订单流按客户号转 Map，但同一客户可能有多笔订单。直接 toMap(key,value) 的主要风险是什么？",
+      "code": "",
+      "explanation": "重复键场景应提供 mergeFunction 明确保留或合并策略。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 9
+        }
+      ],
+      "officialRefs": [
+        "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/stream/Collectors.html#toMap(java.util.function.Function,java.util.function.Function)"
+      ],
+      "options": [
+        "重复键会抛 IllegalStateException",
+        "自动丢弃全部重复记录",
+        "Map 会变成 List",
+        "所有值会被置为 null"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。是常见运行时风险。",
+        "B": "错误。不会自动按业务丢弃。",
+        "C": "错误。结果类型不会改变。",
+        "D": "错误。也不会统一置空。"
+      },
+      "id": "JAVA-ADV-009"
+    },
+    {
+      "lecture": 1,
+      "topics": [
+        "subList 视图"
+      ],
+      "difficulty": "难",
+      "type": "single",
+      "stem": "`view = list.subList(0, 3)` 后，原 list 在视图范围外执行结构性 add，再遍历 view，最需要警惕什么？",
+      "code": "",
+      "explanation": "subList 是原列表视图，原列表的非预期结构修改会使视图状态失效。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 9
+        }
+      ],
+      "officialRefs": [
+        "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/List.html#subList(int,int)"
+      ],
+      "options": [
+        "ConcurrentModificationException",
+        "view 自动复制并完全独立",
+        "原 list 被永久设为不可变",
+        "JVM 自动锁住两个列表"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。符合视图并发修改检测。",
+        "B": "错误。不是独立副本。",
+        "C": "错误。不会改变原列表可变性。",
+        "D": "错误。没有自动加锁。"
+      },
+      "id": "JAVA-ADV-010"
+    },
+    {
+      "lecture": 1,
+      "topics": [
+        "Arrays.asList"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "`Arrays.asList(array)` 返回列表后，调用哪项操作最可能失败？",
+      "code": "",
+      "explanation": "该列表大小固定，允许位置替换但不支持增删。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 9
+        }
+      ],
+      "officialRefs": [
+        "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Arrays.html#asList(T...)"
+      ],
+      "options": [
+        "add(newValue)",
+        "set(0,newValue)",
+        "get(0)",
+        "size()"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。add 改变结构大小。",
+        "B": "错误。set 不改变大小。",
+        "C": "错误。读取合法。",
+        "D": "错误。查询大小合法。"
+      },
+      "id": "JAVA-ADV-011"
+    },
+    {
+      "lecture": 1,
+      "topics": [
+        "线程池创建"
+      ],
+      "difficulty": "难",
+      "type": "single",
+      "stem": "银行交易服务需要明确控制核心线程、队列容量和拒绝策略。课件推荐怎样创建线程池？",
+      "code": "",
+      "explanation": "显式参数让容量与过载行为可审计，避免快捷工厂的无界队列等风险。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 10
+        }
+      ],
+      "officialRefs": [
+        "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/ThreadPoolExecutor.html"
+      ],
+      "options": [
+        "显式构造 ThreadPoolExecutor",
+        "无条件使用 Executors.newFixedThreadPool",
+        "每个请求 new Thread",
+        "把任务全部交给 parallelStream"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。符合资源治理要求。",
+        "B": "错误。默认队列可能掩盖堆积风险。",
+        "C": "错误。线程数不可控。",
+        "D": "错误。不能替代明确的服务线程池设计。"
+      },
+      "id": "JAVA-ADV-012"
+    },
+    {
+      "lecture": 1,
+      "topics": [
+        "ThreadLocal 清理"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "在线程池任务中设置 ThreadLocal 后，最稳妥的清理位置是什么？",
+      "code": "",
+      "explanation": "线程池线程会复用，finally 清理能避免数据串用与长期引用。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 10
+        }
+      ],
+      "officialRefs": [
+        "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/ThreadLocal.html#remove()"
+      ],
+      "options": [
+        "finally 块调用 remove()",
+        "任务开始前调用 System.gc()",
+        "只在应用关闭时 clear",
+        "依赖线程结束自动清理"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。无论成功异常都执行。",
+        "B": "错误。GC 不能替代显式 remove。",
+        "C": "错误。清理太晚。",
+        "D": "错误。线程可能长期不结束。"
+      },
+      "id": "JAVA-ADV-013"
+    },
+    {
+      "lecture": 1,
+      "topics": [
+        "日期格式线程安全"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "多个线程共享日期格式化器，哪种方案最合适？",
+      "code": "",
+      "explanation": "DateTimeFormatter 设计为不可变且线程安全。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 10
+        }
+      ],
+      "officialRefs": [
+        "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/time/format/DateTimeFormatter.html"
+      ],
+      "options": [
+        "使用不可变且线程安全的 DateTimeFormatter",
+        "把 SimpleDateFormat 定义为 public static final 后直接共享",
+        "每次调用前只检查 null",
+        "将格式化器放入普通 HashMap"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。可安全共享。",
+        "B": "错误。final 只限制引用，SimpleDateFormat 仍非线程安全。",
+        "C": "错误。判空不解决竞态。",
+        "D": "错误。HashMap 也不提供格式化线程安全。"
+      },
+      "id": "JAVA-ADV-014"
+    },
+    {
+      "lecture": 1,
+      "topics": [
+        "多锁顺序"
+      ],
+      "difficulty": "难",
+      "type": "single",
+      "stem": "转账同时锁定两个账户，怎样最能降低死锁风险？",
+      "code": "",
+      "explanation": "全局一致的锁获取顺序可破坏循环等待条件。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 10
+        }
+      ],
+      "officialRefs": [
+        "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/locks/Lock.html"
+      ],
+      "options": [
+        "所有代码按统一账户排序顺序加锁",
+        "先锁自己能拿到的任意账户",
+        "失败后无限自旋且不释放已有锁",
+        "让两个线程使用相反顺序"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。是经典死锁预防策略。",
+        "B": "错误。不同线程可能形成环路。",
+        "C": "错误。会加剧资源占用。",
+        "D": "错误。最容易形成循环等待。"
+      },
+      "id": "JAVA-ADV-015"
+    },
+    {
+      "lecture": 1,
+      "topics": [
+        "命名规约",
+        "可读性"
+      ],
+      "difficulty": "中",
+      "type": "multiple",
+      "stem": "哪些命名符合课件规约？",
+      "code": "",
+      "explanation": "类、方法、常量和包分别使用不同一致风格。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 6
+        }
+      ],
+      "officialRefs": [
+        "https://github.com/alibaba/p3c"
+      ],
+      "options": [
+        "类名 UserAccountService",
+        "方法名 calculateInterest",
+        "常量名 MAX_RETRY_COUNT",
+        "包名 Cn.Com.Bank"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。大驼峰正确。",
+        "B": "正确。小驼峰正确。",
+        "C": "正确。全大写下划线正确。",
+        "D": "错误。包名应全小写。"
+      },
+      "id": "JAVA-ADV-016"
+    },
+    {
+      "lecture": 1,
+      "topics": [
+        "代码格式",
+        "团队协作"
+      ],
+      "difficulty": "易",
+      "type": "multiple",
+      "stem": "哪些格式要求符合课件？",
+      "code": "",
+      "explanation": "格式规则服务于一致性和可读性。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 7
+        }
+      ],
+      "officialRefs": [
+        "https://github.com/alibaba/p3c"
+      ],
+      "options": [
+        "保留字 if 与左括号间留空格",
+        "统一 4 空格缩进",
+        "二目运算符两侧留空格",
+        "单行越长越能减少文件行数"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。正确。",
+        "B": "正确。正确。",
+        "C": "正确。正确。",
+        "D": "错误。课件限制单行长度并要求合理换行。"
+      },
+      "id": "JAVA-ADV-017"
+    },
+    {
+      "lecture": 1,
+      "topics": [
+        "数值比较",
+        "金额"
+      ],
+      "difficulty": "难",
+      "type": "multiple",
+      "stem": "金融业务处理数值时，哪些做法合理？",
+      "code": "",
+      "explanation": "精确金额和浮点近似计算需要不同策略。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 8
+        }
+      ],
+      "officialRefs": [
+        "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/math/BigDecimal.html"
+      ],
+      "options": [
+        "浮点近似比较使用误差范围",
+        "BigDecimal 数值相等使用 compareTo",
+        "金额可用最小单位 long 保存",
+        "所有金额统一用 double 以提升精度"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。避免直接 ==。",
+        "B": "正确。可忽略 scale 差异。",
+        "C": "正确。整数分可精确存储。",
+        "D": "错误。double 不能保证十进制精确。"
+      },
+      "id": "JAVA-ADV-018"
+    },
+    {
+      "lecture": 1,
+      "topics": [
+        "空指针",
+        "POJO"
+      ],
+      "difficulty": "中",
+      "type": "multiple",
+      "stem": "哪些做法有助于减少常见 OOP 陷阱？",
+      "code": "",
+      "explanation": "空安全、编译期校验和可诊断性都有明确收益。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 8
+        }
+      ],
+      "officialRefs": [
+        "https://github.com/alibaba/p3c"
+      ],
+      "options": [
+        "用确定非空常量调用 equals",
+        "覆写方法添加 @Override",
+        "POJO 提供有意义的 toString",
+        "同一布尔属性同时提供 isXxx 和 getXxx"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。避免调用方为 null。",
+        "B": "正确。发现签名错误。",
+        "C": "正确。便于日志排查。",
+        "D": "错误。可能令框架属性提取歧义。"
+      },
+      "id": "JAVA-ADV-019"
+    },
+    {
+      "lecture": 1,
+      "topics": [
+        "集合视图",
+        "结构修改"
+      ],
+      "difficulty": "中",
+      "type": "multiple",
+      "stem": "哪些集合 API 需要特别理解“视图或固定大小”语义？",
+      "code": "",
+      "explanation": "前三者都与底层容器关联或受结构修改限制。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 9
+        }
+      ],
+      "officialRefs": [
+        "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/package-summary.html"
+      ],
+      "options": [
+        "List.subList",
+        "Arrays.asList",
+        "Map.entrySet",
+        "new ArrayList<>() 必然固定大小"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。是原列表范围视图。",
+        "B": "正确。是数组固定大小视图。",
+        "C": "正确。是 Map 的关联视图。",
+        "D": "错误。普通 ArrayList 可改变大小。"
+      },
+      "id": "JAVA-ADV-020"
+    },
+    {
+      "lecture": 1,
+      "topics": [
+        "集合遍历",
+        "性能与安全"
+      ],
+      "difficulty": "中",
+      "type": "multiple",
+      "stem": "哪些集合处理方式符合课件建议？",
+      "code": "",
+      "explanation": "意图清晰并避免重复查找或并发修改风险。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 9
+        }
+      ],
+      "officialRefs": [
+        "https://github.com/alibaba/p3c"
+      ],
+      "options": [
+        "判空使用 isEmpty",
+        "遍历 Map 优先 entrySet 获取键值",
+        "需要删除时使用 Iterator.remove 或 removeIf",
+        "在 foreach 中直接 list.add"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。语义直接。",
+        "B": "正确。避免再次 map.get。",
+        "C": "正确。是受支持删除方式。",
+        "D": "错误。结构修改可能触发异常。"
+      },
+      "id": "JAVA-ADV-021"
+    },
+    {
+      "lecture": 1,
+      "topics": [
+        "并发资源",
+        "线程池"
+      ],
+      "difficulty": "中",
+      "type": "multiple",
+      "stem": "设计服务线程池时应显式考虑哪些参数或策略？",
+      "code": "",
+      "explanation": "线程池治理需要容量边界和过载处理。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 10
+        }
+      ],
+      "officialRefs": [
+        "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/ThreadPoolExecutor.html"
+      ],
+      "options": [
+        "核心与最大线程数",
+        "任务队列容量",
+        "拒绝策略",
+        "把队列设为无限即可无需监控"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。决定并发资源。",
+        "B": "正确。控制堆积上限。",
+        "C": "正确。定义饱和行为。",
+        "D": "错误。无界堆积可能耗尽内存并放大延迟。"
+      },
+      "id": "JAVA-ADV-022"
+    },
+    {
+      "lecture": 1,
+      "topics": [
+        "ThreadLocal",
+        "线程复用"
+      ],
+      "difficulty": "中",
+      "type": "multiple",
+      "stem": "线程池中使用 ThreadLocal 时，哪些风险与措施正确？",
+      "code": "",
+      "explanation": "线程复用使上下文生命周期不能依赖线程结束。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 10
+        }
+      ],
+      "officialRefs": [
+        "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/ThreadLocal.html"
+      ],
+      "options": [
+        "旧值可能污染后续任务",
+        "长期引用可能造成内存压力",
+        "finally 中 remove",
+        "把 ThreadLocal 改成 static 就自动安全"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。确有串数据风险。",
+        "B": "正确。值可能长期挂在线程上。",
+        "C": "正确。能可靠清理。",
+        "D": "错误。static 不会自动清理每线程值。"
+      },
+      "id": "JAVA-ADV-023"
+    },
+    {
+      "lecture": 1,
+      "topics": [
+        "并发正确性",
+        "锁"
+      ],
+      "difficulty": "中",
+      "type": "multiple",
+      "stem": "资金更新采用悲观锁时，哪些步骤体现课件的“一锁二判三更新四释放”？",
+      "code": "",
+      "explanation": "锁内复核和可靠释放是保证正确性的关键。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 10
+        }
+      ],
+      "officialRefs": [
+        "https://github.com/alibaba/p3c"
+      ],
+      "options": [
+        "先取得互斥控制",
+        "锁内重新校验业务条件",
+        "完成更新后可靠释放锁",
+        "锁外读取一次余额后永不复核"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。先建立排他性。",
+        "B": "正确。避免状态在等待锁期间变化。",
+        "C": "正确。通常用 finally 释放。",
+        "D": "错误。锁外快照可能已过期。"
+      },
+      "id": "JAVA-ADV-024"
+    },
+    {
+      "lecture": 1,
+      "topics": [
+        "布尔字段命名"
+      ],
+      "difficulty": "中",
+      "type": "judge",
+      "stem": "判断：为了生成 isDeleted()，POJO 字段本身必须命名为 isDeleted。",
+      "code": "",
+      "explanation": "错误。课件要求布尔字段避免 is 前缀，以减少序列化和 ORM 属性名解析歧义。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 6
+        }
+      ],
+      "officialRefs": [
+        "https://github.com/alibaba/p3c"
+      ],
+      "options": [],
+      "answer": "错误",
+      "optionExplanations": {},
+      "id": "JAVA-ADV-025"
+    },
+    {
+      "lecture": 1,
+      "topics": [
+        "格式自动化"
+      ],
+      "difficulty": "易",
+      "type": "judge",
+      "stem": "判断：可把团队代码风格写入 IDE 格式化配置，以减少人工执行规约的偏差。",
+      "code": "",
+      "explanation": "正确。工具化能稳定落实缩进、空格和换行规则。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 7
+        }
+      ],
+      "officialRefs": [
+        "https://github.com/alibaba/p3c"
+      ],
+      "options": [],
+      "answer": "正确",
+      "optionExplanations": {},
+      "id": "JAVA-ADV-026"
+    },
+    {
+      "lecture": 1,
+      "topics": [
+        "Integer 比较"
+      ],
+      "difficulty": "中",
+      "type": "judge",
+      "stem": "判断：两个 Integer 引用只要数值相同，使用 == 在所有数值范围都一定为 true。",
+      "code": "",
+      "explanation": "错误。== 比较引用且缓存范围有限，业务数值相等应使用 equals。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 8
+        }
+      ],
+      "officialRefs": [
+        "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/Integer.html"
+      ],
+      "options": [],
+      "answer": "错误",
+      "optionExplanations": {},
+      "id": "JAVA-ADV-027"
+    },
+    {
+      "lecture": 1,
+      "topics": [
+        "集合转数组"
+      ],
+      "difficulty": "中",
+      "type": "judge",
+      "stem": "判断：`list.toArray(new String[0])` 能得到运行时组件类型为 String 的数组。",
+      "code": "",
+      "explanation": "正确。带类型数组的重载避免无参 toArray 返回 Object[] 后的错误强转。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 9
+        }
+      ],
+      "officialRefs": [
+        "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/Collection.html#toArray(T%5B%5D)"
+      ],
+      "options": [],
+      "answer": "正确",
+      "optionExplanations": {},
+      "id": "JAVA-ADV-028"
+    },
+    {
+      "lecture": 1,
+      "topics": [
+        "ThreadLocal 生命周期"
+      ],
+      "difficulty": "中",
+      "type": "judge",
+      "stem": "判断：线程池线程会自动在每个任务结束后销毁，因此 ThreadLocal 无需 remove。",
+      "code": "",
+      "explanation": "错误。线程池会复用工作线程，任务应在 finally 中清理上下文。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 10
+        }
+      ],
+      "officialRefs": [
+        "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/lang/ThreadLocal.html"
+      ],
+      "options": [],
+      "answer": "错误",
+      "optionExplanations": {},
+      "id": "JAVA-ADV-029"
+    },
+    {
+      "lecture": 1,
+      "topics": [
+        "多锁顺序"
+      ],
+      "difficulty": "中",
+      "type": "judge",
+      "stem": "判断：多个流程如果以统一的全局顺序获取多把锁，可以降低形成循环等待死锁的风险。",
+      "code": "",
+      "explanation": "正确。一致锁顺序是常见的死锁预防策略。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 10
+        }
+      ],
+      "officialRefs": [
+        "https://docs.oracle.com/en/java/javase/25/docs/api/java.base/java/util/concurrent/locks/Lock.html"
+      ],
+      "options": [],
+      "answer": "正确",
+      "optionExplanations": {},
+      "id": "JAVA-ADV-030"
+    },
+    {
+      "lecture": 2,
+      "topics": [
+        "故障隔离"
+      ],
+      "difficulty": "易",
+      "type": "single",
+      "stem": "营销推荐服务持续超时并占满共享线程池，支付请求也开始排队。最能直接阻止故障继续扩散的改造是？",
+      "code": "",
+      "explanation": "隔离舱配合熔断可限制故障影响范围。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 13
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf"
+      ],
+      "options": [
+        "增大所有服务的日志级别",
+        "为推荐服务设置独立线程池并在高错误率时熔断",
+        "让支付请求无限等待推荐结果",
+        "把推荐异常统一改成成功响应"
+      ],
+      "answer": "B",
+      "optionExplanations": {
+        "A": "错误。日志不能解除资源争抢。",
+        "B": "正确。独立资源与主动切断共同避免拖垮核心链路。",
+        "C": "错误。无限等待会加剧线程耗尽。",
+        "D": "错误。伪装成功会掩盖故障。"
+      },
+      "id": "JAVA-ADV-031"
+    },
+    {
+      "lecture": 2,
+      "topics": [
+        "熔断机制"
+      ],
+      "difficulty": "易",
+      "type": "single",
+      "stem": "下游征信服务错误率已连续超过阈值，上游此时最合理的动作是？",
+      "code": "",
+      "explanation": "熔断是在异常达到阈值后主动切断调用链路。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 13
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf"
+      ],
+      "options": [
+        "立即暂停转发并快速失败",
+        "继续全量调用以收集更多错误",
+        "无限增加重试次数",
+        "删除已有调用日志"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。可快速止损并保护上游资源。",
+        "B": "错误。会继续堆积错误请求。",
+        "C": "错误。会放大下游压力。",
+        "D": "错误。会破坏追溯能力。"
+      },
+      "id": "JAVA-ADV-032"
+    },
+    {
+      "lecture": 2,
+      "topics": [
+        "限流"
+      ],
+      "difficulty": "易",
+      "type": "single",
+      "stem": "秒杀活动流量瞬间超过系统安全水位，网关首先应采用哪类措施？",
+      "code": "",
+      "explanation": "限流用于削峰并按业务价值保障核心流量。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 13
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf"
+      ],
+      "options": [
+        "取消超时",
+        "分层限流并优先保障交易请求",
+        "让所有请求进入数据库",
+        "关闭资源监控"
+      ],
+      "answer": "B",
+      "optionExplanations": {
+        "A": "错误。取消超时会积压资源。",
+        "B": "正确。控制入口流量可避免过载。",
+        "C": "错误。会把冲击传递到数据库。",
+        "D": "错误。无法保护系统。"
+      },
+      "id": "JAVA-ADV-033"
+    },
+    {
+      "lecture": 2,
+      "topics": [
+        "数据一致性"
+      ],
+      "difficulty": "易",
+      "type": "single",
+      "stem": "转账接口返回超时，但无法确认账务服务是否已记账。调用方下一步应当？",
+      "code": "",
+      "explanation": "调用超时不等于业务失败，须先核实真实状态。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 14
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf"
+      ],
+      "options": [
+        "直接认定失败并再次扣款",
+        "直接执行反向回滚",
+        "按业务流水查询状态或异步核对结果",
+        "生成新流水号持续重试"
+      ],
+      "answer": "C",
+      "optionExplanations": {
+        "A": "错误。可能重复记账。",
+        "B": "错误。可能回滚一笔已完成且后续已处理的交易。",
+        "C": "正确。状态核对能避免误判并保障最终一致。",
+        "D": "错误。新流水会绕过幂等校验。"
+      },
+      "id": "JAVA-ADV-034"
+    },
+    {
+      "lecture": 2,
+      "topics": [
+        "重试与幂等"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "核心扣款请求因网络抖动需要重试，最关键的前置设计是？",
+      "code": "",
+      "explanation": "资金写操作只有具备幂等保障后才可受控重试。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 17
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf"
+      ],
+      "options": [
+        "每次重试生成不同订单号",
+        "使用业务唯一流水号做幂等校验",
+        "关闭交易日志",
+        "把有限重试改为无限重试"
+      ],
+      "answer": "B",
+      "optionExplanations": {
+        "A": "错误。会被视为多笔业务。",
+        "B": "正确。相同业务重复到达仍只产生一次结果。",
+        "C": "错误。无法防重。",
+        "D": "错误。会造成负载放大。"
+      },
+      "id": "JAVA-ADV-035"
+    },
+    {
+      "lecture": 2,
+      "topics": [
+        "重试策略"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "针对偶发网络瞬断的查询调用，哪种重试策略最恰当？",
+      "code": "",
+      "explanation": "瞬时故障适合有限次数、指数退避的自动重试。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 17
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf"
+      ],
+      "options": [
+        "有限次数并采用指数退避",
+        "零间隔无限重试",
+        "所有错误永久重试",
+        "每次失败都人工重启服务"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。兼顾恢复机会与负载控制。",
+        "B": "错误。易形成重试风暴。",
+        "C": "错误。永久错误不会因重试消失。",
+        "D": "错误。不符合自动化优先。"
+      },
+      "id": "JAVA-ADV-036"
+    },
+    {
+      "lecture": 2,
+      "topics": [
+        "事务回滚"
+      ],
+      "difficulty": "难",
+      "type": "single",
+      "stem": "开户流程中账户已创建，但额度服务永久失败且后续无法完成。符合分布式事务原则的处理是？",
+      "code": "",
+      "explanation": "后续无法完成时应逆向补偿已成功步骤。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 20
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf"
+      ],
+      "options": [
+        "保留半成品并返回成功",
+        "执行已定义的逆向补偿撤销账户创建",
+        "反复调用额度服务且不设上限",
+        "直接修改生产数据库删除记录且不留痕"
+      ],
+      "answer": "B",
+      "optionExplanations": {
+        "A": "错误。会遗留不一致状态。",
+        "B": "正确。可使跨服务状态恢复一致。",
+        "C": "错误。永久故障无效重试会拖垮系统。",
+        "D": "错误。绕过审批且不可追溯。"
+      },
+      "id": "JAVA-ADV-037"
+    },
+    {
+      "lecture": 2,
+      "topics": [
+        "分布式事务"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "跨服务业务需要柔性保障最终一致性，优先考虑的方案是？",
+      "code": "",
+      "explanation": "补偿事务与可靠消息是常见的最终一致性方案。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 20
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf"
+      ],
+      "options": [
+        "依赖单机内存变量",
+        "SAGA/TCC、事务消息或本地消息表",
+        "取消所有状态检查",
+        "仅靠前端重复提交"
+      ],
+      "answer": "B",
+      "optionExplanations": {
+        "A": "错误。进程故障后状态不可靠。",
+        "B": "正确。这些方案能协调跨服务状态。",
+        "C": "错误。会放任数据偏差。",
+        "D": "错误。会增加重复执行风险。"
+      },
+      "id": "JAVA-ADV-038"
+    },
+    {
+      "lecture": 2,
+      "topics": [
+        "消息可靠性"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "生产端要降低消息成功提交业务后却未落盘至 Broker 的风险，应优先配置？",
+      "code": "",
+      "explanation": "全副本确认与可靠投递机制从生产端降低丢失风险。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 19
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf"
+      ],
+      "options": [
+        "acks=all 并配合重试或事务消息",
+        "发送后立即删除业务记录",
+        "关闭副本确认",
+        "仅依赖消费者日志"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。可确认消息可靠落盘。",
+        "B": "错误。会损害恢复依据。",
+        "C": "错误。增加消息丢失概率。",
+        "D": "错误。无法保证生产端投递。"
+      },
+      "id": "JAVA-ADV-039"
+    },
+    {
+      "lecture": 2,
+      "topics": [
+        "消息幂等"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "消费者 Rebalance 后同一扣款消息再次到达，防止重复扣款的最佳依据是？",
+      "code": "",
+      "explanation": "稳定的业务唯一键可用于消费幂等校验。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 19
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf"
+      ],
+      "options": [
+        "消费者启动时间",
+        "随机数",
+        "订单号或消息全局 ID",
+        "当前线程名称"
+      ],
+      "answer": "C",
+      "optionExplanations": {
+        "A": "错误。不能稳定标识业务。",
+        "B": "错误。每次不同，无法去重。",
+        "C": "正确。可识别同一业务或消息。",
+        "D": "错误。与业务唯一性无关。"
+      },
+      "id": "JAVA-ADV-040"
+    },
+    {
+      "lecture": 2,
+      "topics": [
+        "死信队列"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "消息因字段非法导致消费逻辑必然失败，正确治理方式是？",
+      "code": "",
+      "explanation": "永久异常应进入 DLQ 并触发人工闭环。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 19
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf"
+      ],
+      "options": [
+        "无间隔永久重试",
+        "转入死信队列并告警",
+        "静默丢弃",
+        "修改为消费成功但不处理"
+      ],
+      "answer": "B",
+      "optionExplanations": {
+        "A": "错误。会持续消耗资源。",
+        "B": "正确。既隔离问题又保留后续处置入口。",
+        "C": "错误。会造成漏处理且不可追溯。",
+        "D": "错误。掩盖数据不一致。"
+      },
+      "id": "JAVA-ADV-041"
+    },
+    {
+      "lecture": 2,
+      "topics": [
+        "可观测性"
+      ],
+      "difficulty": "易",
+      "type": "single",
+      "stem": "要把网关、微服务、数据库和第三方接口的碎片日志串成一次完整调用，应依靠？",
+      "code": "",
+      "explanation": "全局唯一 Trace ID 应贯穿整条调用链。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 15
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf"
+      ],
+      "options": [
+        "统一 Trace ID",
+        "服务器主机名",
+        "用户展示文案",
+        "每天更换异常码"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。可关联同一请求的跨节点日志。",
+        "B": "错误。只能标识机器。",
+        "C": "错误。不能关联技术调用。",
+        "D": "错误。异常码应永久固定。"
+      },
+      "id": "JAVA-ADV-042"
+    },
+    {
+      "lecture": 2,
+      "topics": [
+        "日志上下文"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "某接口偶发失败，只记录了“处理异常”四个字。为提升根因定位能力，最应补充？",
+      "code": "",
+      "explanation": "完整上下文可最大程度还原故障现场。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 15
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf"
+      ],
+      "options": [
+        "入参、返回结果、堆栈、环境快照和 Trace ID",
+        "更多成功宣传语",
+        "仅记录操作员姓名",
+        "删除错误时间"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。覆盖定位所需的链路和现场信息。",
+        "B": "错误。与故障定位无关。",
+        "C": "错误。信息维度不足。",
+        "D": "错误。会削弱追溯能力。"
+      },
+      "id": "JAVA-ADV-043"
+    },
+    {
+      "lecture": 2,
+      "topics": [
+        "异常编码"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "组织架构调整后，原异常码中的部门已更名。正确做法是？",
+      "code": "",
+      "explanation": "异常码编号不与组织架构挂钩且一经分配永久固定。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 22
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf"
+      ],
+      "options": [
+        "批量修改历史异常码",
+        "保持异常码不变，通过文档和消息更新业务说明",
+        "删除旧异常码且不兼容",
+        "让各系统自行解释同一码"
+      ],
+      "answer": "B",
+      "optionExplanations": {
+        "A": "错误。会破坏历史数据与系统兼容。",
+        "B": "正确。保持稳定并由消息承载业务信息。",
+        "C": "错误。会导致调用方识别失败。",
+        "D": "错误。违背统一规范。"
+      },
+      "id": "JAVA-ADV-044"
+    },
+    {
+      "lecture": 2,
+      "topics": [
+        "异常编码"
+      ],
+      "difficulty": "易",
+      "type": "single",
+      "stem": "后端返回标准异常码后，面向客户的页面应如何展示？",
+      "code": "",
+      "explanation": "异常码用于系统识别，不应直接作为用户提示。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 22
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf"
+      ],
+      "options": [
+        "直接展示内部异常码",
+        "经映射层转换为友好可读提示",
+        "完整展示调用堆栈",
+        "展示数据库连接信息"
+      ],
+      "answer": "B",
+      "optionExplanations": {
+        "A": "错误。内部编码对客户不友好。",
+        "B": "正确。映射可兼顾内部归因与用户体验。",
+        "C": "错误。可能泄露内部实现。",
+        "D": "错误。存在安全风险且无助于用户。"
+      },
+      "id": "JAVA-ADV-045"
+    },
+    {
+      "lecture": 2,
+      "topics": [
+        "异常编码"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "开发发现已有异常码与新场景语义相近，规范做法是？",
+      "code": "",
+      "explanation": "异常码应减少重复定义并保持通用。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 22
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf"
+      ],
+      "options": [
+        "优先复用并核对文档语义",
+        "随意新建一个码",
+        "用 HTTP 200 代替异常码",
+        "把异常码写成完整业务描述"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。有助于体系一致性。",
+        "B": "错误。会造成码值膨胀和歧义。",
+        "C": "错误。无法表达异常分类。",
+        "D": "错误。会耦合过多业务属性。"
+      },
+      "id": "JAVA-ADV-046"
+    },
+    {
+      "lecture": 2,
+      "topics": [
+        "优雅降级"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "支付页的个性化推荐模块宕机，而支付核心功能正常。最合理的服务端策略是？",
+      "code": "",
+      "explanation": "非核心功能应优雅降级，保障核心链路。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 18
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf"
+      ],
+      "options": [
+        "屏蔽推荐并继续支付",
+        "关闭整个支付系统",
+        "让支付线程等待推荐恢复",
+        "把推荐错误当作扣款失败"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。牺牲局部体验可维持核心可用。",
+        "B": "错误。扩大了故障影响。",
+        "C": "错误。会占用核心资源。",
+        "D": "错误。混淆不同业务结果。"
+      },
+      "id": "JAVA-ADV-047"
+    },
+    {
+      "lecture": 2,
+      "topics": [
+        "异常分类"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "上游需要自动决定是提示客户修改输入还是触发系统告警，服务端应重点提供？",
+      "code": "",
+      "explanation": "统一码规和异常分类支持精准归因与自动处理。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 18
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf"
+      ],
+      "options": [
+        "标准化返回码并区分业务校验错误与系统错误",
+        "始终返回同一错误文本",
+        "仅打印本地日志",
+        "随机返回状态码"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。上游可据此选择不同处置。",
+        "B": "错误。无法区分责任与处理路径。",
+        "C": "错误。上游不可见。",
+        "D": "错误。会制造识别歧义。"
+      },
+      "id": "JAVA-ADV-048"
+    },
+    {
+      "lecture": 2,
+      "topics": [
+        "自动补偿"
+      ],
+      "difficulty": "难",
+      "type": "single",
+      "stem": "自动补偿连续失败且已超过阈值，下一步最符合原则的是？",
+      "code": "",
+      "explanation": "自动恢复失败后应转人工兜底并形成合规闭环。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 16
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf"
+      ],
+      "options": [
+        "静默忽略",
+        "继续无限补偿",
+        "告警并落异常台账，按审批复核流程人工介入",
+        "允许任何开发直接改账"
+      ],
+      "answer": "C",
+      "optionExplanations": {
+        "A": "错误。会形成无人知晓的数据偏差。",
+        "B": "错误。可能持续放大资源消耗。",
+        "C": "正确。兼顾追溯、处置与合规。",
+        "D": "错误。无审批操作风险极高。"
+      },
+      "id": "JAVA-ADV-049"
+    },
+    {
+      "lecture": 2,
+      "topics": [
+        "人工兜底"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "运维人员准备手工修正一笔异常账务，哪项要求最关键？",
+      "code": "",
+      "explanation": "人工介入必须受合规管控并可复盘。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 16
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf"
+      ],
+      "options": [
+        "跳过审批以缩短时间",
+        "经审批和复核并完整留痕",
+        "只在聊天群说明",
+        "修正后删除台账"
+      ],
+      "answer": "B",
+      "optionExplanations": {
+        "A": "错误。容易引发误操作。",
+        "B": "正确。形成授权、双人复核和追溯闭环。",
+        "C": "错误。不能替代正式流程。",
+        "D": "错误。破坏审计证据。"
+      },
+      "id": "JAVA-ADV-050"
+    },
+    {
+      "lecture": 2,
+      "topics": [
+        "超时控制"
+      ],
+      "difficulty": "易",
+      "type": "single",
+      "stem": "外部接口偶尔长时间无响应，设置明确超时阈值的主要目的是什么？",
+      "code": "",
+      "explanation": "合理超时可避免等待拖垮本地资源。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 17
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf"
+      ],
+      "options": [
+        "让请求永久占用线程",
+        "快速失败并阻断资源持续占用",
+        "保证下游一定成功",
+        "取消异常记录"
+      ],
+      "answer": "B",
+      "optionExplanations": {
+        "A": "错误。与目标相反。",
+        "B": "正确。能限制慢依赖的影响。",
+        "C": "错误。超时不能保证业务成功。",
+        "D": "错误。仍需完整留痕。"
+      },
+      "id": "JAVA-ADV-051"
+    },
+    {
+      "lecture": 2,
+      "topics": [
+        "流量治理"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "突发流量下资源只够支持核心交易，最符合“取舍”原则的是？",
+      "code": "",
+      "explanation": "过载时应牺牲非核心体验以保全核心业务。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 21
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf"
+      ],
+      "options": [
+        "优先拒绝营销页等非关键请求",
+        "平均拖慢所有请求",
+        "优先关闭支付",
+        "允许非核心请求抢占全部连接"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。释放资源并保障高价值链路。",
+        "B": "错误。可能导致整体不可用。",
+        "C": "错误。违背业务优先级。",
+        "D": "错误。会淹没核心服务。"
+      },
+      "id": "JAVA-ADV-052"
+    },
+    {
+      "lecture": 2,
+      "topics": [
+        "隔离舱"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "报表任务大量消耗 CPU，导致交易容器响应恶化。最针对性的治理是？",
+      "code": "",
+      "explanation": "容器化资源隔离可防止一个模块耗尽资源影响其他模块。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 21
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf"
+      ],
+      "options": [
+        "报表与交易使用独立容器并设置资源上限",
+        "把二者放进同一无限线程池",
+        "关闭 CPU 监控",
+        "提高所有请求重试次数"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。实现资源独立和影响范围隔断。",
+        "B": "错误。会增强资源争抢。",
+        "C": "错误。无法治理耗尽。",
+        "D": "错误。会进一步增加负载。"
+      },
+      "id": "JAVA-ADV-053"
+    },
+    {
+      "lecture": 2,
+      "topics": [
+        "网络调用治理"
+      ],
+      "difficulty": "难",
+      "type": "multiple",
+      "stem": "账务服务调用超时且结果未知时，哪些措施有助于避免重复记账和误回滚？",
+      "code": "",
+      "explanation": "超时结果未知时，应以幂等和结果核对共同保障一致性。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 17
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf"
+      ],
+      "options": [
+        "以业务唯一流水号做幂等校验",
+        "调用状态查询接口核对结果",
+        "通过异步消息继续核对",
+        "每次重试都更换流水号"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。可防止同一业务重复生效。",
+        "B": "正确。能确认真实执行状态。",
+        "C": "正确。可在同步链路失败后继续确认。",
+        "D": "错误。会绕过同一业务的幂等识别。"
+      },
+      "id": "JAVA-ADV-054"
+    },
+    {
+      "lecture": 2,
+      "topics": [
+        "故障隔离"
+      ],
+      "difficulty": "中",
+      "type": "multiple",
+      "stem": "为避免某下游故障演变为系统雪崩，可以采用哪些措施？",
+      "code": "",
+      "explanation": "熔断、限流和隔离舱共同构成故障隔离防线。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 13
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf"
+      ],
+      "options": [
+        "错误率超阈值后熔断",
+        "入口按能力限流",
+        "为不同业务设置独立线程池",
+        "对失败请求无限重试"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。可主动切断故障链。",
+        "B": "正确。可使负载处于安全水位。",
+        "C": "正确。可避免资源耗尽相互影响。",
+        "D": "错误。会放大故障和负载。"
+      },
+      "id": "JAVA-ADV-055"
+    },
+    {
+      "lecture": 2,
+      "topics": [
+        "可观测性"
+      ],
+      "difficulty": "中",
+      "type": "multiple",
+      "stem": "一条异常日志要支持跨系统快速定位，宜包含哪些信息？",
+      "code": "",
+      "explanation": "追踪标识和完整现场上下文是还原根因的关键。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 15
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf"
+      ],
+      "options": [
+        "全链路 Trace ID",
+        "关键入参与返回结果",
+        "调用堆栈和环境快照",
+        "仅面向客户的友好提示"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。用于串联跨节点日志。",
+        "B": "正确。可还原请求与响应现场。",
+        "C": "正确。可定位代码路径和运行环境。",
+        "D": "错误。不足以支持技术排障。"
+      },
+      "id": "JAVA-ADV-056"
+    },
+    {
+      "lecture": 2,
+      "topics": [
+        "自动化与人工兜底"
+      ],
+      "difficulty": "中",
+      "type": "multiple",
+      "stem": "自动补偿无法恢复一笔异常交易后，规范的人工兜底应包括？",
+      "code": "",
+      "explanation": "人工兜底必须及时触达、留痕并受合规控制。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 16
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf"
+      ],
+      "options": [
+        "多渠道告警",
+        "自动落地异常台账",
+        "审批与复核后操作",
+        "修复完成后清除全部痕迹"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。使责任人员及时介入。",
+        "B": "正确。支持跟踪、审计和复盘。",
+        "C": "正确。降低无授权和误操作风险。",
+        "D": "错误。会破坏追溯闭环。"
+      },
+      "id": "JAVA-ADV-057"
+    },
+    {
+      "lecture": 2,
+      "topics": [
+        "消息异常治理"
+      ],
+      "difficulty": "难",
+      "type": "multiple",
+      "stem": "关于异步消息链路异常治理，哪些设计符合课件要求？",
+      "code": "",
+      "explanation": "可靠投递、幂等消费和分类处置缺一不可。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 19
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf"
+      ],
+      "options": [
+        "生产端启用全副本确认",
+        "消费端依据业务唯一键幂等",
+        "瞬时异常指数退避重试",
+        "永久逻辑错误持续循环重试"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。降低消息未可靠落盘风险。",
+        "B": "正确。防止重复消费产生重复业务结果。",
+        "C": "正确。适合网络抖动等偶发故障。",
+        "D": "错误。应转死信而非无效重试。"
+      },
+      "id": "JAVA-ADV-058"
+    },
+    {
+      "lecture": 2,
+      "topics": [
+        "分布式事务"
+      ],
+      "difficulty": "难",
+      "type": "multiple",
+      "stem": "跨服务流程执行一半失败后，哪些做法有利于最终一致性？",
+      "code": "",
+      "explanation": "可靠一致性方案、正向重试、逆向补偿和后续核对共同治理半完成状态。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 20
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf"
+      ],
+      "options": [
+        "采用 SAGA/TCC 或事务消息",
+        "能继续时自动重试后续步骤",
+        "不能继续时逆向补偿已完成步骤",
+        "取消对账和状态巡检"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。提供柔性事务协调能力。",
+        "B": "正确。可促使流程最终完成。",
+        "C": "正确。可撤销已产生的局部修改。",
+        "D": "错误。会让残余偏差长期存在。"
+      },
+      "id": "JAVA-ADV-059"
+    },
+    {
+      "lecture": 2,
+      "topics": [
+        "流量冲击"
+      ],
+      "difficulty": "中",
+      "type": "multiple",
+      "stem": "系统遭遇突发流量时，为保护核心交易可以采取？",
+      "code": "",
+      "explanation": "分层限流、业务取舍和资源约束可共同阻断过载扩散。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 21
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf"
+      ],
+      "options": [
+        "网关到应用分层限流",
+        "按业务价值设置优先级",
+        "限制 CPU、内存和连接数",
+        "让非核心请求无条件优先"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。从多层控制进入系统的流量。",
+        "B": "正确。确保有限资源优先供应核心业务。",
+        "C": "正确。避免单点资源耗尽。",
+        "D": "错误。会挤占核心交易资源。"
+      },
+      "id": "JAVA-ADV-060"
+    },
+    {
+      "lecture": 2,
+      "topics": [
+        "异常码规范"
+      ],
+      "difficulty": "中",
+      "type": "multiple",
+      "stem": "设计统一异常码体系时，哪些做法正确？",
+      "code": "",
+      "explanation": "异常码应统一、稳定、可扩展且避免组织耦合。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 22
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf"
+      ],
+      "options": [
+        "优先复用语义相近的已有码",
+        "码值一经分配保持稳定",
+        "按分类分层并预留扩展空间",
+        "将部门名称固化进编号"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。减少重复定义和识别歧义。",
+        "B": "正确。保障历史数据和调用方兼容。",
+        "C": "正确。支持体系持续演进。",
+        "D": "错误。组织变化会导致码值不稳定。"
+      },
+      "id": "JAVA-ADV-061"
+    },
+    {
+      "lecture": 2,
+      "topics": [
+        "异常码输出"
+      ],
+      "difficulty": "难",
+      "type": "multiple",
+      "stem": "标准异常响应及配套治理应满足哪些要求？",
+      "code": "",
+      "explanation": "异常码服务机器识别，消息服务业务表达，文档保障正确使用。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 22
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf"
+      ],
+      "options": [
+        "内部码通过映射转换为用户提示",
+        "具体业务信息由 error_message 承载",
+        "每个异常码配套文档和示例",
+        "直接向用户输出堆栈"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。兼顾统一归因与用户可读性。",
+        "B": "正确。避免码值承载过多业务属性。",
+        "C": "正确。降低开发者误用概率。",
+        "D": "错误。会泄露实现细节且不友好。"
+      },
+      "id": "JAVA-ADV-062"
+    },
+    {
+      "lecture": 2,
+      "topics": [
+        "服务端异常"
+      ],
+      "difficulty": "中",
+      "type": "multiple",
+      "stem": "实例宕机或资源耗尽时，服务端可采用哪些方式限制影响？",
+      "code": "",
+      "explanation": "降级、熔断和统一分类分别保障核心、隔离故障并支持上游处置。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 18
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf"
+      ],
+      "options": [
+        "非核心功能优雅降级",
+        "错误率超阈值触发熔断",
+        "标准化区分系统错误和业务错误",
+        "所有异常均伪装为成功"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。可保留核心链路可用。",
+        "B": "正确。能快速阻断扩散。",
+        "C": "正确。便于精准归因和自动处理。",
+        "D": "错误。会掩盖真实失败。"
+      },
+      "id": "JAVA-ADV-063"
+    },
+    {
+      "lecture": 2,
+      "topics": [
+        "重试策略"
+      ],
+      "difficulty": "难",
+      "type": "multiple",
+      "stem": "制定自动重试策略时，应考虑哪些约束？",
+      "code": "",
+      "explanation": "重试必须基于故障可恢复性、负载约束及业务幂等性。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 17
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf"
+      ],
+      "options": [
+        "只对可恢复的瞬时故障重试",
+        "限制次数并采用退避",
+        "写操作先保证幂等",
+        "超时一律等同业务失败"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。避免对永久错误无效重试。",
+        "B": "正确。降低重试风暴风险。",
+        "C": "正确。防止重复写入和记账。",
+        "D": "错误。超时可能是结果未知。"
+      },
+      "id": "JAVA-ADV-064"
+    },
+    {
+      "lecture": 2,
+      "topics": [
+        "数据一致性"
+      ],
+      "difficulty": "中",
+      "type": "multiple",
+      "stem": "金融账务异常治理重点防范哪些核心风险？",
+      "code": "",
+      "explanation": "一致性治理的三项铁律是防账实不符、防重复、防漏记。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 14
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf"
+      ],
+      "options": [
+        "账实不符",
+        "重复记账",
+        "漏记账",
+        "页面配色不统一"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。系统账与实际状态必须一致。",
+        "B": "正确。需依靠幂等防范。",
+        "C": "正确。需以补偿机制防范。",
+        "D": "错误。不属于账务一致性风险。"
+      },
+      "id": "JAVA-ADV-065"
+    },
+    {
+      "lecture": 2,
+      "topics": [
+        "查询与账务差异"
+      ],
+      "difficulty": "中",
+      "type": "multiple",
+      "stem": "关于查询类与账务类异常处理，哪些表述正确？",
+      "code": "",
+      "explanation": "查询和资金写入的状态风险不同，不能采用同一套宽松策略。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 14
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf"
+      ],
+      "options": [
+        "查询通常无状态，可适当放宽重试",
+        "账务交易需严格落实回滚和补偿",
+        "账务写操作可以不做幂等就盲目重试",
+        "两类交易应按风险差异化治理"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "D"
+      ],
+      "optionExplanations": {
+        "A": "正确。查询重试通常不改变业务状态。",
+        "B": "正确。账务需强一致性保护。",
+        "C": "错误。可能造成重复记账。",
+        "D": "正确。差异化治理才能匹配风险。"
+      },
+      "id": "JAVA-ADV-066"
+    },
+    {
+      "lecture": 2,
+      "topics": [
+        "熔断恢复"
+      ],
+      "difficulty": "中",
+      "type": "judge",
+      "stem": "服务熔断后应永远保持断开，即使探测确认下游已经恢复，也不应自动恢复流量。",
+      "code": "",
+      "explanation": "熔断期间可按固定频率探测，确认服务恢复后自动恢复流量。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 18
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf"
+      ],
+      "options": [],
+      "answer": "错误",
+      "optionExplanations": {},
+      "id": "JAVA-ADV-067"
+    },
+    {
+      "lecture": 2,
+      "topics": [
+        "超时语义"
+      ],
+      "difficulty": "中",
+      "type": "judge",
+      "stem": "账务调用超时只表示调用方未按时收到结果，不能据此直接断定业务未执行。",
+      "code": "",
+      "explanation": "超时可能发生在下游已完成业务但响应丢失的阶段，因此需要状态核对。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 17
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf"
+      ],
+      "options": [],
+      "answer": "正确",
+      "optionExplanations": {},
+      "id": "JAVA-ADV-068"
+    },
+    {
+      "lecture": 2,
+      "topics": [
+        "消息幂等"
+      ],
+      "difficulty": "易",
+      "type": "judge",
+      "stem": "消费者已开启自动重试后，就不再需要依据订单号或消息 ID 做幂等校验。",
+      "code": "",
+      "explanation": "重发和 Rebalance 都可能造成重复消费，自动重试不能替代业务幂等。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 19
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf"
+      ],
+      "options": [],
+      "answer": "错误",
+      "optionExplanations": {},
+      "id": "JAVA-ADV-069"
+    },
+    {
+      "lecture": 2,
+      "topics": [
+        "人工干预合规"
+      ],
+      "difficulty": "中",
+      "type": "judge",
+      "stem": "生产故障紧急时，可以先由个人直接改账，事后再决定是否补充审批和留痕。",
+      "code": "",
+      "explanation": "人工干预必须遵循审批和复核流程并完整留痕，紧急不能成为绕过合规控制的理由。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 16
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf"
+      ],
+      "options": [],
+      "answer": "错误",
+      "optionExplanations": {},
+      "id": "JAVA-ADV-070"
+    },
+    {
+      "lecture": 2,
+      "topics": [
+        "异常码稳定性"
+      ],
+      "difficulty": "易",
+      "type": "judge",
+      "stem": "异常码一经分配应保持稳定，不应因负责部门调整而重新编号。",
+      "code": "",
+      "explanation": "异常码编号不与组织架构挂钩，永久固定有利于兼容和历史追溯。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 22
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf"
+      ],
+      "options": [],
+      "answer": "正确",
+      "optionExplanations": {},
+      "id": "JAVA-ADV-071"
+    },
+    {
+      "lecture": 2,
+      "topics": [
+        "日志设计"
+      ],
+      "difficulty": "中",
+      "type": "judge",
+      "stem": "只要记录了错误文本，即使没有 Trace ID、关键入参和调用堆栈，也足以实现跨系统秒级定位。",
+      "code": "",
+      "explanation": "跨系统定位依赖全链路标识及完整调用上下文，单一错误文本通常无法还原现场。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 15
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf"
+      ],
+      "options": [],
+      "answer": "错误",
+      "optionExplanations": {},
+      "id": "JAVA-ADV-072"
+    },
+    {
+      "lecture": 2,
+      "topics": [
+        "补偿策略"
+      ],
+      "difficulty": "难",
+      "type": "judge",
+      "stem": "跨服务流程中前置步骤已成功而后续暂时失败时，系统只能回滚前置步骤，不能尝试补做后续业务。",
+      "code": "",
+      "explanation": "若后续仍可完成，可自动重试推进；无法继续时才执行逆向补偿。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 20
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf"
+      ],
+      "options": [],
+      "answer": "错误",
+      "optionExplanations": {},
+      "id": "JAVA-ADV-073"
+    },
+    {
+      "lecture": 2,
+      "topics": [
+        "流量治理"
+      ],
+      "difficulty": "中",
+      "type": "judge",
+      "stem": "过载时主动拒绝部分非核心请求，是为了释放资源并维持交易、支付等核心链路可用。",
+      "code": "",
+      "explanation": "流量治理强调业务取舍，以局部非核心体验换取整体和核心业务稳定。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 21
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf"
+      ],
+      "options": [],
+      "answer": "正确",
+      "optionExplanations": {},
+      "id": "JAVA-ADV-074"
+    },
+    {
+      "lecture": 2,
+      "topics": [
+        "死信治理"
+      ],
+      "difficulty": "难",
+      "type": "judge",
+      "stem": "数据非法导致的永久消费异常应转入死信队列并触发告警，而不是持续无效重试。",
+      "code": "",
+      "explanation": "死信队列隔离永久异常，告警和台账则为后续人工闭环提供入口。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 19
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf"
+      ],
+      "options": [],
+      "answer": "正确",
+      "optionExplanations": {},
+      "id": "JAVA-ADV-075"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "工程结构价值"
+      ],
+      "difficulty": "易",
+      "type": "single",
+      "stem": "新成员需要快速定位账户开户代码，规范工程结构最直接提供了什么帮助？",
+      "code": "",
+      "explanation": "清晰目录和自解释分层可降低理解与上手成本。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 28
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "减少目录数量",
+        "提升代码可读性与导航效率",
+        "自动消除缺陷",
+        "免除业务沟通"
+      ],
+      "answer": "B",
+      "optionExplanations": {
+        "A": "错误。目录少不等于结构清晰。",
+        "B": "正确。规范结构便于定位模块。",
+        "C": "错误。结构不能自动消除缺陷。",
+        "D": "错误。仍需业务沟通。"
+      },
+      "id": "JAVA-ADV-076"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "关注点分离"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "一次数据库驱动替换导致大量业务规则同时修改，最可能违反了哪项工程原则？",
+      "code": "",
+      "explanation": "业务逻辑与技术细节未隔离会造成牵一发而动全身。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 28
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "关注点分离",
+        "统一响应码",
+        "版本号四段式",
+        "薄 Controller"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。该原则要求隔离变化。",
+        "B": "错误。与故障现象不直接对应。",
+        "C": "错误。是资源命名规则。",
+        "D": "错误。只描述表现层。"
+      },
+      "id": "JAVA-ADV-077"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "Controller职责"
+      ],
+      "difficulty": "易",
+      "type": "single",
+      "stem": "Controller 收到开户 HTTP 请求后，最合适的处理方式是什么？",
+      "code": "",
+      "explanation": "Controller 应保持薄门面，只做请求适配与转发。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 29
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "直接编写开户规则并提交事务",
+        "解析参数、调用 Service 并封装响应",
+        "直接执行 SQL",
+        "维护领域不变量"
+      ],
+      "answer": "B",
+      "optionExplanations": {
+        "A": "错误。业务规则应在业务层。",
+        "B": "正确。符合表现层职责。",
+        "C": "错误。SQL 属于数据层。",
+        "D": "错误。领域规则不应放在表现层。"
+      },
+      "id": "JAVA-ADV-078"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "Service职责"
+      ],
+      "difficulty": "易",
+      "type": "single",
+      "stem": "跨两张表完成转账并要求整体回滚，事务控制最适合放在哪一层？",
+      "code": "",
+      "explanation": "Service 负责业务规则、流程编排与事务控制。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 29
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "Controller",
+        "Service",
+        "DAO",
+        "VO"
+      ],
+      "answer": "B",
+      "optionExplanations": {
+        "A": "错误。表现层不承载事务流程。",
+        "B": "正确。符合业务层职责。",
+        "C": "错误。DAO 专注单纯数据访问。",
+        "D": "错误。VO 是展示对象。"
+      },
+      "id": "JAVA-ADV-079"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "DAO职责"
+      ],
+      "difficulty": "易",
+      "type": "single",
+      "stem": "以下哪项最符合 DAO 的设计边界？",
+      "code": "",
+      "explanation": "DAO 只负责数据存取并屏蔽底层存储细节。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 29
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "判断客户是否满足授信政策",
+        "封装账户表 CRUD 与映射",
+        "组合多个业务步骤",
+        "拼装页面展示文案"
+      ],
+      "answer": "B",
+      "optionExplanations": {
+        "A": "错误。属于业务判断。",
+        "B": "正确。符合数据访问职责。",
+        "C": "错误。属于业务编排。",
+        "D": "错误。属于展示适配。"
+      },
+      "id": "JAVA-ADV-080"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "分层解耦"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "团队计划把数据库从一种产品迁移到另一种产品，希望业务规则少受影响，主要依赖哪种分层价值？",
+      "code": "",
+      "explanation": "分层隔离存储实现，使技术替换不必扩散到业务逻辑。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 29
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "界面、业务与存储解耦",
+        "所有代码放同一包",
+        "DTO 直接映射表",
+        "Controller 管理事务"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。符合分层价值。",
+        "B": "错误。会增加耦合。",
+        "C": "错误。DTO 不应替代持久化模型。",
+        "D": "错误。职责放置错误。"
+      },
+      "id": "JAVA-ADV-081"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "PO模型"
+      ],
+      "difficulty": "易",
+      "type": "single",
+      "stem": "需要表示账户表字段并仅用于持久化映射，应优先使用哪类对象？",
+      "code": "",
+      "explanation": "PO/Entity 与数据库表结构直接映射，不包含业务逻辑。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 30
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "VO",
+        "DTO",
+        "PO/Entity",
+        "BO"
+      ],
+      "answer": "C",
+      "optionExplanations": {
+        "A": "错误。用于展示。",
+        "B": "错误。用于传输。",
+        "C": "正确。符合题意。",
+        "D": "错误。承载业务逻辑。"
+      },
+      "id": "JAVA-ADV-082"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "DTO模型"
+      ],
+      "difficulty": "易",
+      "type": "single",
+      "stem": "为了避免外部接口直接暴露内部实体结构，请求参数应封装为什么？",
+      "code": "",
+      "explanation": "DTO 用于层间传输并解耦接口与内部结构。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 30
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "Request DTO",
+        "PO",
+        "DAO",
+        "常量类"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。符合用途。",
+        "B": "错误。会暴露持久化结构。",
+        "C": "错误。不是数据对象。",
+        "D": "错误。不能表达请求载荷。"
+      },
+      "id": "JAVA-ADV-083"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "VO模型"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "页面需要同时展示客户摘要、账户余额和风险提示，最适合返回哪类对象？",
+      "code": "",
+      "explanation": "VO 可聚合页面渲染所需数据并屏蔽复杂实体关系。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 30
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "VO",
+        "PO",
+        "Repository",
+        "配置类"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。符合展示聚合。",
+        "B": "错误。只映射表。",
+        "C": "错误。是访问接口。",
+        "D": "错误。不承载页面数据。"
+      },
+      "id": "JAVA-ADV-084"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "BO模型"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "一个对象组合多个持久化对象并执行计息业务规则，它更符合哪种模型？",
+      "code": "",
+      "explanation": "BO 是业务层核心载体，可组合对象完成复杂业务操作。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 30
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "BO",
+        "Response DTO",
+        "VO",
+        "PO"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。符合描述。",
+        "B": "错误。只负责传输。",
+        "C": "错误。面向展示。",
+        "D": "错误。不应包含业务逻辑。"
+      },
+      "id": "JAVA-ADV-085"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "DO模型"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "DDD 建模中要把账户状态与“冻结”行为及不变量封装在一起，应使用什么？",
+      "code": "",
+      "explanation": "DO 强调状态、行为与领域规则的一致性。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 30
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "DO",
+        "DAO",
+        "Request DTO",
+        "配置对象"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。符合领域对象定义。",
+        "B": "错误。只访问数据。",
+        "C": "错误。只传输参数。",
+        "D": "错误。用于配置。"
+      },
+      "id": "JAVA-ADV-086"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "包组织方式"
+      ],
+      "difficulty": "易",
+      "type": "single",
+      "stem": "中大型项目中，Customer 的 Controller、Service、DAO 应如何组织更符合课件推荐？",
+      "code": "",
+      "explanation": "按业务领域聚合能形成高内聚、边界清晰的代码单元。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 31
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "分别放进全局 controller、service、dao 包",
+        "聚合在 Customer 业务模块下",
+        "全部放 common 包",
+        "按开发人员姓名分包"
+      ],
+      "answer": "B",
+      "optionExplanations": {
+        "A": "错误。会物理割裂业务。",
+        "B": "正确。符合推荐模式。",
+        "C": "错误。公共包不应吞并业务。",
+        "D": "错误。人员不是稳定业务边界。"
+      },
+      "id": "JAVA-ADV-087"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "模块化演进"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "未来可能把 Account 拆成微服务，当前最有利的包结构是什么？",
+      "code": "",
+      "explanation": "业务模块聚合天然形成边界，为微服务拆分打基础。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 31
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "按业务模块聚合",
+        "所有 DAO 集中",
+        "所有类放默认包",
+        "按文件大小分包"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。符合演进需求。",
+        "B": "错误。会割裂账户业务。",
+        "C": "错误。没有清晰边界。",
+        "D": "错误。不是业务结构。"
+      },
+      "id": "JAVA-ADV-088"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "api模块"
+      ],
+      "difficulty": "易",
+      "type": "single",
+      "stem": "系统要统一管理对外接口和 DTO 契约，最适合放在哪个通用模块？",
+      "code": "",
+      "explanation": "api/interfaces 是对外接口定义中心。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 32
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "api/interfaces",
+        "util/common",
+        "aspect",
+        "constant"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。符合用途。",
+        "B": "错误。用于工具能力。",
+        "C": "错误。用于横切逻辑。",
+        "D": "错误。用于常量枚举。"
+      },
+      "id": "JAVA-ADV-089"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "横切模块"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "日志、权限校验和性能监控不应散落业务代码，宜集中在哪个包？",
+      "code": "",
+      "explanation": "aspect 通过 AOP 将横切逻辑与主流程解耦。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 32
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "aspect",
+        "model",
+        "dao",
+        "constant"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。符合用途。",
+        "B": "错误。承载模型。",
+        "C": "错误。负责数据访问。",
+        "D": "错误。只管理常量。"
+      },
+      "id": "JAVA-ADV-090"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "公共机制层"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "业务应用需要业务流水号，但不应了解分布式序号组件细节，合理做法是什么？",
+      "code": "",
+      "explanation": "公共机制层向上屏蔽技术实现，对下层能力做通用封装。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 33
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "每个业务自行调用底层组件",
+        "由公共机制按业务场景封装",
+        "放到 Controller 生成",
+        "写死在常量包"
+      ],
+      "answer": "B",
+      "optionExplanations": {
+        "A": "错误。造成重复和耦合。",
+        "B": "正确。符合承上启下定位。",
+        "C": "错误。表现层职责不当。",
+        "D": "错误。流水号不是固定常量。"
+      },
+      "id": "JAVA-ADV-091"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "公共机制范围"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "多个业务表都要自动填充创建人和更新时间，应由哪项公共机制支持？",
+      "code": "",
+      "explanation": "公共机制可统一赋值非业务公共字段。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 34
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "公共表字段赋值",
+        "消息推送",
+        "凭证模板",
+        "缓存远期查询"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。符合场景。",
+        "B": "错误。用于外围消息。",
+        "C": "错误。用于打印数据。",
+        "D": "错误。用于按生效日查参数。"
+      },
+      "id": "JAVA-ADV-092"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "响应码管理"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "应用在交易后处理中需把响应码映射为统一描述，课件建议依赖什么？",
+      "code": "",
+      "explanation": "统一响应码机制通过参数数据完成描述映射。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 34
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "参数管理系统推送的响应码参数表",
+        "Controller 硬编码文案",
+        "DAO 猜测错误原因",
+        "每个微服务自建编码"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。符合统一管理。",
+        "B": "错误。难以维护。",
+        "C": "错误。超出 DAO 职责。",
+        "D": "错误。破坏统一性。"
+      },
+      "id": "JAVA-ADV-093"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "消息推送"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "应用向短信外围系统发送通知，最符合公共机制设计的路径是什么？",
+      "code": "",
+      "explanation": "消息推送客户端统一封装消息体，并异步经 MQ 交给服务处理。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 34
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "同步直连且各应用自组报文",
+        "SDK 统一封装存储后经 MQ 异步推送",
+        "写入 VO 等待前端发送",
+        "在 DAO 中调用短信接口"
+      ],
+      "answer": "B",
+      "optionExplanations": {
+        "A": "错误。增加耦合。",
+        "B": "正确。符合课件流程。",
+        "C": "错误。VO 不承担发送。",
+        "D": "错误。数据层不调用外围业务。"
+      },
+      "id": "JAVA-ADV-094"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "parent依赖管理"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "希望业务应用统一使用技术平台组件包版本，应由公共机制承担什么角色？",
+      "code": "",
+      "explanation": "公共机制作为 parent 统一管理组件包和版本号。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 34
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "作为 pom 依赖的 parent 统一纳管",
+        "运行时替换所有 jar",
+        "把版本写进 DTO",
+        "由每个 DAO 自选版本"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。符合建设范围。",
+        "B": "错误。不是运行时职责。",
+        "C": "错误。DTO 不管理依赖。",
+        "D": "错误。会产生版本漂移。"
+      },
+      "id": "JAVA-ADV-095"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "联机公共机制依赖"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "联机应用需要通用责任链扩展和公共上下文处理，直接依赖哪个模块？",
+      "code": "",
+      "explanation": "app-online-common 提供联机场景特殊实现与处理。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 35
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "app-online-common",
+        "app-batch-common",
+        "cps-bpaas-batch-starter",
+        "xxx-infra"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。符合场景。",
+        "B": "错误。面向批量。",
+        "C": "错误。是批处理框架。",
+        "D": "错误。是基础设施实现。"
+      },
+      "id": "JAVA-ADV-096"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "批量公共机制依赖"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "批量上下文与通用前后处理应由哪个公共机制模块提供？",
+      "code": "",
+      "explanation": "app-batch-common 专门处理批量场景。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 35
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "app-common",
+        "app-batch-common",
+        "app-online-common",
+        "xxx-aps-api"
+      ],
+      "answer": "B",
+      "optionExplanations": {
+        "A": "错误。提供联机批量共性。",
+        "B": "正确。符合题意。",
+        "C": "错误。专属联机。",
+        "D": "错误。只是应用服务接口。"
+      },
+      "id": "JAVA-ADV-097"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "平台接口扩展"
+      ],
+      "difficulty": "难",
+      "type": "single",
+      "stem": "公共机制要通过 SPI 实现数据库切面，从而填充公共字段，应依赖哪个平台模块？",
+      "code": "",
+      "explanation": "cps-component-api 提供数据库切面等处理接口类。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 35
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "cps-component-api",
+        "cps-component-common-resource",
+        "xxx-txs-dist",
+        "app-online-common"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。提供所需接口。",
+        "B": "错误。偏元数据和运行时工具。",
+        "C": "错误。是构建打包工程。",
+        "D": "错误。是联机场景机制。"
+      },
+      "id": "JAVA-ADV-098"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "运行时元数据"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "应用需要获取法人代码、交易码等运行时上下文，应使用哪个依赖？",
+      "code": "",
+      "explanation": "该模块提供元数据及获取运行时上下文的工具类。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 35
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "cps-component-common-resource",
+        "cps-component-api",
+        "xxx-dms-api",
+        "config-resource-dist"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。符合用途。",
+        "B": "错误。主要提供处理接口。",
+        "C": "错误。提供领域服务契约。",
+        "D": "错误。负责配置物料打包。"
+      },
+      "id": "JAVA-ADV-099"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "应用服务接口实现分离"
+      ],
+      "difficulty": "易",
+      "type": "single",
+      "stem": "对外提供可被流程编排的应用服务接口与其具体实现，分别对应什么模块？",
+      "code": "",
+      "explanation": "aps-api 定义应用服务接口，aps 提供实现。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 37
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "xxx-aps-api 与 xxx-aps",
+        "xxx-dms 与 xxx-infra",
+        "xxx-txs 与 xxx-bjs",
+        "xxx-common 与 xxx-txs-dist"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。匹配课件模块说明。",
+        "B": "错误。是领域与基础设施。",
+        "C": "错误。是联机与批量入口。",
+        "D": "错误。是公共与打包。"
+      },
+      "id": "JAVA-ADV-100"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "领域服务模块"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "仓储服务接口应定义在哪个模块？",
+      "code": "",
+      "explanation": "领域服务实现模块 xxx-dms 同时定义仓储服务接口。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 37
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "xxx-dms",
+        "xxx-infra",
+        "xxx-dms-api",
+        "xxx-aps-api"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。符合职责。",
+        "B": "错误。负责实现仓储接口。",
+        "C": "错误。主要放领域服务接口和数据对象。",
+        "D": "错误。定义应用服务接口。"
+      },
+      "id": "JAVA-ADV-101"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "基础设施模块"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "命名 SQL、PO 及仓储接口实现应归入哪个模块？",
+      "code": "",
+      "explanation": "基础设施模块实现仓储并定义命名 SQL、PO 等。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 37
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "xxx-infra",
+        "xxx-dms",
+        "xxx-common",
+        "xxx-aps"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。符合职责。",
+        "B": "错误。定义仓储接口。",
+        "C": "错误。用于业务公共能力。",
+        "D": "错误。实现应用服务。"
+      },
+      "id": "JAVA-ADV-102"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "二方依赖"
+      ],
+      "difficulty": "难",
+      "type": "single",
+      "stem": "xxx 工程要调用范围外 yyy 的领域服务，最应引入哪种二方模块？",
+      "code": "",
+      "explanation": "yyy-dms-api 暴露可调用的领域服务接口与数据对象。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 37
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "yyy-dms-api",
+        "yyy-infra 必选",
+        "yyy-txs-dist",
+        "xxx-common"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。符合契约依赖。",
+        "B": "错误。基础设施不应作为必选入口。",
+        "C": "错误。是部署制品。",
+        "D": "错误。是本组件公共工程。"
+      },
+      "id": "JAVA-ADV-103"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "联机打包工程"
+      ],
+      "difficulty": "易",
+      "type": "single",
+      "stem": "要准备联机应用制品包，应构建哪个工程？",
+      "code": "",
+      "explanation": "xxx-txs-dist 组合联机所需模块并生成应用制品。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 38
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "xxx-txs-dist",
+        "xxx-bjs-dist",
+        "cps-deploy-db-resource-dist",
+        "cps-app-config-resource-dist"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。符合用途。",
+        "B": "错误。用于批量。",
+        "C": "错误。生成 SQL 物料。",
+        "D": "错误。生成配置物料。"
+      },
+      "id": "JAVA-ADV-104"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "批量构建范围"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "纯批量制品 xxx-bjs-dist 的标准构建清单中不包含哪项？",
+      "code": "",
+      "explanation": "批量构建包含批量接口、领域与基础设施等，不包含应用服务 xxx-aps。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 38
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "xxx-bjs",
+        "xxx-dms",
+        "xxx-infra",
+        "xxx-aps"
+      ],
+      "answer": "D",
+      "optionExplanations": {
+        "A": "错误。应包含。",
+        "B": "错误。应包含。",
+        "C": "错误。应包含。",
+        "D": "正确。不在清单。"
+      },
+      "id": "JAVA-ADV-105"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "物料工程"
+      ],
+      "difficulty": "易",
+      "type": "single",
+      "stem": "数据库初始化与迭代 SQL 应通过哪个构建工程准备物料包？",
+      "code": "",
+      "explanation": "db-resource 构建工程用于准备物料 SQL 包。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 38
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "cps-deploy-db-resource-dist",
+        "xxx-txs-dist",
+        "xxx-bjs-dist",
+        "cps-app-config-resource-dist"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。符合用途。",
+        "B": "错误。生成联机制品。",
+        "C": "错误。生成批量制品。",
+        "D": "错误。生成配置包。"
+      },
+      "id": "JAVA-ADV-106"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "CI流程"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "代码合并或指定 tag 触发流水线后，CI 的核心产出和去向是什么？",
+      "code": "",
+      "explanation": "CI 拉取代码、构建打包并将 fatjar 推送到制品仓库。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 39
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "生成 fatjar 并推送制品仓库",
+        "直接修改生产数据库",
+        "只发送邮件",
+        "把源码复制到配置中心"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。符合流程。",
+        "B": "错误。属于部署且风险错误。",
+        "C": "错误。不是核心产出。",
+        "D": "错误。配置中心不存源码。"
+      },
+      "id": "JAVA-ADV-107"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "部署顺序"
+      ],
+      "difficulty": "难",
+      "type": "single",
+      "stem": "一次发布同时包含配置、SQL 和应用制品，应采用什么顺序？",
+      "code": "",
+      "explanation": "涉及应用制品时，应按图示自上而下先配置、再数据库、后应用。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 39
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "应用启动→SQL→配置",
+        "配置→SQL→应用制品并启动",
+        "SQL→应用启动→配置",
+        "三者任意并行"
+      ],
+      "answer": "B",
+      "optionExplanations": {
+        "A": "错误。会让应用先于依赖物料。",
+        "B": "正确。符合部署顺序。",
+        "C": "错误。配置过晚。",
+        "D": "错误。可能造成版本不一致。"
+      },
+      "id": "JAVA-ADV-108"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "db-resource命名"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "某独立部署的英文名为 account 的应用，其数据库资源子工程应如何命名？",
+      "code": "",
+      "explanation": "独立部署应用遵循 cps-应用英文名称-db-resource。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 40
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "cps-account-db-resource",
+        "cps-account-sdk-db-resource",
+        "account-config-resource",
+        "cps-db-account"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。格式正确。",
+        "B": "错误。适用于 SDK 组件。",
+        "C": "错误。不是数据库资源命名。",
+        "D": "错误。顺序不符。"
+      },
+      "id": "JAVA-ADV-109"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "SQL目录规范"
+      ],
+      "difficulty": "难",
+      "type": "single",
+      "stem": "以下哪个 db-resource 目录满足结构规范？",
+      "code": "",
+      "explanation": "目录依次为模块缩写、standard、数据库类型、场景、四段版本、脚本类型。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 40
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "acct/standard/goldendb/deploy/1.2.3.4/ddl",
+        "acct/deploy/goldendb/ddl/1.2",
+        "standard/acct/prod/ddl",
+        "acct/standard/mysql/deploy/1.2.3.4/ddl"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。完全符合。",
+        "B": "错误。顺序和版本错误。",
+        "C": "错误。结构错误。",
+        "D": "错误。mysql 不在可选值。"
+      },
+      "id": "JAVA-ADV-110"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "SQL文件命名"
+      ],
+      "difficulty": "难",
+      "type": "single",
+      "stem": "目录版本为 1.2.3.4，正常部署 DDL 初始化脚本的合规文件名是哪项？",
+      "code": "",
+      "explanation": "主版本需匹配目录，00 表示 DDL，后缀必须为 sql。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 40
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "V1.2.3.4.00.1_init.sql",
+        "V1.2.3.5.00.1_init.sql",
+        "V1.2.3.4.10.1_init.sql",
+        "V1.2.3.4.90.1_init.txt"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。全部合规。",
+        "B": "错误。主版本不一致。",
+        "C": "错误。10 表示 DML。",
+        "D": "错误。90 为回滚 DDL 且后缀错误。"
+      },
+      "id": "JAVA-ADV-111"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "配置优先级"
+      ],
+      "difficulty": "易",
+      "type": "single",
+      "stem": "应用级、系统级和全局级配置都定义 timeout 时，应用最终优先采用哪一级？",
+      "code": "",
+      "explanation": "同名项加载或覆盖优先级为应用级、系统级、全局级。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 41
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "应用级",
+        "系统级",
+        "全局级",
+        "随机选择"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。优先级最高。",
+        "B": "错误。低于应用级。",
+        "C": "错误。优先级最低。",
+        "D": "错误。顺序是确定的。"
+      },
+      "id": "JAVA-ADV-112"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "工程结构价值",
+        "团队协作"
+      ],
+      "difficulty": "中",
+      "type": "multiple",
+      "stem": "规范的工程结构通常能带来哪些效果？",
+      "code": "",
+      "explanation": "良好结构提升可读性、维护性与协作效率，但不能冻结需求。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 28
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "降低新成员上手成本",
+        "减少模块间无谓耦合",
+        "明确并行开发边界",
+        "保证需求永不变化"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。便于导航定位。",
+        "B": "正确。关注点分离降低耦合。",
+        "C": "正确。边界减少冲突。",
+        "D": "错误。工程结构不能控制需求。"
+      },
+      "id": "JAVA-ADV-113"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "分层架构",
+        "职责边界"
+      ],
+      "difficulty": "中",
+      "type": "multiple",
+      "stem": "关于经典 Controller-Service-DAO 分层，哪些安排合理？",
+      "code": "",
+      "explanation": "三层各司其职，业务判断不应下沉到 DAO。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 29
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "Controller 适配请求",
+        "Service 编排业务与事务",
+        "DAO 封装 CRUD",
+        "DAO 决定授信政策"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。符合表现层。",
+        "B": "正确。符合业务层。",
+        "C": "正确。符合数据层。",
+        "D": "错误。属于业务规则。"
+      },
+      "id": "JAVA-ADV-114"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "对象模型",
+        "数据隔离"
+      ],
+      "difficulty": "中",
+      "type": "multiple",
+      "stem": "哪些对象及用途匹配正确？",
+      "code": "",
+      "explanation": "DO 在 DDD 中封装行为、不变量和业务规则。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 30
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "PO 映射数据库表",
+        "DTO 承担层间传输",
+        "VO 聚合展示数据",
+        "DO 只保存表字段且无行为"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。匹配。",
+        "B": "正确。匹配。",
+        "C": "正确。匹配。",
+        "D": "错误。这是对 PO 的描述。"
+      },
+      "id": "JAVA-ADV-115"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "BO",
+        "DO"
+      ],
+      "difficulty": "难",
+      "type": "multiple",
+      "stem": "关于 BO 与 DO，哪些说法符合课件？",
+      "code": "",
+      "explanation": "BO 和 DO 均面向业务，前端展示由 VO 承担。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 30
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "BO 可组合多个 PO 或 DO",
+        "BO 是业务逻辑实际执行者",
+        "DO 强调状态与行为一致",
+        "DO 专门用于前端渲染"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。符合 BO。",
+        "B": "正确。符合 BO。",
+        "C": "正确。符合 DDD。",
+        "D": "错误。这是 VO 用途。"
+      },
+      "id": "JAVA-ADV-116"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "包组织",
+        "模块边界"
+      ],
+      "difficulty": "中",
+      "type": "multiple",
+      "stem": "按业务模块聚合 Customer、Account 代码，可能获得哪些收益？",
+      "code": "",
+      "explanation": "业务聚合改善边界和演进性，但不意味着绝对零依赖。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 31
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "业务逻辑高内聚",
+        "模块间依赖最小化",
+        "便于未来微服务拆分",
+        "保证所有模块零依赖"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。符合。",
+        "B": "正确。符合。",
+        "C": "正确。符合。",
+        "D": "错误。合理依赖仍存在。"
+      },
+      "id": "JAVA-ADV-117"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "通用包模块",
+        "职责"
+      ],
+      "difficulty": "中",
+      "type": "multiple",
+      "stem": "哪些包职责配对正确？",
+      "code": "",
+      "explanation": "工具包提供通用技术方法，不应承载核心业务规则。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 32
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "exception—自定义异常与统一处理",
+        "constant—状态码和枚举值",
+        "config—Bean 与第三方集成配置",
+        "util—实现开户核心规则"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。正确。",
+        "B": "正确。正确。",
+        "C": "正确。正确。",
+        "D": "错误。业务规则应在业务模块。"
+      },
+      "id": "JAVA-ADV-118"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "公共机制层",
+        "能力复用"
+      ],
+      "difficulty": "难",
+      "type": "multiple",
+      "stem": "公共机制层的合理定位包括哪些？",
+      "code": "",
+      "explanation": "公共机制承上启下，但不取代差异化业务实现。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 33
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "抽象业务公共场景",
+        "屏蔽底层技术实现细节",
+        "封装运行时技术能力供业务复用",
+        "替代所有具体业务应用"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。符合目标。",
+        "B": "正确。向上屏蔽。",
+        "C": "正确。向下封装。",
+        "D": "错误。边界过度。"
+      },
+      "id": "JAVA-ADV-119"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "公共机制范围",
+        "业务场景"
+      ],
+      "difficulty": "中",
+      "type": "multiple",
+      "stem": "哪些属于课件列出的公共机制建设范围？",
+      "code": "",
+      "explanation": "组件与版本应统一纳管，而非各应用自行选择。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 34
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "流水处理",
+        "凭证打印模板管理",
+        "缓存参数远期查询",
+        "每个应用独立选择组件版本"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。列明能力。",
+        "B": "正确。列明能力。",
+        "C": "正确。列明能力。",
+        "D": "错误。违背 parent 纳管。"
+      },
+      "id": "JAVA-ADV-120"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "消息推送",
+        "解耦"
+      ],
+      "difficulty": "难",
+      "type": "multiple",
+      "stem": "消息推送公共机制中，哪些描述正确？",
+      "code": "",
+      "explanation": "外围协议适配应由推送服务处理，不应侵入 DAO。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 34
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "客户端 SDK 统一封装消息体",
+        "消息可经 MQ 异步推送",
+        "服务消费消息后组装外围请求",
+        "业务 DAO 直接承担短信协议适配"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。符合。",
+        "B": "正确。符合。",
+        "C": "正确。符合。",
+        "D": "错误。职责错误。"
+      },
+      "id": "JAVA-ADV-121"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "公共机制依赖",
+        "场景区分"
+      ],
+      "difficulty": "中",
+      "type": "multiple",
+      "stem": "以下依赖关系哪些合理？",
+      "code": "",
+      "explanation": "联机与批量有各自场景模块，共性下沉 app-common。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 35
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "联机应用依赖 app-online-common",
+        "批量应用依赖 app-batch-common",
+        "二者共性机制沉淀到 app-common",
+        "批量应用必须依赖 online starter"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。合理。",
+        "B": "正确。合理。",
+        "C": "正确。合理。",
+        "D": "错误。批量应使用 batch starter。"
+      },
+      "id": "JAVA-ADV-122"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "平台组件",
+        "职责"
+      ],
+      "difficulty": "难",
+      "type": "multiple",
+      "stem": "关于技术平台层组件，哪些说法正确？",
+      "code": "",
+      "explanation": "component-api 提供序号、MQ、数据库切面等接口类。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 35
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "online starter 编排联机调用并维护控制信息",
+        "batch starter 支持多种批处理编程模型",
+        "common-resource 提供元数据和上下文工具",
+        "component-api 只存放 SQL 脚本"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。正确。",
+        "B": "正确。正确。",
+        "C": "正确。正确。",
+        "D": "错误。职责描述错误。"
+      },
+      "id": "JAVA-ADV-123"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "内部模块",
+        "接口实现分离"
+      ],
+      "difficulty": "中",
+      "type": "multiple",
+      "stem": "哪些模块配对正确？",
+      "code": "",
+      "explanation": "基础设施模块实现仓储并管理 SQL、PO，不是交易控制器。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 37
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "xxx-aps-api—应用服务接口",
+        "xxx-aps—应用服务实现",
+        "xxx-dms-api—领域服务接口及数据对象",
+        "xxx-infra—交易 HTTP 控制器"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。正确。",
+        "B": "正确。正确。",
+        "C": "正确。正确。",
+        "D": "错误。职责错误。"
+      },
+      "id": "JAVA-ADV-124"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "领域服务",
+        "基础设施"
+      ],
+      "difficulty": "难",
+      "type": "multiple",
+      "stem": "关于 xxx-dms、xxx-infra 的边界，哪些说法正确？",
+      "code": "",
+      "explanation": "领域层承载规则并定义仓储抽象，基础设施层实现技术访问。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 37
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "dms 提供领域服务实现",
+        "dms 定义仓储服务接口",
+        "infra 实现仓储接口",
+        "infra 负责决定账户计息等核心领域规则"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。正确。",
+        "B": "正确。正确。",
+        "C": "正确。正确。",
+        "D": "错误。核心领域规则不应下沉到基础设施实现。"
+      },
+      "id": "JAVA-ADV-125"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "构建工程",
+        "制品"
+      ],
+      "difficulty": "中",
+      "type": "multiple",
+      "stem": "以下构建工程与产物用途匹配的有哪些？",
+      "code": "",
+      "explanation": "交易、批量与数据库资源工程分别准备对应部署物料。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 38
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "txs-dist—联机应用制品",
+        "bjs-dist—批量应用制品",
+        "db-resource-dist—SQL 物料包",
+        "config-resource-dist—联机交易 fatjar"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。匹配。",
+        "B": "正确。匹配。",
+        "C": "正确。匹配。",
+        "D": "错误。配置资源工程准备配置物料包，不是联机交易 fatjar。"
+      },
+      "id": "JAVA-ADV-126"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "构建范围",
+        "可选依赖"
+      ],
+      "difficulty": "难",
+      "type": "multiple",
+      "stem": "关于 dist 工程构建范围，哪些说法正确？",
+      "code": "",
+      "explanation": "批量构建清单不包含 xxx-aps，外部二方模块按需引入。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 38
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "txs-dist 整合交易、应用、领域、基础设施等模块",
+        "bjs-dist 整合批量、领域和基础设施等模块",
+        "yyy 相关模块可按需要引入",
+        "两个 dist 都必须包含 xxx-aps"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。正确。",
+        "B": "正确。正确。",
+        "C": "正确。正确。",
+        "D": "错误。不符合批量清单。"
+      },
+      "id": "JAVA-ADV-127"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "CI/CD",
+        "发布流程"
+      ],
+      "difficulty": "中",
+      "type": "multiple",
+      "stem": "关于构建部署流程，哪些说法正确？",
+      "code": "",
+      "explanation": "物料可按实际变更单独发布，涉及应用制品时遵循顺序。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 39
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "开发人员提交代码配置脚本并发起 MR",
+        "CI 可由合并事件或 tag 触发",
+        "CI 将构建制品推送仓库",
+        "CD 只允许三类物料永远同时发布"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。正确。",
+        "B": "正确。正确。",
+        "C": "正确。正确。",
+        "D": "错误。允许单独推送。"
+      },
+      "id": "JAVA-ADV-128"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "CD部署",
+        "物料顺序"
+      ],
+      "difficulty": "难",
+      "type": "multiple",
+      "stem": "发布同时涉及三类物料时，哪些做法符合规范？",
+      "code": "",
+      "explanation": "依赖性物料应先于应用启动完成。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 39
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "先推配置物料",
+        "应用启动前完成 SQL 物料部署",
+        "最后部署应用制品并启动",
+        "为提速先启动应用再补配置"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。顺序正确。",
+        "B": "正确。顺序正确。",
+        "C": "正确。顺序正确。",
+        "D": "错误。可能导致启动配置缺失。"
+      },
+      "id": "JAVA-ADV-129"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "db-resource",
+        "目录命名"
+      ],
+      "difficulty": "难",
+      "type": "multiple",
+      "stem": "db-resource 目录规范中，哪些说法正确？",
+      "code": "",
+      "explanation": "末级脚本类型只能按语言类型划分为 ddl 或 dml。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 40
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "数据库类型可为 goldendb 或 opengauss",
+        "升级场景为 deploy 或 rollback",
+        "版本号由四段纯数字组成",
+        "脚本类型目录可写 sql"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。正确。",
+        "B": "正确。正确。",
+        "C": "正确。正确。",
+        "D": "错误。应为 ddl/dml。"
+      },
+      "id": "JAVA-ADV-130"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "SQL命名",
+        "脚本编码"
+      ],
+      "difficulty": "难",
+      "type": "multiple",
+      "stem": "SQL 文件脚本类型编码配对正确的有哪些？",
+      "code": "",
+      "explanation": "00、10 与 90 分别对应正常 DDL、正常 DML 和回滚 DDL。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 40
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "00—DDL",
+        "10—DML",
+        "90—回滚 DDL",
+        "99—正常部署 DDL"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。正确。",
+        "B": "正确。正确。",
+        "C": "正确。正确。",
+        "D": "错误。99 对应回滚 DML，而非正常部署 DDL。"
+      },
+      "id": "JAVA-ADV-131"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "SQL执行",
+        "回滚管理"
+      ],
+      "difficulty": "难",
+      "type": "multiple",
+      "stem": "关于 SQL 推送与回滚，哪些说法正确？",
+      "code": "",
+      "explanation": "正常部署成功后应删除 rollback 目录下相关文件。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 40
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "先按目录版本从小到大执行",
+        "同目录按子版本号从小到大执行",
+        "正常部署失败可执行 rollback 文件",
+        "正常部署成功后仍永久保留本次 rollback 文件"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。正确。",
+        "B": "正确。正确。",
+        "C": "正确。正确。",
+        "D": "错误。与规范相反。"
+      },
+      "id": "JAVA-ADV-132"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "config-resource",
+        "配置目录"
+      ],
+      "difficulty": "中",
+      "type": "multiple",
+      "stem": "哪些配置路径层级描述正确？",
+      "code": "",
+      "explanation": "全局配置为所有系统共用，不按应用目录划分。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 41
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "应用级包含系统编号、应用英文名、环境编号",
+        "系统级包含系统编号和环境编号",
+        "全局级包含环境编号",
+        "全局级必须再包含应用英文名"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。正确。",
+        "B": "正确。正确。",
+        "C": "正确。正确。",
+        "D": "错误。不需要应用维度。"
+      },
+      "id": "JAVA-ADV-133"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "配置文件",
+        "元数据引用"
+      ],
+      "difficulty": "中",
+      "type": "multiple",
+      "stem": "关于配置资源文件，哪些说法正确？",
+      "code": "",
+      "explanation": "系统编号应为纯数字编号。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 41
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "后缀只能是 properties 或 yaml",
+        "环境编号可为 prod、sit、uat、dev",
+        "新增系统级文件需在对应 metadata 配置中引用",
+        "系统编号可以任意中文名称"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。正确。",
+        "B": "正确。正确。",
+        "C": "正确。正确。",
+        "D": "错误。不符合编号规则。"
+      },
+      "id": "JAVA-ADV-134"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "配置优先级",
+        "覆盖"
+      ],
+      "difficulty": "中",
+      "type": "multiple",
+      "stem": "同名配置项跨层级出现时，哪些判断正确？",
+      "code": "",
+      "explanation": "全局级优先级最低。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 41
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [
+        "应用级可覆盖系统级",
+        "系统级可覆盖全局级",
+        "全局级优先于应用级",
+        "优先级顺序是应用→系统→全局"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "D"
+      ],
+      "optionExplanations": {
+        "A": "正确。正确。",
+        "B": "正确。正确。",
+        "C": "错误。顺序相反。",
+        "D": "正确。正确。"
+      },
+      "id": "JAVA-ADV-135"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "工程结构价值"
+      ],
+      "difficulty": "易",
+      "type": "judge",
+      "stem": "良好的工程结构不仅组织代码，也可作为团队协作的共同契约。",
+      "code": "",
+      "explanation": "统一边界和规范能降低协作冲突并支持长期演进。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 28
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [],
+      "answer": "正确",
+      "optionExplanations": {},
+      "id": "JAVA-ADV-136"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "Controller职责"
+      ],
+      "difficulty": "易",
+      "type": "judge",
+      "stem": "为保持薄门面，Controller 应避免承载核心业务逻辑。",
+      "code": "",
+      "explanation": "Controller 主要负责请求解析、转发和响应适配。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 29
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [],
+      "answer": "正确",
+      "optionExplanations": {},
+      "id": "JAVA-ADV-137"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "DAO职责"
+      ],
+      "difficulty": "中",
+      "type": "judge",
+      "stem": "DAO 既应负责数据存取，也应决定复杂业务流转和规则校验。",
+      "code": "",
+      "explanation": "复杂业务流转与规则校验属于 Service，DAO 应专注数据访问。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 29
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [],
+      "answer": "错误",
+      "optionExplanations": {},
+      "id": "JAVA-ADV-138"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "DTO模型"
+      ],
+      "difficulty": "中",
+      "type": "judge",
+      "stem": "Request DTO 与 Response DTO 有助于隔离外部接口和内部数据结构。",
+      "code": "",
+      "explanation": "DTO 是层间传输契约，可避免直接暴露内部实体。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 30
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [],
+      "answer": "正确",
+      "optionExplanations": {},
+      "id": "JAVA-ADV-139"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "包组织方式"
+      ],
+      "difficulty": "中",
+      "type": "judge",
+      "stem": "把所有 Service 放在一个技术包中，始终比按业务模块聚合更利于中大型项目维护。",
+      "code": "",
+      "explanation": "技术分层堆砌会物理割裂业务，课件推荐按业务模块聚合。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 31
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [],
+      "answer": "错误",
+      "optionExplanations": {},
+      "id": "JAVA-ADV-140"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "公共机制层"
+      ],
+      "difficulty": "中",
+      "type": "judge",
+      "stem": "公共机制层应让业务应用复用通用能力，并尽量屏蔽具体技术实现。",
+      "code": "",
+      "explanation": "其定位是在业务应用与技术底座之间承上启下。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 33
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [],
+      "answer": "正确",
+      "optionExplanations": {},
+      "id": "JAVA-ADV-141"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "应用服务模块"
+      ],
+      "difficulty": "中",
+      "type": "judge",
+      "stem": "xxx-aps-api 提供应用服务接口，xxx-aps 提供对应的具体实现。",
+      "code": "",
+      "explanation": "接口与实现分别置于两个工程模块。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 37
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [],
+      "answer": "正确",
+      "optionExplanations": {},
+      "id": "JAVA-ADV-142"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "仓储边界"
+      ],
+      "difficulty": "中",
+      "type": "judge",
+      "stem": "仓储服务接口与实现都应放在 xxx-infra，以免领域模块依赖接口。",
+      "code": "",
+      "explanation": "仓储接口定义在 xxx-dms，技术实现放在 xxx-infra。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 37
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [],
+      "answer": "错误",
+      "optionExplanations": {},
+      "id": "JAVA-ADV-143"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "构建制品"
+      ],
+      "difficulty": "易",
+      "type": "judge",
+      "stem": "cps-app-config-resource-dist 用于准备应用所需的配置物料包。",
+      "code": "",
+      "explanation": "该工程通过构建汇集已验证的应用配置内容。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 38
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [],
+      "answer": "正确",
+      "optionExplanations": {},
+      "id": "JAVA-ADV-144"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "CI/CD"
+      ],
+      "difficulty": "中",
+      "type": "judge",
+      "stem": "CI 的职责包括构建应用制品并推送到制品仓库，CD 再获取指定物料执行发布。",
+      "code": "",
+      "explanation": "这符合开发、CI、CD 三阶段分工。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 39
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [],
+      "answer": "正确",
+      "optionExplanations": {},
+      "id": "JAVA-ADV-145"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "部署顺序"
+      ],
+      "difficulty": "中",
+      "type": "judge",
+      "stem": "只要三类物料版本号一致，应用制品就可以先启动，再部署 SQL 和配置。",
+      "code": "",
+      "explanation": "涉及应用制品时须先配置、再 SQL、后应用启动。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 39
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [],
+      "answer": "错误",
+      "optionExplanations": {},
+      "id": "JAVA-ADV-146"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "SQL版本"
+      ],
+      "difficulty": "中",
+      "type": "judge",
+      "stem": "SQL 文件名中的主版本号必须与其所在版本子目录保持一致。",
+      "code": "",
+      "explanation": "这是 db-resource 文件命名规范的明确要求。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 40
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [],
+      "answer": "正确",
+      "optionExplanations": {},
+      "id": "JAVA-ADV-147"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "SQL回滚"
+      ],
+      "difficulty": "中",
+      "type": "judge",
+      "stem": "正常部署成功后，应删除 rollback 目录下的所有文件。",
+      "code": "",
+      "explanation": "课件规定成功时清理回滚场景文件，失败时才执行回滚。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 40
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [],
+      "answer": "正确",
+      "optionExplanations": {},
+      "id": "JAVA-ADV-148"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "配置目录"
+      ],
+      "difficulty": "中",
+      "type": "judge",
+      "stem": "全局级配置路径需要同时包含系统编号和应用服务英文名称。",
+      "code": "",
+      "explanation": "全局级路径只按环境编号组织，供所有系统共用。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 41
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [],
+      "answer": "错误",
+      "optionExplanations": {},
+      "id": "JAVA-ADV-149"
+    },
+    {
+      "lecture": 3,
+      "topics": [
+        "配置优先级"
+      ],
+      "difficulty": "中",
+      "type": "judge",
+      "stem": "同名配置项的覆盖优先级中，应用级高于系统级，系统级高于全局级。",
+      "code": "",
+      "explanation": "规范顺序为应用级、系统级、全局级。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 41
+        }
+      ],
+      "officialRefs": [
+        "JAVA进阶课程培训 v0.1.pdf#工程结构与设计"
+      ],
+      "options": [],
+      "answer": "正确",
+      "optionExplanations": {},
+      "id": "JAVA-ADV-150"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "服务协同",
+        "注册中心"
+      ],
+      "difficulty": "易",
+      "type": "single",
+      "stem": "微服务实例会弹性扩缩容，调用方不应维护固定地址清单。最适合引入哪项能力？",
+      "code": "",
+      "explanation": "注册中心承载服务注册、实例发现和健康检查，使调用方可动态寻址。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 43
+        }
+      ],
+      "officialRefs": [
+        "https://kubernetes.io/docs/concepts/services-networking/service/"
+      ],
+      "options": [
+        "注册中心",
+        "日志清洗管道",
+        "分布式文件存储",
+        "批量总控"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。能够实时感知实例上下线。",
+        "B": "错误。日志清洗不提供服务寻址。",
+        "C": "错误。文件存储不维护服务实例。",
+        "D": "错误。批量总控面向批量任务闭环。"
+      },
+      "id": "JAVA-ADV-151"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "服务协同",
+        "配置中心"
+      ],
+      "difficulty": "易",
+      "type": "single",
+      "stem": "银行调整某项非敏感业务开关，希望所有节点无需重启便可逐步生效，应优先使用什么？",
+      "code": "",
+      "explanation": "配置中心集中管理多环境配置并支持热更新，可缩短变更生效时间。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 43
+        }
+      ],
+      "officialRefs": [
+        "https://kubernetes.io/docs/concepts/configuration/configmap/"
+      ],
+      "options": [
+        "配置中心热更新",
+        "重新打包每个应用",
+        "链路追踪采样",
+        "分布式序号生成"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。与题目目标一致。",
+        "B": "错误。重新打包成本高且通常需发布。",
+        "C": "错误。采样用于观测而非配置下发。",
+        "D": "错误。序号服务只生成业务 ID。"
+      },
+      "id": "JAVA-ADV-152"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "服务治理",
+        "熔断"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "下游征信服务持续超时，线程不断堆积并可能拖垮上游。此时最直接阻断故障扩散的措施是什么？",
+      "code": "",
+      "explanation": "熔断在失败达到阈值后快速失败，给下游恢复窗口并保护上游资源。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 43
+        }
+      ],
+      "officialRefs": [
+        "https://kubernetes.io/docs/concepts/services-networking/"
+      ],
+      "options": [
+        "熔断暂时停止调用",
+        "增加日志字段",
+        "改用趋势递增流水号",
+        "压缩历史监控数据"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。直接切断持续失败调用。",
+        "B": "错误。日志增强可观测性但不阻断调用。",
+        "C": "错误。流水号与容错无关。",
+        "D": "错误。压缩存储不能保护线程池。"
+      },
+      "id": "JAVA-ADV-153"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "服务治理",
+        "限流"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "营销活动使查询请求瞬时超过核心系统安全容量，首要治理手段是什么？",
+      "code": "",
+      "explanation": "限流把进入系统的请求控制在可承受范围内，避免过载演变为雪崩。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 43
+        }
+      ],
+      "officialRefs": [
+        "https://kubernetes.io/docs/concepts/cluster-administration/flow-control/"
+      ],
+      "options": [
+        "按容量实施限流",
+        "无限增加重试次数",
+        "关闭身份认证",
+        "把同步调用全部改为本地文件"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。符合入口保护目标。",
+        "B": "错误。重试会进一步放大流量。",
+        "C": "错误。会破坏高安全要求。",
+        "D": "错误。并非合理的通用替代方案。"
+      },
+      "id": "JAVA-ADV-154"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "服务治理",
+        "降级"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "余额查询依赖的推荐信息服务异常，但核心余额仍可读取。较合理的降级策略是什么？",
+      "code": "",
+      "explanation": "降级应保住核心能力，以可接受的功能损失换取整体可用性。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 43
+        }
+      ],
+      "officialRefs": [
+        "https://kubernetes.io/docs/concepts/architecture/"
+      ],
+      "options": [
+        "隐藏推荐信息并返回核心余额",
+        "让所有交易永久失败",
+        "跳过余额读取只返回推荐",
+        "删除异常服务的数据"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。保留了关键业务结果。",
+        "B": "错误。影响范围过大且永久化。",
+        "C": "错误。颠倒了核心与非核心能力。",
+        "D": "错误。删除数据不是降级。"
+      },
+      "id": "JAVA-ADV-155"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "服务治理",
+        "超时重试"
+      ],
+      "difficulty": "难",
+      "type": "single",
+      "stem": "支付请求可能已在下游成功，但响应因网络中断丢失。上游重试前最关键的设计是什么？",
+      "code": "",
+      "explanation": "结果未知时直接重试可能重复扣款，幂等键或防重记录是金融调用的重要前提。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 43
+        }
+      ],
+      "officialRefs": [
+        "https://kubernetes.io/docs/concepts/architecture/"
+      ],
+      "options": [
+        "幂等或防重机制",
+        "关闭超时控制",
+        "删除调用日志",
+        "使用更长的服务名"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。可避免重复业务副作用。",
+        "B": "错误。无超时会长期占用资源。",
+        "C": "错误。日志有助于审计，不应删除。",
+        "D": "错误。命名长度不解决重复执行。"
+      },
+      "id": "JAVA-ADV-156"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "数据一致性",
+        "最终一致性"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "交易成功后发送短信，允许通知稍晚到达，且不能让短信系统阻塞主交易。更合适的方式是什么？",
+      "code": "",
+      "explanation": "短信属于可异步处理的非核心副作用，可靠消息可解耦并削峰，达到最终一致。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 43
+        }
+      ],
+      "officialRefs": [
+        "https://seata.apache.org/docs/"
+      ],
+      "options": [
+        "可靠消息异步驱动",
+        "跨系统全程持有数据库锁",
+        "在主交易线程无限等待",
+        "要求短信与账务共用一张表"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。兼顾交易时延与通知可靠性。",
+        "B": "错误。长时间锁会降低可用性。",
+        "C": "错误。无限等待会拖垮联机链路。",
+        "D": "错误。共表造成不必要耦合。"
+      },
+      "id": "JAVA-ADV-157"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "数据一致性",
+        "强一致"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "同一笔转账的借方扣款与贷方入账必须作为一个业务整体处理，首要关注哪项能力？",
+      "code": "",
+      "explanation": "资金变动不能出现单边成功，应通过适合场景的事务或补偿机制维护一致性。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 44
+        }
+      ],
+      "officialRefs": [
+        "https://seata.apache.org/docs/"
+      ],
+      "options": [
+        "跨服务事务一致性",
+        "日志全文检索",
+        "文件分片存储",
+        "报表可视化"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。直接对应资金操作原子性。",
+        "B": "错误。检索只帮助排障。",
+        "C": "错误。文件存储不是资金事务机制。",
+        "D": "错误。可视化不改变数据结果。"
+      },
+      "id": "JAVA-ADV-158"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "分布式事务",
+        "SAGA"
+      ],
+      "difficulty": "难",
+      "type": "single",
+      "stem": "跨多个服务的长流程无法长期锁住数据库资源，且每一步都能定义业务补偿。课件列出的哪种模式更匹配？",
+      "code": "",
+      "explanation": "SAGA 将长事务拆为本地事务序列，并在失败时执行相应补偿。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 46
+        }
+      ],
+      "officialRefs": [
+        "https://seata.apache.org/docs/user/saga"
+      ],
+      "options": [
+        "SAGA",
+        "本地 synchronized",
+        "单机文件锁",
+        "只读缓存"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。适合可补偿的长流程。",
+        "B": "错误。只能协调单 JVM 内线程。",
+        "C": "错误。不能覆盖跨服务事务。",
+        "D": "错误。缓存不负责事务补偿。"
+      },
+      "id": "JAVA-ADV-159"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "分布式事务",
+        "TCC"
+      ],
+      "difficulty": "难",
+      "type": "single",
+      "stem": "业务需要显式预留资金、确认扣款或取消释放，哪种事务模式最贴近这一语义？",
+      "code": "",
+      "explanation": "TCC 通过 Try、Confirm、Cancel 三阶段表达资源预留、确认和撤销。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 46
+        }
+      ],
+      "officialRefs": [
+        "https://seata.apache.org/docs/user/tcc"
+      ],
+      "options": [
+        "TCC",
+        "日志采集",
+        "健康检查",
+        "号段生成"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。与题干三类动作对应。",
+        "B": "错误。日志采集不控制资金状态。",
+        "C": "错误。健康检查只判断实例状态。",
+        "D": "错误。号段算法生成标识。"
+      },
+      "id": "JAVA-ADV-160"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "分布式锁",
+        "并发控制"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "两个应用实例同时处理同一账户的互斥更新，单机 `synchronized` 为什么不够？",
+      "code": "",
+      "explanation": "跨实例并发需要所有参与者可见的协调机制，单 JVM 锁没有这个作用域。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 46
+        }
+      ],
+      "officialRefs": [
+        "https://redis.io/docs/latest/develop/use/patterns/distributed-locks/"
+      ],
+      "options": [
+        "它只协调同一 JVM 内线程",
+        "它不能保护任何 Java 对象",
+        "它一定导致数据库宕机",
+        "它只能用于读取文件"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。准确说明作用域限制。",
+        "B": "错误。它可以保护 JVM 内共享对象。",
+        "C": "错误。不会必然导致数据库故障。",
+        "D": "错误。用途不局限于文件。"
+      },
+      "id": "JAVA-ADV-161"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "分布式锁",
+        "租约"
+      ],
+      "difficulty": "难",
+      "type": "single",
+      "stem": "持锁实例崩溃后，怎样降低锁永久不释放的风险？",
+      "code": "",
+      "explanation": "租约提供故障后的自动释放边界，释放时校验持有者可避免误删他人的锁。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 46
+        }
+      ],
+      "officialRefs": [
+        "https://redis.io/docs/latest/develop/use/patterns/distributed-locks/"
+      ],
+      "options": [
+        "设置有界租约并校验持有者后释放",
+        "让锁永不过期",
+        "任何实例都可无条件解锁",
+        "只把锁名写入日志"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。同时处理失联与误释放。",
+        "B": "错误。会形成死锁风险。",
+        "C": "错误。可能删除新持有者的锁。",
+        "D": "错误。记录日志不会改变锁状态。"
+      },
+      "id": "JAVA-ADV-162"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "链路追踪",
+        "故障定位"
+      ],
+      "difficulty": "易",
+      "type": "single",
+      "stem": "一次请求跨越网关、账户、账务和通知服务，想还原调用路径与各段耗时，应查看什么？",
+      "code": "",
+      "explanation": "链路追踪通过统一上下文串联跨服务跨度，呈现路径、耗时和异常节点。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 43
+        }
+      ],
+      "officialRefs": [
+        "https://opentelemetry.io/docs/concepts/signals/traces/"
+      ],
+      "options": [
+        "全链路追踪",
+        "配置中心",
+        "分布式锁",
+        "文件多副本"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。正是该能力的目的。",
+        "B": "错误。配置中心管理配置。",
+        "C": "错误。锁解决互斥。",
+        "D": "错误。文件副本解决文件可靠性。"
+      },
+      "id": "JAVA-ADV-163"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "链路追踪",
+        "上下文传播"
+      ],
+      "difficulty": "难",
+      "type": "single",
+      "stem": "同一交易在服务间的 Trace 无法串联，最应先检查哪一项？",
+      "code": "",
+      "explanation": "跨进程链路依赖 Trace 上下文传播；丢失上下文会形成彼此孤立的跨度。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 50
+        }
+      ],
+      "officialRefs": [
+        "https://opentelemetry.io/docs/concepts/context-propagation/"
+      ],
+      "options": [
+        "追踪上下文是否随请求传播",
+        "每台机器磁盘是否同型号",
+        "业务 ID 是否趋势递增",
+        "报表文件是否压缩"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。这是链路连续性的基础。",
+        "B": "错误。硬盘型号不决定 Trace 关联。",
+        "C": "错误。业务 ID 不能自动替代追踪上下文。",
+        "D": "错误。压缩与关联无关。"
+      },
+      "id": "JAVA-ADV-164"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "四高一强",
+        "高可用"
+      ],
+      "difficulty": "易",
+      "type": "single",
+      "stem": "课件中消除单点故障、保证服务持续在线主要对应哪一支柱？",
+      "code": "",
+      "explanation": "集群部署和故障自动转移主要提升高可用性。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 44
+        }
+      ],
+      "officialRefs": [
+        "https://kubernetes.io/docs/concepts/workloads/controllers/deployment/"
+      ],
+      "options": [
+        "高可用",
+        "高性能",
+        "高安全",
+        "强一致"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。与课件定义一致。",
+        "B": "错误。高性能关注吞吐与时延。",
+        "C": "错误。高安全关注认证加密与权限。",
+        "D": "错误。强一致关注全局数据视图。"
+      },
+      "id": "JAVA-ADV-165"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "四高一强",
+        "高可靠"
+      ],
+      "difficulty": "易",
+      "type": "single",
+      "stem": "数据冗余、多重校验与容灾备份主要保障什么？",
+      "code": "",
+      "explanation": "这些措施保障数据在传输和存储全流程准确、可恢复。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 44
+        }
+      ],
+      "officialRefs": [
+        "https://kubernetes.io/docs/concepts/storage/"
+      ],
+      "options": [
+        "高可靠",
+        "高性能",
+        "服务发现",
+        "调用采样"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。符合高可靠内涵。",
+        "B": "错误。性能不是其首要目标。",
+        "C": "错误。服务发现解决寻址。",
+        "D": "错误。采样属于观测策略。"
+      },
+      "id": "JAVA-ADV-166"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "四高一强",
+        "高性能"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "优化并发处理、缓存策略和资源调度，直接追求的目标是什么？",
+      "code": "",
+      "explanation": "高性能要求系统在高并发下仍保持足够吞吐与流畅响应。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 44
+        }
+      ],
+      "officialRefs": [
+        "https://kubernetes.io/docs/concepts/cluster-administration/"
+      ],
+      "options": [
+        "提升吞吐并降低响应时延",
+        "保证每个配置永不修改",
+        "取消所有访问控制",
+        "让所有事务无限期等待"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。准确描述性能目标。",
+        "B": "错误。配置不可变不是性能目标。",
+        "C": "错误。破坏高安全。",
+        "D": "错误。会损害可用性与性能。"
+      },
+      "id": "JAVA-ADV-167"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "四高一强",
+        "高安全"
+      ],
+      "difficulty": "易",
+      "type": "single",
+      "stem": "身份认证、数据加密和权限管控共同支撑哪项能力？",
+      "code": "",
+      "explanation": "高安全通过身份、数据和访问控制等多层防护保障资产与信息。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 44
+        }
+      ],
+      "officialRefs": [
+        "https://kubernetes.io/docs/concepts/security/"
+      ],
+      "options": [
+        "高安全",
+        "高可用",
+        "高性能",
+        "最终一致"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。三项均是安全控制。",
+        "B": "错误。可用性强调持续服务。",
+        "C": "错误。性能强调处理效率。",
+        "D": "错误。最终一致是数据收敛语义。"
+      },
+      "id": "JAVA-ADV-168"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "架构权衡",
+        "金融场景"
+      ],
+      "difficulty": "难",
+      "type": "single",
+      "stem": "关于“四高一强”的技术选型，哪项理解最准确？",
+      "code": "",
+      "explanation": "五项是关键领域的技术底线，但具体架构与组件仍要根据业务约束选择。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 44
+        }
+      ],
+      "officialRefs": [
+        "https://kubernetes.io/docs/concepts/architecture/"
+      ],
+      "options": [
+        "应结合场景权衡实现方式，但关键金融领域必须守住底线",
+        "所有系统都必须采用完全相同的组件组合",
+        "只要强一致就可忽略安全与可用性",
+        "高性能意味着所有操作都必须同步"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。兼顾原则与落地权衡。",
+        "B": "错误。组件组合不应一刀切。",
+        "C": "错误。各支柱相辅相成。",
+        "D": "错误。同步并不天然高性能。"
+      },
+      "id": "JAVA-ADV-169"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "SDK职责",
+        "联机框架SDK"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "核心同步交易需要交易编排、防重、超时控制和异常容错扩展点，应优先复用哪个 SDK？",
+      "code": "",
+      "explanation": "联机框架 SDK 是银行联机同步交易的基座，覆盖题干所列交易阶段能力。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 46
+        }
+      ],
+      "officialRefs": [
+        "https://kubernetes.io/docs/concepts/architecture/"
+      ],
+      "options": [
+        "联机框架 SDK",
+        "分布式文件 SDK",
+        "加密机 SDK",
+        "批量框架 SDK"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。职责完全匹配。",
+        "B": "错误。面向文件流转。",
+        "C": "错误。面向密码能力。",
+        "D": "错误。面向批量作业。"
+      },
+      "id": "JAVA-ADV-170"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "SDK职责",
+        "数据访问框架SDK"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "团队希望屏蔽数据库厂商语法差异，并统一连接池、分库分表和慢查询监控，应采用什么？",
+      "code": "",
+      "explanation": "数据访问框架 SDK 对底层数据库访问进行标准化封装并提供相关治理能力。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 46
+        }
+      ],
+      "officialRefs": [
+        "https://kubernetes.io/docs/concepts/storage/"
+      ],
+      "options": [
+        "数据访问框架 SDK",
+        "服务治理 SDK",
+        "分布式消息 SDK",
+        "接入网关"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。与题干各项职责一致。",
+        "B": "错误。主要治理服务调用。",
+        "C": "错误。主要实现异步消息。",
+        "D": "错误。主要处理外部接入。"
+      },
+      "id": "JAVA-ADV-171"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "SDK职责",
+        "批量框架SDK"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "日终计息任务数据量巨大，要求分片并行、失败后断点续跑和可视化调度，应选择什么？",
+      "code": "",
+      "explanation": "批量框架 SDK 专门支撑金融批量作业的调度、并行执行和恢复。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 47
+        }
+      ],
+      "officialRefs": [
+        "https://kubernetes.io/docs/concepts/workloads/controllers/job/"
+      ],
+      "options": [
+        "批量框架 SDK",
+        "联机框架 SDK",
+        "注册中心",
+        "链路追踪探针"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。能力组合完全匹配。",
+        "B": "错误。主要面向同步联机交易。",
+        "C": "错误。只维护实例目录。",
+        "D": "错误。只负责观测链路。"
+      },
+      "id": "JAVA-ADV-172"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "SDK职责",
+        "加密机SDK"
+      ],
+      "difficulty": "易",
+      "type": "single",
+      "stem": "对卡号报文执行国密加解密、数字签名验签和密钥生命周期管理，应使用什么？",
+      "code": "",
+      "explanation": "加密机 SDK 对接金融专用硬件加密机，提供课件所列密码能力。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 47
+        }
+      ],
+      "officialRefs": [
+        "https://kubernetes.io/docs/concepts/security/"
+      ],
+      "options": [
+        "加密机 SDK",
+        "分布式锁 SDK",
+        "批量框架 SDK",
+        "配置中心"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。职责准确。",
+        "B": "错误。锁不提供密码运算。",
+        "C": "错误。批量引擎不管理密钥。",
+        "D": "错误。配置中心不应替代加密机。"
+      },
+      "id": "JAVA-ADV-173"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "运行时组件",
+        "网关"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "渠道请求进入核心系统时，需要统一进行报文转换、认证鉴权和入口限流。该职责属于什么？",
+      "code": "",
+      "explanation": "接入网关是外部请求进入核心系统的统一通道和第一道安全防线。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 48
+        }
+      ],
+      "officialRefs": [
+        "https://kubernetes.io/docs/concepts/services-networking/gateway/"
+      ],
+      "options": [
+        "接入网关",
+        "外呼网关",
+        "批量总控",
+        "配置中心"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。处理入站渠道流量。",
+        "B": "错误。外呼网关处理核心主动对外调用。",
+        "C": "错误。批量总控处理文件与任务闭环。",
+        "D": "错误。配置中心管理配置。"
+      },
+      "id": "JAVA-ADV-174"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "运行时组件",
+        "分布式序号"
+      ],
+      "difficulty": "中",
+      "type": "single",
+      "stem": "为跨机房交易流水生成全局唯一、趋势递增且低延迟的 ID，应使用什么？",
+      "code": "",
+      "explanation": "分布式序号组件利用高性能算法或号段策略提供唯一业务标识。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 49
+        }
+      ],
+      "officialRefs": [
+        "https://kubernetes.io/docs/concepts/architecture/"
+      ],
+      "options": [
+        "分布式序号生成服务",
+        "日志检索引擎",
+        "服务熔断器",
+        "文件扫描器"
+      ],
+      "answer": "A",
+      "optionExplanations": {
+        "A": "正确。符合唯一性和性能要求。",
+        "B": "错误。检索引擎不生成业务 ID。",
+        "C": "错误。熔断器保护调用。",
+        "D": "错误。文件扫描器管理文件任务。"
+      },
+      "id": "JAVA-ADV-175"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "服务协同",
+        "注册中心"
+      ],
+      "difficulty": "中",
+      "type": "multiple",
+      "stem": "注册中心在微服务协同中通常承担哪些职责？",
+      "code": "",
+      "explanation": "注册中心维护可用服务实例目录，不负责具体业务事务。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 43
+        }
+      ],
+      "officialRefs": [
+        "https://kubernetes.io/docs/concepts/services-networking/service/"
+      ],
+      "options": [
+        "接收服务实例注册",
+        "提供实例发现",
+        "执行实例健康检查",
+        "替业务数据库提交转账事务"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。形成动态实例目录。",
+        "B": "正确。调用方可获得可用地址。",
+        "C": "正确。用于感知节点上下线。",
+        "D": "错误。属于业务与事务组件职责。"
+      },
+      "id": "JAVA-ADV-176"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "配置中心",
+        "变更治理"
+      ],
+      "difficulty": "难",
+      "type": "multiple",
+      "stem": "金融系统使用配置中心进行热更新时，哪些做法有助于控制变更风险？",
+      "code": "",
+      "explanation": "热更新提高响应速度，也需要隔离、审计、灰度和回滚机制；敏感信息应采用专门安全存储。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 49
+        }
+      ],
+      "officialRefs": [
+        "https://kubernetes.io/docs/concepts/configuration/configmap/",
+        "https://kubernetes.io/docs/concepts/configuration/secret/"
+      ],
+      "options": [
+        "区分环境与应用作用域",
+        "保留版本及审计记录",
+        "对关键配置灰度并支持回滚",
+        "把密码明文写入普通配置"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。避免配置串用。",
+        "B": "正确。便于追责和恢复。",
+        "C": "正确。降低全量错误配置风险。",
+        "D": "错误。违反敏感信息保护要求。"
+      },
+      "id": "JAVA-ADV-177"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "服务治理",
+        "容错组合"
+      ],
+      "difficulty": "难",
+      "type": "multiple",
+      "stem": "为防止下游故障演变为系统雪崩，合理的组合措施有哪些？",
+      "code": "",
+      "explanation": "超时、有界重试、熔断和降级共同构成分层容错；无界重试会放大故障。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 43
+        }
+      ],
+      "officialRefs": [
+        "https://kubernetes.io/docs/concepts/architecture/"
+      ],
+      "options": [
+        "设置调用超时",
+        "限制重试次数并采用退避",
+        "配置熔断与降级",
+        "对所有失败请求立即无限并发重试"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。限制资源占用时间。",
+        "B": "正确。减少重试风暴。",
+        "C": "正确。隔离故障并保住核心能力。",
+        "D": "错误。会制造更大压力。"
+      },
+      "id": "JAVA-ADV-178"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "服务治理",
+        "负载均衡"
+      ],
+      "difficulty": "中",
+      "type": "multiple",
+      "stem": "注册发现与负载均衡配合时，哪些判断正确？",
+      "code": "",
+      "explanation": "服务发现解决“有哪些地址”，负载均衡解决“本次选哪个地址”，事务原子性是另一类问题。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 43
+        }
+      ],
+      "officialRefs": [
+        "https://kubernetes.io/docs/concepts/services-networking/service/"
+      ],
+      "options": [
+        "发现提供候选实例集合",
+        "负载均衡从可用实例中选择目标",
+        "健康检查结果可影响路由",
+        "负载均衡能自动保证跨库事务原子性"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。提供动态目录。",
+        "B": "正确。执行请求分配。",
+        "C": "正确。异常实例应退出候选集合。",
+        "D": "错误。不属于流量分配职责。"
+      },
+      "id": "JAVA-ADV-179"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "数据一致性",
+        "方案选择"
+      ],
+      "difficulty": "难",
+      "type": "multiple",
+      "stem": "关于强一致与最终一致的选择，哪些说法合理？",
+      "code": "",
+      "explanation": "一致性方案取决于业务后果和时效要求；异步消息仍需投递、消费与幂等保障。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 43
+        }
+      ],
+      "officialRefs": [
+        "https://seata.apache.org/docs/"
+      ],
+      "options": [
+        "资金核心账务通常更强调一致性约束",
+        "短信通知可采用可靠消息实现最终一致",
+        "一致性级别应结合业务容忍度选择",
+        "任何异步方案都天然不会丢消息"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。单边账务后果严重。",
+        "B": "正确。允许短暂延迟且便于解耦。",
+        "C": "正确。体现架构权衡。",
+        "D": "错误。可靠性需额外机制保证。"
+      },
+      "id": "JAVA-ADV-180"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "分布式事务",
+        "补偿设计"
+      ],
+      "difficulty": "难",
+      "type": "multiple",
+      "stem": "设计 SAGA 或 TCC 补偿逻辑时，哪些问题需要重点考虑？",
+      "code": "",
+      "explanation": "分布式环境存在重复、超时和部分失败，补偿必须可重复、安全、可观测且有兜底。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 46
+        }
+      ],
+      "officialRefs": [
+        "https://seata.apache.org/docs/"
+      ],
+      "options": [
+        "补偿操作幂等",
+        "记录可审计的事务状态",
+        "处理补偿失败并支持重试或人工介入",
+        "假设网络调用永远只执行一次"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。避免重复补偿产生副作用。",
+        "B": "正确。支持恢复与审计。",
+        "C": "正确。失败不能静默遗留。",
+        "D": "错误。网络不提供这种保证。"
+      },
+      "id": "JAVA-ADV-181"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "分布式锁",
+        "正确性"
+      ],
+      "difficulty": "中",
+      "type": "multiple",
+      "stem": "使用分布式锁保护账户资源时，哪些实践较合理？",
+      "code": "",
+      "explanation": "锁的粒度、失效策略和所有权校验影响安全性与可用性；忙等会加重协调服务压力。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 46
+        }
+      ],
+      "officialRefs": [
+        "https://redis.io/docs/latest/develop/use/patterns/distributed-locks/"
+      ],
+      "options": [
+        "锁键包含明确业务资源标识",
+        "设置合理租约并考虑续期边界",
+        "释放时验证持有者令牌",
+        "锁获取失败后在紧循环中无限重试"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。避免无关账户互相阻塞。",
+        "B": "正确。降低实例失联导致死锁的风险。",
+        "C": "正确。防止误释放他人锁。",
+        "D": "错误。会造成资源消耗与拥塞。"
+      },
+      "id": "JAVA-ADV-182"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "链路追踪",
+        "可观测性"
+      ],
+      "difficulty": "中",
+      "type": "multiple",
+      "stem": "全链路追踪数据可帮助团队完成哪些工作？",
+      "code": "",
+      "explanation": "追踪揭示请求路径、耗时与错误，但不是数据备份方案。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 50
+        }
+      ],
+      "officialRefs": [
+        "https://opentelemetry.io/docs/concepts/signals/traces/"
+      ],
+      "options": [
+        "还原跨服务调用拓扑",
+        "分析各跨度耗时",
+        "定位异常或超时节点",
+        "直接替代业务数据备份"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。展示依赖关系。",
+        "B": "正确。发现性能损耗位置。",
+        "C": "正确。缩小故障定位范围。",
+        "D": "错误。备份需独立的数据保护机制。"
+      },
+      "id": "JAVA-ADV-183"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "运维组件",
+        "日志体系"
+      ],
+      "difficulty": "中",
+      "type": "multiple",
+      "stem": "课件日志体系中，组件与职责匹配的有哪些？",
+      "code": "",
+      "explanation": "前三类组件依次覆盖采集、缓冲和加工，Elasticsearch 负责检索存储而非数据库事务。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 50
+        }
+      ],
+      "officialRefs": [
+        "https://prometheus.io/docs/introduction/overview/"
+      ],
+      "options": [
+        "Filebeat—轻量采集",
+        "Kafka—高吞吐缓冲",
+        "Logstash—解析清洗",
+        "Elasticsearch—负责数据库分布式事务提交"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。负责采集应用与系统日志。",
+        "B": "正确。承接海量日志流并削峰。",
+        "C": "正确。统一字段与格式。",
+        "D": "错误。不承担分布式事务提交。"
+      },
+      "id": "JAVA-ADV-184"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "运维组件",
+        "监控体系"
+      ],
+      "difficulty": "中",
+      "type": "multiple",
+      "stem": "关于课件中的监控体系，哪些描述正确？",
+      "code": "",
+      "explanation": "指标采集、时序存储与可视化各有侧重；SkyWalking 面向分布式追踪。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 50
+        }
+      ],
+      "officialRefs": [
+        "https://prometheus.io/docs/introduction/overview/",
+        "https://opentelemetry.io/docs/concepts/signals/metrics/"
+      ],
+      "options": [
+        "Prometheus 可采集指标并按规则告警",
+        "VictoriaMetrics 适合海量时序数据存储",
+        "Grafana 用于多源聚合和看板展示",
+        "SkyWalking 的唯一职责是保存业务文件"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。符合指标监控职责。",
+        "B": "正确。符合长期低成本存储定位。",
+        "C": "正确。提供可视化分析。",
+        "D": "错误。其职责不是业务文件存储。"
+      },
+      "id": "JAVA-ADV-185"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "SDK职责",
+        "服务治理SDK"
+      ],
+      "difficulty": "中",
+      "type": "multiple",
+      "stem": "课件中的服务治理 SDK 可向业务应用提供哪些能力？",
+      "code": "",
+      "explanation": "服务治理 SDK 将微服务调用所需的发现、路由与保护能力标准化。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 46
+        }
+      ],
+      "officialRefs": [
+        "https://kubernetes.io/docs/concepts/services-networking/",
+        "https://opentelemetry.io/docs/concepts/signals/traces/"
+      ],
+      "options": [
+        "自动注册发现",
+        "动态路由",
+        "熔断限流",
+        "维护数据库 DDL 脚本版本"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。减少手工维护地址。",
+        "B": "正确。根据治理规则选路。",
+        "C": "正确。保护核心服务。",
+        "D": "错误。DDL 版本属于数据库资源工程治理。"
+      },
+      "id": "JAVA-ADV-186"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "SDK职责",
+        "分布式消息SDK"
+      ],
+      "difficulty": "中",
+      "type": "multiple",
+      "stem": "哪些场景适合采用分布式消息 SDK？",
+      "code": "",
+      "explanation": "消息适合异步解耦和削峰；必须立即确认的强一致资金结果不应仅依赖普通异步通知。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 47
+        }
+      ],
+      "officialRefs": [
+        "https://kubernetes.io/docs/concepts/architecture/"
+      ],
+      "options": [
+        "短信通知异步发送",
+        "日终任务事件驱动",
+        "跨系统数据异步同步",
+        "要求调用线程立即获得强一致扣款结果"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。允许异步完成。",
+        "B": "正确。可由消息触发批处理。",
+        "C": "正确。适合事件驱动同步。",
+        "D": "错误。语义与普通异步消息不匹配。"
+      },
+      "id": "JAVA-ADV-187"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "运行时组件",
+        "网关边界"
+      ],
+      "difficulty": "中",
+      "type": "multiple",
+      "stem": "关于接入网关与外呼网关，哪些说法正确？",
+      "code": "",
+      "explanation": "两个网关分别治理入站与出站交互，并可集中完成适配和安全控制。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 48
+        }
+      ],
+      "officialRefs": [
+        "https://kubernetes.io/docs/concepts/services-networking/gateway/"
+      ],
+      "options": [
+        "接入网关处理渠道进入核心的请求",
+        "外呼网关是核心调用第三方的统一出口",
+        "两者都可承担协议或报文适配",
+        "外呼网关负责维护所有账户余额"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。入站边界职责。",
+        "B": "正确。出站边界职责。",
+        "C": "正确。减少业务服务重复适配。",
+        "D": "错误。账户余额属于核心业务数据。"
+      },
+      "id": "JAVA-ADV-188"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "四高一强",
+        "架构措施"
+      ],
+      "difficulty": "中",
+      "type": "multiple",
+      "stem": "下列措施与“四高一强”目标的对应关系，哪些合理？",
+      "code": "",
+      "explanation": "高可用、高可靠和高性能分别需要故障转移、数据保护及性能治理。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 44
+        }
+      ],
+      "officialRefs": [
+        "https://kubernetes.io/docs/concepts/architecture/",
+        "https://seata.apache.org/docs/"
+      ],
+      "options": [
+        "集群与故障转移提升高可用",
+        "冗余校验与容灾备份提升高可靠",
+        "缓存和资源调度提升高性能",
+        "统一页面配色即可实现强一致"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。降低单点中断。",
+        "B": "正确。保护数据准确与可恢复。",
+        "C": "正确。提升吞吐与响应能力。",
+        "D": "错误。页面配色与分布式数据一致性无关。"
+      },
+      "id": "JAVA-ADV-189"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "金融场景",
+        "核算解耦"
+      ],
+      "difficulty": "中",
+      "type": "multiple",
+      "stem": "交易与会计核算采用异步分离设计时，哪些判断合理？",
+      "code": "",
+      "explanation": "异步核算解耦联机交易与内部会计处理，但仍需保障流水可靠、可追踪和可恢复。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 51
+        }
+      ],
+      "officialRefs": [
+        "https://opentelemetry.io/docs/concepts/signals/",
+        "https://prometheus.io/docs/introduction/overview/"
+      ],
+      "options": [
+        "核心应用负责交易确认和对客服务",
+        "核算中心按规则生成会计分录",
+        "交易流水可作为核算处理输入",
+        "异步意味着无需监控积压和失败"
+      ],
+      "answer": [
+        "A",
+        "B",
+        "C"
+      ],
+      "optionExplanations": {
+        "A": "正确。符合课件功能定位。",
+        "B": "正确。属于核算中心职责。",
+        "C": "正确。流程图展示了该数据关系。",
+        "D": "错误。异步链路更需要积压与失败治理。"
+      },
+      "id": "JAVA-ADV-190"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "分布式体系",
+        "整体认识"
+      ],
+      "difficulty": "易",
+      "type": "judge",
+      "stem": "分布式技术体系是由服务协同、治理、一致性、观测等能力组成的集合，而不是一种单独产品。",
+      "code": "",
+      "explanation": "课件强调它是针对不同分布式问题形成的完整技术集合。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 43
+        }
+      ],
+      "officialRefs": [
+        "https://kubernetes.io/docs/concepts/architecture/"
+      ],
+      "options": [],
+      "answer": "正确",
+      "optionExplanations": {},
+      "id": "JAVA-ADV-191"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "配置中心",
+        "热更新"
+      ],
+      "difficulty": "易",
+      "type": "judge",
+      "stem": "使用配置中心热更新后，任何配置变更都可以不经校验、灰度和回滚设计直接全量发布。",
+      "code": "",
+      "explanation": "热更新只改变生效方式，不会消除错误配置风险；金融系统仍需严格的变更治理。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 49
+        }
+      ],
+      "officialRefs": [
+        "https://kubernetes.io/docs/concepts/configuration/configmap/"
+      ],
+      "options": [],
+      "answer": "错误",
+      "optionExplanations": {},
+      "id": "JAVA-ADV-192"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "服务治理",
+        "重试"
+      ],
+      "difficulty": "中",
+      "type": "judge",
+      "stem": "下游超时时，无限制地立即重试通常会提高系统稳定性。",
+      "code": "",
+      "explanation": "无界且无退避的重试会放大流量和资源占用，可能加速故障扩散。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 43
+        }
+      ],
+      "officialRefs": [
+        "https://kubernetes.io/docs/concepts/architecture/"
+      ],
+      "options": [],
+      "answer": "错误",
+      "optionExplanations": {},
+      "id": "JAVA-ADV-193"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "数据一致性",
+        "业务权衡"
+      ],
+      "difficulty": "中",
+      "type": "judge",
+      "stem": "只要允许数据短暂不一致，就可以不考虑消息丢失、重复消费和幂等问题。",
+      "code": "",
+      "explanation": "最终一致仍需可靠投递、重复处理防护和异常恢复，才能保证最终收敛。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 43
+        }
+      ],
+      "officialRefs": [
+        "https://seata.apache.org/docs/"
+      ],
+      "options": [],
+      "answer": "错误",
+      "optionExplanations": {},
+      "id": "JAVA-ADV-194"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "分布式锁",
+        "作用域"
+      ],
+      "difficulty": "中",
+      "type": "judge",
+      "stem": "跨多个 JVM 实例争抢同一账户资源时，仅在每个实例内部使用 `synchronized` 就能实现全局互斥。",
+      "code": "",
+      "explanation": "各 JVM 的本地锁彼此不可见，必须引入跨实例可见的协调机制或数据库约束。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 46
+        }
+      ],
+      "officialRefs": [
+        "https://redis.io/docs/latest/develop/use/patterns/distributed-locks/"
+      ],
+      "options": [],
+      "answer": "错误",
+      "optionExplanations": {},
+      "id": "JAVA-ADV-195"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "链路追踪",
+        "性能分析"
+      ],
+      "difficulty": "易",
+      "type": "judge",
+      "stem": "链路追踪既能展示跨服务调用路径，也能分析各节点耗时并定位异常节点。",
+      "code": "",
+      "explanation": "Trace 和 Span 能表达端到端路径、时间与错误信息。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 50
+        }
+      ],
+      "officialRefs": [
+        "https://opentelemetry.io/docs/concepts/signals/traces/"
+      ],
+      "options": [],
+      "answer": "正确",
+      "optionExplanations": {},
+      "id": "JAVA-ADV-196"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "四高一强",
+        "高可用"
+      ],
+      "difficulty": "中",
+      "type": "judge",
+      "stem": "RPO=0 表示故障恢复后允许丢失一段最近数据。",
+      "code": "",
+      "explanation": "RPO=0 表示恢复点目标不允许业务数据丢失。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 44
+        }
+      ],
+      "officialRefs": [
+        "https://kubernetes.io/docs/concepts/architecture/"
+      ],
+      "options": [],
+      "answer": "错误",
+      "optionExplanations": {},
+      "id": "JAVA-ADV-197"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "SDK职责",
+        "标准化复用"
+      ],
+      "difficulty": "中",
+      "type": "judge",
+      "stem": "业务应用按需接入成熟 SDK 或 API，有助于减少重复建设并统一治理能力。",
+      "code": "",
+      "explanation": "标准化组件复用可降低开发成本，并为高并发和高可用提供成熟支撑。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 43
+        }
+      ],
+      "officialRefs": [
+        "https://kubernetes.io/docs/concepts/architecture/"
+      ],
+      "options": [],
+      "answer": "正确",
+      "optionExplanations": {},
+      "id": "JAVA-ADV-198"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "运行时组件",
+        "分布式序号"
+      ],
+      "difficulty": "中",
+      "type": "judge",
+      "stem": "分布式序号只需保证单个进程内不重复，不必考虑跨节点和跨机房唯一性。",
+      "code": "",
+      "explanation": "课件明确要求在多节点、多机房部署下仍保持全局唯一、低延迟和高可用。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 49
+        }
+      ],
+      "officialRefs": [
+        "https://kubernetes.io/docs/concepts/architecture/"
+      ],
+      "options": [],
+      "answer": "错误",
+      "optionExplanations": {},
+      "id": "JAVA-ADV-199"
+    },
+    {
+      "lecture": 4,
+      "topics": [
+        "金融场景",
+        "核算异步化"
+      ],
+      "difficulty": "中",
+      "type": "judge",
+      "stem": "交易与核算异步分离可以降低联机交易耦合，但必须配套可靠流水、监控告警和失败恢复。",
+      "code": "",
+      "explanation": "异步设计改善联机响应与职责边界，同时把可靠交付和恢复能力变成必要条件。",
+      "slideRefs": [
+        {
+          "deck": "JAVA进阶课程培训 v0.1.pdf",
+          "slide": 51
+        }
+      ],
+      "officialRefs": [
+        "https://prometheus.io/docs/introduction/overview/",
+        "https://opentelemetry.io/docs/concepts/signals/"
+      ],
+      "options": [],
+      "answer": "正确",
+      "optionExplanations": {},
+      "id": "JAVA-ADV-200"
+    }
+  ]
+}
