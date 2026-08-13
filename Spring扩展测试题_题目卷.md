@@ -11,10 +11,10 @@
 
 需要事件发布和国际化能力时，通常应选择哪类容器？
 
-A. ApplicationContext
-B. 仅使用BeanFactory
-C. 直接new对象
-D. 只使用ServletContext
+A. 仅使用BeanFactory
+B. ApplicationContext
+C. 只使用ServletContext
+D. 直接new对象
 
 ### EXT-002（单选题）
 
@@ -22,34 +22,34 @@ D. 只使用ServletContext
 
 A. @Qualifier或@Primary
 B. 删除接口
-C. 把两个实现改成静态字段
-D. 关闭组件扫描
+C. 关闭组件扫描
+D. 把两个实现改成静态字段
 
 ### EXT-003（单选题）
 
 构造器注入相对字段注入最重要的设计收益是？
 
-A. 必需依赖在对象创建时明确
-B. 依赖一定变成单例
-C. 绕过类型检查
+A. 依赖一定变成单例
+B. 绕过类型检查
+C. 必需依赖在对象创建时明确
 D. 不再需要容器
 
 ### EXT-004（单选题）
 
 一个prototype Bean被注入singleton Bean后，默认会发生什么？
 
-A. 只在singleton创建时解析一次
-B. 每次调用singleton方法都自动创建一个
-C. prototype自动变成request作用域
-D. 容器拒绝所有prototype Bean
+A. 容器拒绝所有prototype Bean
+B. prototype自动变成request作用域
+C. 每次调用singleton方法都自动创建一个
+D. 只在singleton创建时解析一次
 
 ### EXT-005（单选题）
 
 BeanPostProcessor通常作用于哪个阶段？
 
 A. Bean初始化前后进行实例扩展处理
-B. 只在JVM退出时运行
-C. 只扫描数据库表
+B. 只扫描数据库表
+C. 只在JVM退出时运行
 D. 只负责编译源码
 
 ### EXT-006（单选题）
@@ -57,9 +57,9 @@ D. 只负责编译源码
 实现BeanFactoryAware的Bean通常希望获得什么？
 
 A. 所属BeanFactory引用
-B. 当前HTTP请求正文
-C. 数据库连接池密码
-D. 编译器对象
+B. 数据库连接池密码
+C. 编译器对象
+D. 当前HTTP请求正文
 
 ### EXT-007（单选题）
 
@@ -67,16 +67,16 @@ D. 编译器对象
 
 A. &
 B. #
-C. @
-D. $
+C. $
+D. @
 
 ### EXT-008（单选题）
 
 构造器循环依赖通常比单例字段循环依赖更难解决，主要原因是？
 
-A. 对象尚未完成实例化就无法提供构造参数
-B. 构造器不能接收接口
-C. 字段永远不能注入
+A. 字段永远不能注入
+B. 对象尚未完成实例化就无法提供构造参数
+C. 构造器不能接收接口
 D. 所有Bean都不能创建
 
 ### EXT-009（单选题）
@@ -92,98 +92,98 @@ D. 只有XML才能复用Bean
 
 Spring Framework原生的@Profile主要用于什么？
 
-A. 按激活环境选择Bean定义
+A. 按数据库主键创建表
 B. 按HTTP状态码选择响应
-C. 按数据库主键创建表
-D. 按CPU温度编译代码
+C. 按CPU温度编译代码
+D. 按激活环境选择Bean定义
 
 ### EXT-011（单选题）
 
 Environment对象主要聚合哪类信息？
 
-A. profiles和properties
+A. 浏览器DOM和CSS
 B. 线程堆栈和字节码
-C. 浏览器DOM和CSS
+C. profiles和properties
 D. Git提交对象
 
 ### EXT-012（单选题）
 
 PropertySourcesPlaceholderConfigurer的常见用途是？
 
-A. 解析${...}占位符
-B. 创建HTTP客户端
-C. 执行数据库事务
-D. 生成AOP切点
+A. 创建HTTP客户端
+B. 生成AOP切点
+C. 解析${...}占位符
+D. 执行数据库事务
 
 ### EXT-013（单选题）
 
 Resource接口的价值是？
 
-A. 以统一方式访问类路径、文件和URL资源
-B. 只代表数据库行
-C. 只代表HTTP响应
-D. 只代表Java线程
+A. 只代表HTTP响应
+B. 只代表Java线程
+C. 以统一方式访问类路径、文件和URL资源
+D. 只代表数据库行
 
 ### EXT-014（单选题）
 
 ApplicationEventPublisher发布事件后，监听器默认在哪个线程执行？
 
-A. 发布线程同步执行
+A. 永远由独立线程池执行
 B. 永远由数据库线程执行
-C. 永远由独立线程池执行
-D. 由浏览器执行
+C. 由浏览器执行
+D. 发布线程同步执行
 
 ### EXT-015（单选题）
 
 需要在事务提交后再处理领域事件时，应关注哪个机制？
 
-A. 事务绑定事件监听
-B. Servlet过滤器顺序
+A. Gateway断言
+B. 事务绑定事件监听
 C. Bean作用域prototype
-D. Gateway断言
+D. Servlet过滤器顺序
 
 ### EXT-016（单选题）
 
 SpEL表达式访问Bean通常使用哪个符号？
 
-A. @beanName
-B. #beanName
-C. $beanName
-D. %beanName
+A. %beanName
+B. $beanName
+C. @beanName
+D. #beanName
 
 ### EXT-017（单选题）
 
 让不可信用户输入直接作为SpEL表达式执行的主要风险是？
 
 A. 表达式注入和越权访问
-B. 自动获得类型安全
-C. 只会导致页面变色
-D. 不会产生任何风险
+B. 不会产生任何风险
+C. 自动获得类型安全
+D. 只会导致页面变色
 
 ### EXT-018（单选题）
 
 ConversionService主要解决什么问题？
 
-A. 在类型之间进行统一转换
-B. 创建AOP代理
-C. 注册服务实例
-D. 管理事务提交
+A. 创建AOP代理
+B. 管理事务提交
+C. 在类型之间进行统一转换
+D. 注册服务实例
 
 ### EXT-019（单选题）
 
 方法参数校验通常依赖哪类标准注解生态？
 
-A. Jakarta Bean Validation
-B. Servlet URL规则
-C. Git Hooks
-D. SQL触发器
+A. Git Hooks
+B. SQL触发器
+C. Jakarta Bean Validation
+D. Servlet URL规则
 
 ### EXT-020（单选题）
 
 Spring AOP默认支持哪类连接点？
 
-A. Spring Bean的方法执行
-B. 任意字段读取
+A. 任意字段读取
+B. Spring Bean的方法执行
 C. 任意构造器字节码
 D. 所有数据库触发器
 
@@ -192,26 +192,26 @@ D. 所有数据库触发器
 目标对象实现接口时，Spring AOP可能优先使用哪类代理？
 
 A. JDK动态代理
-B. 数据库代理
-C. Servlet过滤器代理
-D. 编译器宏
+B. 编译器宏
+C. 数据库代理
+D. Servlet过滤器代理
 
 ### EXT-022（单选题）
 
 需要代理没有接口的具体类时，常见实现方式是？
 
-A. 基于子类的CGLIB代理
-B. 只能使用JDK代理
-C. 只能修改数据库
-D. 只能使用反射调用字段
+A. 只能使用反射调用字段
+B. 只能修改数据库
+C. 基于子类的CGLIB代理
+D. 只能使用JDK代理
 
 ### EXT-023（单选题）
 
 execution切点最主要描述什么？
 
-A. 匹配方法签名和执行位置
-B. 匹配数据库表数据
-C. 匹配HTML标签
+A. 匹配HTML标签
+B. 匹配方法签名和执行位置
+C. 匹配数据库表数据
 D. 匹配JVM堆大小
 
 ### EXT-024（单选题）
@@ -219,151 +219,151 @@ D. 匹配JVM堆大小
 @Around通知相比@Before和@After的额外能力是？
 
 A. 控制是否继续调用目标并修改返回结果
-B. 只能记录日志
+B. 不能访问目标方法
 C. 只能处理异常
-D. 不能访问目标方法
+D. 只能记录日志
 
 ### EXT-025（单选题）
 
 多个切面同时作用于同一方法时，优先级通常通过什么表达？
 
 A. @Order或Ordered
-B. @BeanName
-C. @ProfileOnly
+B. @ProfileOnly
+C. @BeanName
 D. @HttpStatus
 
 ### EXT-026（单选题）
 
 同一个Bean内部方法this.other()调用导致事务或切面不生效，根本原因常是？
 
-A. 调用绕过了代理对象
-B. 事务注解不支持public方法
-C. 数据库拒绝所有调用
-D. Spring不支持方法调用
+A. Spring不支持方法调用
+B. 调用绕过了代理对象
+C. 事务注解不支持public方法
+D. 数据库拒绝所有调用
 
 ### EXT-027（单选题）
 
 需要拦截字段访问而非仅方法执行时，应考虑什么？
 
-A. AspectJ等织入技术
-B. 只增加@Order
-C. 只增加@Primary
-D. 只修改application.yml端口
+A. 只增加@Order
+B. 只增加@Primary
+C. 只修改application.yml端口
+D. AspectJ等织入技术
 
 ### EXT-028（单选题）
 
 Spring事务抽象的主要价值是？
 
-A. 统一不同事务API的编程模型
-B. 让所有数据库都变成内存库
-C. 消除所有锁竞争
-D. 替代业务补偿
+A. 消除所有锁竞争
+B. 替代业务补偿
+C. 让所有数据库都变成内存库
+D. 统一不同事务API的编程模型
 
 ### EXT-029（单选题）
 
 @Transactional通常依赖什么机制拦截方法？
 
-A. AOP代理
-B. 编译器自动改写所有字节码
-C. 浏览器脚本
-D. 数据库触发器
+A. 数据库触发器
+B. AOP代理
+C. 编译器自动改写所有字节码
+D. 浏览器脚本
 
 ### EXT-030（单选题）
 
 REQUIRED传播行为在已有事务时通常如何处理？
 
-A. 加入现有事务
+A. 只读执行
 B. 永远创建两个事务
-C. 拒绝调用
-D. 只读执行
+C. 加入现有事务
+D. 拒绝调用
 
 ### EXT-031（单选题）
 
 REQUIRES_NEW传播行为的关键语义是？
 
-A. 挂起外部事务并创建新事务
-B. 永远加入外部事务
+A. 永远加入外部事务
+B. 只执行查询
 C. 不允许数据库写入
-D. 只执行查询
+D. 挂起外部事务并创建新事务
 
 ### EXT-032（单选题）
 
 NESTED传播通常依赖哪种机制？
 
-A. 同一物理事务中的保存点
-B. 两个独立数据库集群
-C. HTTP重定向
-D. 线程销毁
+A. 线程销毁
+B. HTTP重定向
+C. 同一物理事务中的保存点
+D. 两个独立数据库集群
 
 ### EXT-033（单选题）
 
 默认情况下，Spring声明式事务通常对哪类异常回滚？
 
-A. 运行时异常和Error
+A. 只有字符串异常
 B. 所有受检异常
-C. 只有字符串异常
-D. 任何日志输出
+C. 任何日志输出
+D. 运行时异常和Error
 
 ### EXT-034（单选题）
 
 readOnly=true最合理的理解是？
 
-A. 表达事务主要用于读取，并可帮助底层优化
+A. 保证查询永远不超时
 B. 强制数据库绝不允许任何SQL
 C. 自动缓存全部结果
-D. 保证查询永远不超时
+D. 表达事务主要用于读取，并可帮助底层优化
 
 ### EXT-035（单选题）
 
 隔离级别主要解决哪类并发问题？
 
-A. 脏读、不可重复读和幻读等
-B. HTTP路径匹配
+A. JSON字段命名
+B. 脏读、不可重复读和幻读等
 C. Bean扫描包名
-D. JSON字段命名
+D. HTTP路径匹配
 
 ### EXT-036（单选题）
 
 事务同步回调适合处理什么？
 
-A. 在事务提交或回滚阶段执行资源清理
+A. 修改Java语法
 B. 替代所有事务管理器
 C. 生成网关路由
-D. 修改Java语法
+D. 在事务提交或回滚阶段执行资源清理
 
 ### EXT-037（单选题）
 
 TransactionalEventListener的AFTER_COMMIT阶段意味着什么？
 
 A. 仅在事务成功提交后处理
-B. 在事务开始前处理
-C. 只在回滚时处理
-D. 永远异步处理
+B. 永远异步处理
+C. 在事务开始前处理
+D. 只在回滚时处理
 
 ### EXT-038（单选题）
 
 JdbcTemplate相对原生JDBC主要减少什么？
 
-A. 连接、资源释放和异常处理样板代码
-B. 所有SQL设计
+A. 所有SQL设计
+B. 业务领域建模
 C. 数据库索引设计
-D. 业务领域建模
+D. 连接、资源释放和异常处理样板代码
 
 ### EXT-039（单选题）
 
 Spring数据访问异常体系的特点是？
 
 A. 把底层异常转换为统一的DataAccessException层次
-B. 把所有异常吞掉
-C. 只保留数据库错误字符串
-D. 自动修复数据
+B. 只保留数据库错误字符串
+C. 自动修复数据
+D. 把所有异常吞掉
 
 ### EXT-040（单选题）
 
 @Cacheable在命中缓存时通常会发生什么？
 
-A. 跳过目标方法并返回缓存值
-B. 一定执行目标方法两次
+A. 一定执行目标方法两次
+B. 跳过目标方法并返回缓存值
 C. 删除缓存
 D. 开启新事务
 
@@ -371,53 +371,53 @@ D. 开启新事务
 
 @CacheEvict常用于什么？
 
-A. 删除或清理指定缓存条目
-B. 创建数据库表
-C. 注册服务实例
-D. 开启HTTP压缩
+A. 注册服务实例
+B. 开启HTTP压缩
+C. 删除或清理指定缓存条目
+D. 创建数据库表
 
 ### EXT-042（单选题）
 
 @Scheduled方法通常由什么触发？
 
-A. Spring调度器按照cron或固定间隔触发
+A. 数据库主键触发
 B. 每次HTTP请求都触发
-C. 数据库主键触发
+C. Spring调度器按照cron或固定间隔触发
 D. 编译器触发
 
 ### EXT-043（单选题）
 
 @Async的基本效果是？
 
-A. 将方法执行提交到异步执行器
-B. 自动开启数据库事务
-C. 自动变成响应式Publisher
-D. 只改变日志级别
+A. 只改变日志级别
+B. 自动变成响应式Publisher
+C. 将方法执行提交到异步执行器
+D. 自动开启数据库事务
 
 ### EXT-044（单选题）
 
 @Controller和@RestController的主要区别是？
 
-A. 后者隐含@ResponseBody
+A. 后者只能处理POST
 B. 前者不能注入Bean
-C. 后者只能处理POST
+C. 后者隐含@ResponseBody
 D. 前者不能返回视图
 
 ### EXT-045（单选题）
 
 @RequestBody主要把什么转换成方法参数？
 
-A. HTTP请求体
-B. URL路径变量
-C. Cookie名称
-D. 数据库记录
+A. Cookie名称
+B. 数据库记录
+C. URL路径变量
+D. HTTP请求体
 
 ### EXT-046（单选题）
 
 @ControllerAdvice适合集中处理什么？
 
-A. 多个控制器共享的异常和绑定逻辑
-B. 数据库连接池创建
+A. 数据库连接池创建
+B. 多个控制器共享的异常和绑定逻辑
 C. 服务注册
 D. JVM垃圾回收
 
@@ -425,64 +425,64 @@ D. JVM垃圾回收
 
 HandlerInterceptor的preHandle通常发生在？
 
-A. 控制器方法调用之前
-B. 响应完全写出之后
-C. 应用关闭以后
-D. 数据库提交之后
+A. 响应完全写出之后
+B. 控制器方法调用之前
+C. 数据库提交之后
+D. 应用关闭以后
 
 ### EXT-048（单选题）
 
 Servlet Filter与HandlerInterceptor的主要边界是？
 
-A. Filter位于Servlet层，Interceptor位于Spring MVC处理链
-B. 二者只能访问数据库
-C. 二者完全没有顺序
-D. Interceptor只能处理静态文件
+A. 二者完全没有顺序
+B. Interceptor只能处理静态文件
+C. 二者只能访问数据库
+D. Filter位于Servlet层，Interceptor位于Spring MVC处理链
 
 ### EXT-049（单选题）
 
 WebFlux的核心编程模型更接近什么？
 
-A. 非阻塞响应式流
-B. 只允许同步Servlet调用
-C. 只支持JDBC阻塞模型
-D. 只用于批处理
+A. 只用于批处理
+B. 只支持JDBC阻塞模型
+C. 只允许同步Servlet调用
+D. 非阻塞响应式流
 
 ### EXT-050（单选题）
 
 WebClient相对RestTemplate的主要定位是？
 
-A. 支持非阻塞响应式HTTP调用
-B. 只用于数据库查询
-C. 只生成HTML模板
-D. 只管理Bean作用域
+A. 只用于数据库查询
+B. 只生成HTML模板
+C. 只管理Bean作用域
+D. 支持非阻塞响应式HTTP调用
 
 ### EXT-051（单选题）
 
 Reactive Streams中的背压主要解决什么？
 
-A. 消费者处理不过来时控制生产速度
-B. 自动提高CPU频率
+A. 让异常永不发生
+B. 消费者处理不过来时控制生产速度
 C. 把所有数据缓存到内存
-D. 让异常永不发生
+D. 自动提高CPU频率
 
 ### EXT-052（单选题）
 
 @ContextConfiguration主要用于什么？
 
-A. 指定测试加载的Spring配置
-B. 启动Nacos服务
+A. 启动Nacos服务
+B. 编译AOP切面
 C. 生成数据库索引
-D. 编译AOP切面
+D. 指定测试加载的Spring配置
 
 ### EXT-053（单选题）
 
 MockMvc最适合测试哪一层？
 
 A. Spring MVC请求映射和响应行为
-B. 真实浏览器渲染性能
+B. Nacos集群选主
 C. 生产数据库容量
-D. Nacos集群选主
+D. 真实浏览器渲染性能
 
 ### EXT-054（单选题）
 
@@ -497,35 +497,35 @@ D. 关闭所有Bean
 
 测试真实Bean装配但避免启动整个应用时，可以使用什么思路？
 
-A. 加载精简的测试ApplicationContext
-B. 只用字符串比较
-C. 禁用所有依赖注入
-D. 只执行静态分析
+A. 只执行静态分析
+B. 禁用所有依赖注入
+C. 加载精简的测试ApplicationContext
+D. 只用字符串比较
 
 ### EXT-056（单选题）
 
 Spring IoC和Spring AOP的关系，哪项正确？
 
 A. AOP通常通过IoC管理的Bean代理实现
-B. IoC必须依赖AOP才能创建Bean
+B. 两者只在数据库层存在
 C. AOP会替代所有依赖注入
-D. 两者只在数据库层存在
+D. IoC必须依赖AOP才能创建Bean
 
 ### EXT-194（单选题）
 
 final方法在基于子类的Spring代理中通常有什么限制？
 
-A. 不能被子类覆写，难以被代理增强
-B. 一定会被JDK代理增强
-C. 会自动变成static
-D. 只能由数据库执行
+A. 一定会被JDK代理增强
+B. 只能由数据库执行
+C. 不能被子类覆写，难以被代理增强
+D. 会自动变成static
 
 ### EXT-195（单选题）
 
 private方法通常为何不能直接被Spring AOP代理拦截？
 
-A. 代理无法通过普通覆写或接口调用拦截它
-B. 它一定没有返回值
+A. 它一定没有返回值
+B. 代理无法通过普通覆写或接口调用拦截它
 C. 它只能被数据库调用
 D. Spring只支持静态方法
 
@@ -534,9 +534,9 @@ D. Spring只支持静态方法
 把@Transactional标在private方法上通常有什么问题？
 
 A. 外部代理无法按常规拦截该方法
-B. 事务会自动跨进程传播
+B. 数据库会拒绝启动
 C. 方法会自动变成public
-D. 数据库会拒绝启动
+D. 事务会自动跨进程传播
 
 ### EXT-197（单选题）
 
@@ -551,17 +551,17 @@ D. 创建JVM进程
 
 ClassPathResource与FileSystemResource的差异主要是？
 
-A. 资源查找位置不同
-B. 一个只能访问数据库
-C. 一个只能访问HTTP
-D. 两者一定返回同一文件
+A. 一个只能访问数据库
+B. 两者一定返回同一文件
+C. 资源查找位置不同
+D. 一个只能访问HTTP
 
 ### EXT-199（单选题）
 
 SpEL中#root通常代表什么？
 
-A. 表达式根对象
-B. 当前数据库表
+A. 当前数据库表
+B. 表达式根对象
 C. HTTP状态码
 D. Git分支
 
@@ -569,17 +569,17 @@ D. Git分支
 
 方法校验失败时，Controller层常见的处理方式是？
 
-A. 返回参数错误并阻止进入业务逻辑
-B. 继续提交无效数据
-C. 删除校验注解
-D. 把错误写入用户密码
+A. 把错误写入用户密码
+B. 删除校验注解
+C. 继续提交无效数据
+D. 返回参数错误并阻止进入业务逻辑
 
 ### EXT-201（单选题）
 
 进程内ApplicationEvent与消息队列事件的关键差异是？
 
-A. 前者默认不提供跨进程可靠投递
-B. 前者一定持久化
+A. 前者一定持久化
+B. 前者默认不提供跨进程可靠投递
 C. 后者不能异步
 D. 二者完全相同
 
@@ -587,19 +587,19 @@ D. 二者完全相同
 
 缓存穿透常见的缓解方式是？
 
-A. 对不存在结果做短时缓存或使用布隆过滤器
+A. 把请求无限重试
 B. 删除所有缓存
-C. 关闭数据库索引
-D. 把请求无限重试
+C. 对不存在结果做短时缓存或使用布隆过滤器
+D. 关闭数据库索引
 
 ### EXT-203（单选题）
 
 多实例部署下@Scheduled任务可能带来什么问题？
 
-A. 每个实例都可能执行一次，造成重复任务
-B. 任务一定只执行一次
-C. 任务自动拥有分布式锁
-D. 调度器会关闭服务发现
+A. 任务自动拥有分布式锁
+B. 每个实例都可能执行一次，造成重复任务
+C. 调度器会关闭服务发现
+D. 任务一定只执行一次
 
 ## 多选题
 
@@ -618,69 +618,69 @@ D. 随机依赖字段声明顺序
 
 A. singleton默认每个容器一个实例
 B. prototype每次请求容器通常创建新实例
-C. request作用域需要Web上下文
-D. 所有作用域都天然线程安全
+C. 所有作用域都天然线程安全
+D. request作用域需要Web上下文
 
 ### EXT-059（多选题）
 
 Bean初始化阶段可能涉及哪些扩展点？
 
 A. @PostConstruct
-B. InitializingBean.afterPropertiesSet
-C. 自定义init-method
+B. 自定义init-method
+C. InitializingBean.afterPropertiesSet
 D. JVM编译器回调
 
 ### EXT-060（多选题）
 
 容器关闭时可能触发哪些清理机制？
 
-A. @PreDestroy
-B. DisposableBean.destroy
+A. DisposableBean.destroy
+B. 自动提交所有未完成事务
 C. 自定义destroy-method
-D. 自动提交所有未完成事务
+D. @PreDestroy
 
 ### EXT-061（多选题）
 
 外部属性注入时，正确的做法包括？
 
-A. 使用Environment
-B. 使用@Value占位符
-C. 使用@ConfigurationProperties绑定对象
-D. 把密码打印到启动日志
+A. 把密码打印到启动日志
+B. 使用@ConfigurationProperties绑定对象
+C. 使用@Value占位符
+D. 使用Environment
 
 ### EXT-062（多选题）
 
 Spring应用事件设计中，正确的有？
 
-A. 监听器可以按类型接收事件
+A. 事件天然保证跨服务可靠投递
 B. 默认监听可能同步执行
 C. 可用@Async异步处理
-D. 事件天然保证跨服务可靠投递
+D. 监听器可以按类型接收事件
 
 ### EXT-063（多选题）
 
 SpEL可以用于哪些场景？
 
-A. 条件表达式
+A. 访问受控Bean
 B. 属性计算
-C. 访问受控Bean
+C. 条件表达式
 D. 无约束执行用户任意代码
 
 ### EXT-064（多选题）
 
 Spring AOP适合处理哪些横切关注点？
 
-A. 事务
-B. 日志
-C. 权限
-D. 修改任意字段访问而无需织入
+A. 权限
+B. 修改任意字段访问而无需织入
+C. 日志
+D. 事务
 
 ### EXT-065（多选题）
 
 关于环绕通知，正确的有？
 
-A. 可以在目标调用前后执行逻辑
-B. 可以决定是否调用proceed
+A. 可以决定是否调用proceed
+B. 可以在目标调用前后执行逻辑
 C. 可以改变返回值
 D. 一定会自动重试无限次
 
@@ -688,28 +688,28 @@ D. 一定会自动重试无限次
 
 以下传播语义中，正确的有？
 
-A. REQUIRED可加入现有事务
-B. REQUIRES_NEW会挂起外部事务
-C. SUPPORTS有事务则加入、无事务也可执行
-D. 所有传播行为都创建新事务
+A. 所有传播行为都创建新事务
+B. SUPPORTS有事务则加入、无事务也可执行
+C. REQUIRES_NEW会挂起外部事务
+D. REQUIRED可加入现有事务
 
 ### EXT-067（多选题）
 
 事务回滚规则设计时应注意哪些？
 
-A. 受检异常默认不一定回滚
-B. 可通过rollbackFor扩展规则
-C. 自调用可能绕过代理
-D. 只要写了@Transactional就能跨线程传播
+A. 自调用可能绕过代理
+B. 只要写了@Transactional就能跨线程传播
+C. 受检异常默认不一定回滚
+D. 可通过rollbackFor扩展规则
 
 ### EXT-068（多选题）
 
 事务代码中合理的实践包括？
 
-A. 缩短事务持有时间
-B. 避免在事务内调用不受控慢服务
-C. 明确隔离级别
-D. 把所有远程调用都包进一个长事务
+A. 把所有远程调用都包进一个长事务
+B. 缩短事务持有时间
+C. 避免在事务内调用不受控慢服务
+D. 明确隔离级别
 
 ### EXT-069（多选题）
 
@@ -724,37 +724,37 @@ D. 自动生成正确业务SQL
 
 缓存注解使用时应考虑哪些问题？
 
-A. 缓存键设计
+A. 缓存天然保证强一致
 B. 失效时机
 C. 并发击穿
-D. 缓存天然保证强一致
+D. 缓存键设计
 
 ### EXT-071（多选题）
 
 Spring MVC请求处理可以包含哪些阶段？
 
-A. HandlerMapping选择处理器
-B. 参数解析和数据绑定
-C. HandlerAdapter调用控制器
-D. 直接由数据库返回HTML
+A. 直接由数据库返回HTML
+B. HandlerMapping选择处理器
+C. 参数解析和数据绑定
+D. HandlerAdapter调用控制器
 
 ### EXT-072（多选题）
 
 响应式Web应用中，正确的有？
 
-A. Mono表示0或1个异步结果
-B. Flux表示0到多个结果
-C. 阻塞调用会破坏非阻塞优势
+A. Flux表示0到多个结果
+B. 阻塞调用会破坏非阻塞优势
+C. Mono表示0或1个异步结果
 D. 所有代码都必须改成线程手工创建
 
 ### EXT-073（多选题）
 
 Spring测试体系中，合理的有？
 
-A. 测试上下文可缓存
-B. MockMvc可测试MVC链路
-C. 测试事务可回滚
-D. 所有测试都必须启动真实生产依赖
+A. 测试事务可回滚
+B. 测试上下文可缓存
+C. 所有测试都必须启动真实生产依赖
+D. MockMvc可测试MVC链路
 
 ### EXT-224（多选题）
 
@@ -762,141 +762,141 @@ D. 所有测试都必须启动真实生产依赖
 
 A. 检查是否发生自调用
 B. 检查方法是否可被代理覆写
-C. 检查调用是否拿到容器代理
-D. 只增加日志就能修复代理
+C. 只增加日志就能修复代理
+D. 检查调用是否拿到容器代理
 
 ### EXT-225（多选题）
 
 事务边界设计中，正确的有？
 
-A. 避免把远程慢调用放进长事务
-B. 明确回滚异常规则
-C. 注意代理和自调用限制
-D. 事务会自动跨任意线程传播
+A. 注意代理和自调用限制
+B. 事务会自动跨任意线程传播
+C. 明确回滚异常规则
+D. 避免把远程慢调用放进长事务
 
 ### EXT-226（多选题）
 
 容器扩展点选择时，正确的有？
 
-A. BeanPostProcessor适合统一包装Bean
-B. BeanFactoryPostProcessor处理BeanDefinition
-C. ApplicationListener接收事件
-D. 所有扩展点都适合执行业务订单
+A. 所有扩展点都适合执行业务订单
+B. ApplicationListener接收事件
+C. BeanPostProcessor适合统一包装Bean
+D. BeanFactoryPostProcessor处理BeanDefinition
 
 ### EXT-227（多选题）
 
 Web层安全设计中，合理的有？
 
-A. 在边界校验输入
-B. 对异常响应脱敏
-C. 使用统一ControllerAdvice
-D. 把堆栈和SQL返回给客户端
+A. 使用统一ControllerAdvice
+B. 在边界校验输入
+C. 把堆栈和SQL返回给客户端
+D. 对异常响应脱敏
 
 ### EXT-236（多选题）
 
 构造器注入适合哪些场景？
 
-A. 表达必需依赖
-B. 支持不可变字段
-C. 便于单元测试替换实现
-D. 隐藏所有依赖以免阅读
+A. 支持不可变字段
+B. 表达必需依赖
+C. 隐藏所有依赖以免阅读
+D. 便于单元测试替换实现
 
 ### EXT-237（多选题）
 
 prototype Bean使用时需要注意哪些？
 
-A. 容器不会管理其全部销毁回调语义
-B. 注入singleton时可能只解析一次
-C. 需要Provider时可按需获取
-D. 它天然线程安全
+A. 它天然线程安全
+B. 需要Provider时可按需获取
+C. 容器不会管理其全部销毁回调语义
+D. 注入singleton时可能只解析一次
 
 ### EXT-238（多选题）
 
 Java配置类设计中，正确的有？
 
-A. @Bean方法可声明第三方类实例
+A. 配置类必须全部写成XML
 B. @Import可引入其他配置
 C. @Profile可选择环境配置
-D. 配置类必须全部写成XML
+D. @Bean方法可声明第三方类实例
 
 ### EXT-239（多选题）
 
 应用事件使用时，合理的有？
 
-A. 事件类型可表达业务语义
-B. 同步监听会占用发布线程
-C. 异步监听要考虑异常和线程池
-D. 事件天然跨服务持久化
+A. 事件天然跨服务持久化
+B. 异步监听要考虑异常和线程池
+C. 同步监听会占用发布线程
+D. 事件类型可表达业务语义
 
 ### EXT-240（多选题）
 
 Resource抽象的合理用途包括？
 
-A. 读取类路径资源
-B. 读取文件系统资源
-C. 读取URL资源
+A. 读取文件系统资源
+B. 读取URL资源
+C. 读取类路径资源
 D. 自动替代数据库事务
 
 ### EXT-241（多选题）
 
 Spring AOP切点设计中，正确的有？
 
-A. execution可匹配方法执行
-B. within可按类型范围匹配
-C. @annotation可按注解匹配
-D. 默认可拦截任意字段读取
+A. 默认可拦截任意字段读取
+B. execution可匹配方法执行
+C. within可按类型范围匹配
+D. @annotation可按注解匹配
 
 ### EXT-242（多选题）
 
 代理对象使用时，正确的有？
 
 A. 调用代理才能触发通知
-B. 自调用可能绕过代理
-C. final方法可能无法被子类代理增强
-D. 代理会自动修复业务异常
+B. final方法可能无法被子类代理增强
+C. 代理会自动修复业务异常
+D. 自调用可能绕过代理
 
 ### EXT-243（多选题）
 
 事务传播设计中，正确的有？
 
-A. NOT_SUPPORTED可挂起现有事务执行非事务代码
-B. NEVER要求当前没有事务
-C. MANDATORY要求已有事务
+A. MANDATORY要求已有事务
+B. NOT_SUPPORTED可挂起现有事务执行非事务代码
+C. NEVER要求当前没有事务
 D. 所有传播都等价于REQUIRED
 
 ### EXT-244（多选题）
 
 事务隔离实践中，正确的有？
 
-A. 提高隔离可能降低并发
-B. 数据库实际支持会影响效果
-C. 只读语义不等于所有数据库禁止写
-D. 隔离级别能解决所有分布式一致性
+A. 隔离级别能解决所有分布式一致性
+B. 只读语义不等于所有数据库禁止写
+C. 提高隔离可能降低并发
+D. 数据库实际支持会影响效果
 
 ### EXT-245（多选题）
 
 声明式事务排查应查看哪些信息？
 
-A. 调用是否经过代理
-B. 异常是否匹配回滚规则
-C. 事务管理器是否正确配置
-D. 只看方法上有没有注解
+A. 异常是否匹配回滚规则
+B. 事务管理器是否正确配置
+C. 只看方法上有没有注解
+D. 调用是否经过代理
 
 ### EXT-246（多选题）
 
 缓存一致性设计需要考虑哪些？
 
-A. 写入后的失效时机
-B. 并发下的击穿和雪崩
-C. 缓存键是否包含租户或版本
-D. 缓存一定比数据库权威
+A. 缓存键是否包含租户或版本
+B. 写入后的失效时机
+C. 缓存一定比数据库权威
+D. 并发下的击穿和雪崩
 
 ### EXT-247（多选题）
 
 集群调度任务治理可采用哪些方式？
 
-A. 分布式锁
-B. 外部调度平台
+A. 外部调度平台
+B. 分布式锁
 C. 任务幂等和状态记录
 D. 让每个实例无限重复执行
 
@@ -905,9 +905,9 @@ D. 让每个实例无限重复执行
 控制器参数处理可涉及哪些机制？
 
 A. HandlerMethodArgumentResolver
-B. HttpMessageConverter
-C. 数据绑定和校验
-D. 直接读取数据库连接对象
+B. 直接读取数据库连接对象
+C. HttpMessageConverter
+D. 数据绑定和校验
 
 ### EXT-249（多选题）
 
@@ -931,45 +931,45 @@ D. 响应式代码必须手工创建一个线程对应一个请求
 
 测试上下文设计中，正确的有？
 
-A. 共享上下文可减少启动成本
-B. 测试切片缩小装配范围
+A. 测试切片缩小装配范围
+B. 所有测试必须使用相同上下文
 C. 外部依赖可用Testcontainers或Mock隔离
-D. 所有测试必须使用相同上下文
+D. 共享上下文可减少启动成本
 
 ### EXT-252（多选题）
 
 Spring边界安全实践包括？
 
-A. 校验和限制输入
+A. 只依赖前端隐藏按钮
 B. 避免日志记录凭证
-C. 对管理接口做授权
-D. 只依赖前端隐藏按钮
+C. 校验和限制输入
+D. 对管理接口做授权
 
 ### EXT-253（多选题）
 
 数据访问层的合理职责包括？
 
-A. 封装查询和持久化
-B. 转换底层数据访问异常
-C. 定义事务边界协作
-D. 把所有领域规则塞进DAO
+A. 把所有领域规则塞进DAO
+B. 定义事务边界协作
+C. 封装查询和持久化
+D. 转换底层数据访问异常
 
 ### EXT-296（多选题）
 
 企业级Spring应用的基础治理通常应包括？
 
-A. 依赖注入
-B. 事务边界
-C. 统一异常和日志
-D. 把所有基础设施写进Controller
+A. 事务边界
+B. 统一异常和日志
+C. 把所有基础设施写进Controller
+D. 依赖注入
 
 ### EXT-300（多选题）
 
 遇到版本冲突或行为差异时，正确的取证方式包括？
 
-A. 查当前官方参考文档
-B. 核对Release Train兼容矩阵
-C. 用最小复现验证配置
+A. 核对Release Train兼容矩阵
+B. 用最小复现验证配置
+C. 查当前官方参考文档
 D. 只看搜索结果摘要并直接上线
 
 # 第2部分：Spring Boot 工程化与生产能力
@@ -981,97 +981,97 @@ D. 只看搜索结果摘要并直接上线
 Spring Boot自动配置通常依据什么决定是否提供默认Bean？
 
 A. 类路径、已有Bean和配置条件
-B. 源代码文件名长度
-C. 浏览器版本
-D. 数据库表行数
+B. 数据库表行数
+C. 源代码文件名长度
+D. 浏览器版本
 
 ### EXT-075（单选题）
 
 用户自己定义DataSource Bean后，相关默认嵌入式数据库自动配置通常会怎样？
 
-A. 相应默认配置回退或让位
-B. 一定创建第二个DataSource
-C. 自动删除用户Bean
-D. 关闭整个ApplicationContext
+A. 关闭整个ApplicationContext
+B. 自动删除用户Bean
+C. 一定创建第二个DataSource
+D. 相应默认配置回退或让位
 
 ### EXT-076（单选题）
 
 @SpringBootApplication通常组合了哪些能力？
 
 A. @SpringBootConfiguration、@EnableAutoConfiguration和@ComponentScan
-B. @Transactional、@Async和@WebMvcTest
-C. @Entity、@Repository和@Mapper
-D. @Test、@MockBean和@Sql
+B. @Entity、@Repository和@Mapper
+C. @Test、@MockBean和@Sql
+D. @Transactional、@Async和@WebMvcTest
 
 ### EXT-077（单选题）
 
 不希望某个自动配置生效时，哪种做法是官方支持的？
 
-A. 使用exclude或spring.autoconfigure.exclude
-B. 删除所有Starter
-C. 修改JVM字节码
-D. 把配置写进HTML
+A. 把配置写进HTML
+B. 修改JVM字节码
+C. 删除所有Starter
+D. 使用exclude或spring.autoconfigure.exclude
 
 ### EXT-078（单选题）
 
 现代Spring Boot自动配置类通常通过哪个资源文件被导入？
 
-A. META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports
-B. application.css
-C. web.xml
-D. pom.lock
+A. application.css
+B. pom.lock
+C. META-INF/spring/org.springframework.boot.autoconfigure.AutoConfiguration.imports
+D. web.xml
 
 ### EXT-079（单选题）
 
 @ConditionalOnClass的基本作用是？
 
-A. 类路径存在某类时才满足条件
-B. 类实例运行五秒后满足
-C. 配置文件必须是XML
-D. 只按HTTP方法判断
+A. 类实例运行五秒后满足
+B. 类路径存在某类时才满足条件
+C. 只按HTTP方法判断
+D. 配置文件必须是XML
 
 ### EXT-080（单选题）
 
 @ConditionalOnMissingBean最适合表达什么？
 
-A. 用户未提供同类Bean时才提供默认Bean
-B. Bean每次调用都刷新
-C. 所有Bean都必须缺失
-D. 只在数据库为空时生效
+A. 所有Bean都必须缺失
+B. 只在数据库为空时生效
+C. Bean每次调用都刷新
+D. 用户未提供同类Bean时才提供默认Bean
 
 ### EXT-081（单选题）
 
 @ConditionalOnProperty的havingValue常用于什么？
 
 A. 按属性值决定条件是否匹配
-B. 定义数据库隔离级别
-C. 修改HTTP响应体
+B. 修改HTTP响应体
+C. 定义数据库隔离级别
 D. 设置线程优先级
 
 ### EXT-082（单选题）
 
 自动配置类需要先后顺序时，通常使用什么表达？
 
-A. @AutoConfigureBefore/@AutoConfigureAfter
+A. @SequenceOnly
 B. @OrderBySQL
-C. @SequenceOnly
-D. @RouteOrder
+C. @RouteOrder
+D. @AutoConfigureBefore/@AutoConfigureAfter
 
 ### EXT-083（单选题）
 
 ApplicationContextRunner主要用于什么？
 
-A. 以最小上下文测试自动配置条件
-B. 启动完整生产集群
+A. 启动完整生产集群
+B. 生成数据库备份
 C. 压测网络带宽
-D. 生成数据库备份
+D. 以最小上下文测试自动配置条件
 
 ### EXT-084（单选题）
 
 现代Spring Boot外部配置导入通常推荐使用什么机制？
 
-A. spring.config.import
-B. bootstrap.xml必选
+A. bootstrap.xml必选
+B. spring.config.import
 C. web.xml
 D. MANIFEST-only
 
@@ -1080,162 +1080,162 @@ D. MANIFEST-only
 配置文件中使用spring.config.import时，导入失败默认意味着什么？
 
 A. 应用启动可能失败，除非使用可选导入语义
-B. 一定静默忽略
-C. 自动回退到生产密码
-D. 自动创建配置中心
+B. 自动创建配置中心
+C. 一定静默忽略
+D. 自动回退到生产密码
 
 ### EXT-086（单选题）
 
 spring.profiles.active的作用是？
 
-A. 激活一个或多个配置Profile
-B. 选择HTTP协议版本
-C. 决定Bean是否单例
-D. 启动Git提交
+A. 启动Git提交
+B. 决定Bean是否单例
+C. 激活一个或多个配置Profile
+D. 选择HTTP协议版本
 
 ### EXT-087（单选题）
 
 spring.config.activate.on-profile适合表达什么？
 
 A. 该配置文档在指定Profile激活时生效
-B. 强制所有Profile同时生效
-C. 设置线程数
-D. 决定日志文件编码
+B. 设置线程数
+C. 决定日志文件编码
+D. 强制所有Profile同时生效
 
 ### EXT-088（单选题）
 
 Spring Boot配置绑定面对命令行参数与application.yml冲突时，通常哪者优先？
 
-A. 命令行参数通常具有更高优先级
-B. YAML永远优先
+A. 都被忽略
+B. 命令行参数通常具有更高优先级
 C. 二者随机选择
-D. 都被忽略
+D. YAML永远优先
 
 ### EXT-089（单选题）
 
 @ConfigurationProperties相对大量@Value字段的优势是？
 
-A. 将一组相关配置类型安全绑定为对象
+A. 只能绑定单个字符串
 B. 自动生成数据库表
 C. 绕过校验
-D. 只能绑定单个字符串
+D. 将一组相关配置类型安全绑定为对象
 
 ### EXT-090（单选题）
 
 对@ConfigurationProperties对象启用Bean Validation通常需要什么？
 
 A. 在绑定对象上启用校验并使用约束注解
-B. 只改端口号
+B. 删除所有默认值
 C. 只添加@RestController
-D. 删除所有默认值
+D. 只改端口号
 
 ### EXT-091（单选题）
 
 spring-boot-configuration-processor的价值是什么？
 
-A. 生成配置元数据以改善IDE提示
-B. 替代配置服务器
-C. 执行所有配置变更
-D. 压缩Jar文件
+A. 压缩Jar文件
+B. 执行所有配置变更
+C. 生成配置元数据以改善IDE提示
+D. 替代配置服务器
 
 ### EXT-092（单选题）
 
 Spring Boot默认日志系统通常基于哪个实现？
 
-A. Logback
-B. JUL永远唯一
-C. Log4j 1.x必选
-D. System.out בלבד
+A. System.out בלבד
+B. Log4j 1.x必选
+C. JUL永远唯一
+D. Logback
 
 ### EXT-093（单选题）
 
 logging.group可以解决什么问题？
 
 A. 把多个Logger归为一组统一调级别
-B. 创建数据库用户组
-C. 组合HTTP路由
+B. 组合HTTP路由
+C. 创建数据库用户组
 D. 合并配置Profile
 
 ### EXT-094（单选题）
 
 Spring Boot Actuator端点的主要定位是？
 
-A. 生产运行监控和管理
-B. 替代业务Controller
-C. 编译Java源码
-D. 生成前端页面
+A. 替代业务Controller
+B. 生成前端页面
+C. 生产运行监控和管理
+D. 编译Java源码
 
 ### EXT-095（单选题）
 
 默认情况下把所有Actuator端点暴露公网的主要问题是？
 
-A. 敏感运行信息和管理能力可能泄露
+A. 自动获得强一致事务
 B. 应用一定更快
-C. 自动获得强一致事务
+C. 敏感运行信息和管理能力可能泄露
 D. 不会有安全风险
 
 ### EXT-096（单选题）
 
 health端点主要报告什么？
 
-A. 应用和关键依赖的健康状态
+A. 编译器警告
 B. Git提交全文
-C. 所有用户密码
-D. 编译器警告
+C. 应用和关键依赖的健康状态
+D. 所有用户密码
 
 ### EXT-097（单选题）
 
 info端点更适合放置哪类信息？
 
-A. 版本、构建和Git元数据
+A. 用户Token
 B. 数据库全部订单
-C. 用户Token
+C. 版本、构建和Git元数据
 D. 线程堆栈原文
 
 ### EXT-098（单选题）
 
 metrics端点主要提供什么？
 
-A. 应用和JVM等指标
-B. HTML模板源码
-C. Nacos服务注册
+A. Nacos服务注册
+B. 应用和JVM等指标
+C. HTML模板源码
 D. 业务数据库迁移
 
 ### EXT-099（单选题）
 
 Micrometer在Boot可观测性中的作用是？
 
-A. 提供厂商无关的指标门面
+A. 作为数据库驱动
 B. 替代所有日志
-C. 作为数据库驱动
-D. 作为API网关
+C. 作为API网关
+D. 提供厂商无关的指标门面
 
 ### EXT-100（单选题）
 
 现代Spring Boot分布式追踪通常需要配合什么？
 
-A. Micrometer Tracing等追踪基础设施
-B. 只设置server.port
-C. 只增加@Entity
-D. 删除所有HTTP头
+A. 只设置server.port
+B. Micrometer Tracing等追踪基础设施
+C. 删除所有HTTP头
+D. 只增加@Entity
 
 ### EXT-101（单选题）
 
 自动配置不符合预期时，最有用的诊断信息通常来自哪里？
 
-A. 条件评估报告
-B. 浏览器缓存
-C. Git分支名称
+A. Git分支名称
+B. 条件评估报告
+C. 浏览器缓存
 D. CSS编译日志
 
 ### EXT-102（单选题）
 
 SpringApplication.run的主要职责是？
 
-A. 创建并刷新ApplicationContext并启动应用
-B. 只打印一行日志
-C. 只加载数据库驱动
-D. 只注册HTTP路由
+A. 只注册HTTP路由
+B. 只加载数据库驱动
+C. 只打印一行日志
+D. 创建并刷新ApplicationContext并启动应用
 
 ### EXT-103（单选题）
 
@@ -1250,10 +1250,10 @@ D. 服务注册健康
 
 Boot可执行Jar的一个部署优势是？
 
-A. 应用与嵌入式服务器一起交付
-B. 必须手工部署外部Tomcat
-C. 不能容器化
-D. 只能在IDE运行
+A. 不能容器化
+B. 只能在IDE运行
+C. 必须手工部署外部Tomcat
+D. 应用与嵌入式服务器一起交付
 
 ### EXT-105（单选题）
 
@@ -1268,36 +1268,36 @@ D. 关闭监控端点
 
 spring-boot-starter-test通常包含什么？
 
-A. Boot测试支持、JUnit Jupiter和断言库等
-B. 生产数据库密码
-C. Nacos服务器
-D. 前端打包器
+A. Nacos服务器
+B. Boot测试支持、JUnit Jupiter和断言库等
+C. 前端打包器
+D. 生产数据库密码
 
 ### EXT-107（单选题）
 
 @SpringBootTest通常创建什么范围的测试？
 
-A. 由SpringApplication加载的应用上下文测试
-B. 只测试一个JSON序列化方法
-C. 只测试CSS
-D. 只测试SQL语法
+A. 只测试一个JSON序列化方法
+B. 由SpringApplication加载的应用上下文测试
+C. 只测试SQL语法
+D. 只测试CSS
 
 ### EXT-108（单选题）
 
 @WebMvcTest的主要特点是？
 
 A. 只加载MVC相关切片而不是完整业务上下文
-B. 启动所有外部微服务
-C. 只测试数据库事务
+B. 只测试数据库事务
+C. 启动所有外部微服务
 D. 只测试消息队列
 
 ### EXT-109（单选题）
 
 @DataJpaTest的典型用途是？
 
-A. 测试JPA实体、Repository和数据访问切片
+A. 测试前端组件
 B. 测试网关路由
-C. 测试前端组件
+C. 测试JPA实体、Repository和数据访问切片
 D. 测试Nacos控制台
 
 ### EXT-110（单选题）
@@ -1305,8 +1305,8 @@ D. 测试Nacos控制台
 在不同Boot版本中测试替身注解发生变化时，正确做法是？
 
 A. 查当前版本官方测试文档并采用对应注解
-B. 照抄旧版本示例
-C. 删除所有测试
+B. 删除所有测试
+C. 照抄旧版本示例
 D. 把Mock写入生产配置
 
 ### EXT-111（单选题）
@@ -1314,18 +1314,18 @@ D. 把Mock写入生产配置
 Spring Boot AOT处理的主要目标是？
 
 A. 在运行前生成优化信息以支持原生镜像等场景
-B. 运行时动态下载依赖
-C. 替代所有测试
+B. 替代所有测试
+C. 运行时动态下载依赖
 D. 生成数据库数据
 
 ### EXT-112（单选题）
 
 原生镜像迁移中最需要关注什么？
 
-A. 反射、资源和代理的运行时提示
-B. 只关注CSS
+A. 只关注CSS
+B. 忽略第三方库兼容性
 C. 只增加线程数
-D. 忽略第三方库兼容性
+D. 反射、资源和代理的运行时提示
 
 ### EXT-113（单选题）
 
@@ -1340,91 +1340,91 @@ D. 只能用于测试
 
 生产环境存放数据库密码的更稳妥方式是？
 
-A. 使用受控密钥管理并通过外部配置注入
+A. 打印到启动日志
 B. 提交明文到Git
-C. 打印到启动日志
-D. 写入公开HTML
+C. 写入公开HTML
+D. 使用受控密钥管理并通过外部配置注入
 
 ### EXT-115（单选题）
 
 Kubernetes环境中readiness与liveness的区别主要是？
 
 A. readiness决定是否接流量，liveness判断是否需要重启
-B. 二者都只看磁盘空间
-C. 二者完全相同
-D. liveness决定版本灰度
+B. liveness决定版本灰度
+C. 二者都只看磁盘空间
+D. 二者完全相同
 
 ### EXT-116（单选题）
 
 修改配置键名时最安全的做法是？
 
 A. 提供兼容迁移并在启动时发现旧键
-B. 直接删除旧键且不告警
-C. 让两个键含义不同但同名
-D. 把键名写入日志
+B. 让两个键含义不同但同名
+C. 把键名写入日志
+D. 直接删除旧键且不告警
 
 ### EXT-117（单选题）
 
 自动配置类中使用@ConditionalOnMissingBean的工程价值是？
 
 A. 允许用户定义Bean覆盖默认实现
-B. 禁止任何用户配置
-C. 强制使用默认实现
+B. 强制使用默认实现
+C. 禁止任何用户配置
 D. 让Bean变成prototype
 
 ### EXT-118（单选题）
 
 使用外部配置中心时，spring.config.import的优势是？
 
-A. 把配置来源显式写入Config Data加载链
+A. 只支持本地文件
 B. 依赖过时bootstrap必选
-C. 只支持本地文件
-D. 绕过所有认证
+C. 绕过所有认证
+D. 把配置来源显式写入Config Data加载链
 
 ### EXT-119（单选题）
 
 management.server.port的作用是？
 
 A. 把管理端点与业务端口分离
-B. 改变数据库端口
-C. 改变JVM调试端口
-D. 改变Nacos端口
+B. 改变JVM调试端口
+C. 改变Nacos端口
+D. 改变数据库端口
 
 ### EXT-120（单选题）
 
 Boot默认错误响应不应包含什么？
 
 A. 敏感堆栈和凭证
-B. 可控错误码
+B. 用户可理解的提示
 C. 必要的请求追踪标识
-D. 用户可理解的提示
+D. 可控错误码
 
 ### EXT-121（单选题）
 
 环境变量命名SPRING_PROFILES_ACTIVE通常对应什么配置？
 
-A. spring.profiles.active
-B. server.port
-C. management.endpoints.web.exposure.include
-D. spring.main.banner-mode
+A. spring.main.banner-mode
+B. spring.profiles.active
+C. server.port
+D. management.endpoints.web.exposure.include
 
 ### EXT-122（单选题）
 
 在微服务日志中加入traceId的主要收益是？
 
-A. 跨服务关联一次请求
-B. 自动重试请求
+A. 自动重试请求
+B. 改变事务隔离
 C. 替代监控指标
-D. 改变事务隔离
+D. 跨服务关联一次请求
 
 ### EXT-123（单选题）
 
 减少启动时间的第一步通常是？
 
-A. 用启动分析定位慢自动配置和初始化Bean
-B. 盲目删除所有Starter
-C. 关闭所有日志
-D. 把所有Bean改为prototype
+A. 把所有Bean改为prototype
+B. 关闭所有日志
+C. 盲目删除所有Starter
+D. 用启动分析定位慢自动配置和初始化Bean
 
 ### EXT-124（单选题）
 
@@ -1432,8 +1432,8 @@ Actuator端点与业务API的安全边界应如何设计？
 
 A. 单独认证、授权和网络限制
 B. 完全复用匿名业务接口
-C. 暴露所有环境变量
-D. 在公网打开shutdown
+C. 在公网打开shutdown
+D. 暴露所有环境变量
 
 ### EXT-125（单选题）
 
@@ -1441,8 +1441,8 @@ D. 在公网打开shutdown
 
 A. 输出自动配置条件评估报告
 B. 开启生产远程调试端口
-C. 删除缓存
-D. 改变服务发现模式
+C. 改变服务发现模式
+D. 删除缓存
 
 ### EXT-126（单选题）
 
@@ -1450,8 +1450,8 @@ D. 改变服务发现模式
 
 A. 启动更快但需要为协作者提供Mock或Import
 B. 一定比端到端更完整
-C. 完全不需要Spring上下文
-D. 只能测试前端
+C. 只能测试前端
+D. 完全不需要Spring上下文
 
 ### EXT-127（单选题）
 
@@ -1459,35 +1459,35 @@ record用于@ConfigurationProperties时，主要收益是？
 
 A. 用不可变构造参数表达配置状态
 B. 自动刷新所有Bean
-C. 跳过校验
-D. 把配置写进数据库
+C. 把配置写进数据库
+D. 跳过校验
 
 ### EXT-128（单选题）
 
 命令行临时覆盖配置的工程价值是？
 
-A. 不重新打包即可改变部署参数
-B. 永久修改代码默认值
-C. 绕过权限审计
-D. 把配置写入Jar
+A. 永久修改代码默认值
+B. 把配置写入Jar
+C. 不重新打包即可改变部署参数
+D. 绕过权限审计
 
 ### EXT-204（单选题）
 
 配置文件中使用---分隔符通常表示什么？
 
 A. 多个YAML文档
-B. 多个数据库事务
+B. 多个HTTP响应
 C. 多个Jar文件
-D. 多个HTTP响应
+D. 多个数据库事务
 
 ### EXT-205（单选题）
 
 spring.config.location主要用于什么？
 
-A. 指定额外配置文件或目录位置
-B. 设置数据库连接池大小
-C. 指定网关路由
-D. 设置线程优先级
+A. 设置线程优先级
+B. 指定网关路由
+C. 指定额外配置文件或目录位置
+D. 设置数据库连接池大小
 
 ### EXT-206（单选题）
 
@@ -1495,16 +1495,16 @@ spring.config.additional-location和spring.config.location的工程区别是？
 
 A. 前者追加位置，后者可替换默认搜索位置
 B. 二者都只能设置端口
-C. 前者关闭所有配置
-D. 二者完全没有差异
+C. 二者完全没有差异
+D. 前者关闭所有配置
 
 ### EXT-207（单选题）
 
 SpringApplication的WebApplicationType主要区分什么？
 
-A. NONE、SERVLET和REACTIVE应用模式
+A. 数据库类型
 B. JDK版本
-C. 数据库类型
+C. NONE、SERVLET和REACTIVE应用模式
 D. 日志格式
 
 ### EXT-208（单选题）
@@ -1512,88 +1512,88 @@ D. 日志格式
 ApplicationRunner与CommandLineRunner的主要差别是？
 
 A. 参数接收形式不同
-B. 一个只能在测试运行
+B. 二者都不能在启动后执行
 C. 一个只处理数据库
-D. 二者都不能在启动后执行
+D. 一个只能在测试运行
 
 ### EXT-209（单选题）
 
 FailureAnalyzer的用途是？
 
-A. 把启动异常转换成更有帮助的分析信息
+A. 替代日志系统
 B. 自动修复所有异常
-C. 替代日志系统
-D. 生成数据库迁移
+C. 生成数据库迁移
+D. 把启动异常转换成更有帮助的分析信息
 
 ### EXT-210（单选题）
 
 ConfigurationPropertiesScan主要解决什么？
 
-A. 扫描并注册配置属性类
-B. 扫描所有数据库表
-C. 扫描Gateway路由
-D. 扫描前端组件
+A. 扫描所有数据库表
+B. 扫描并注册配置属性类
+C. 扫描前端组件
+D. 扫描Gateway路由
 
 ### EXT-211（单选题）
 
 @ConditionalOnResource判断什么？
 
 A. 指定资源是否存在
-B. 数据库是否有行
-C. 服务是否有用户
-D. HTTP是否为POST
+B. 服务是否有用户
+C. HTTP是否为POST
+D. 数据库是否有行
 
 ### EXT-212（单选题）
 
 自定义HealthIndicator返回DOWN的影响取决于什么？
 
 A. 健康聚合和探针配置如何解释该状态
-B. 一定立即关闭JVM
-C. 一定删除数据库
+B. 一定删除数据库
+C. 一定立即关闭JVM
 D. 只改变日志颜色
 
 ### EXT-213（单选题）
 
 Timer和Counter的主要区别是？
 
-A. Timer记录耗时和次数，Counter记录累计事件数
-B. 二者都只能记录内存
-C. Counter记录线程栈
-D. Timer只能记录字符串
+A. Timer只能记录字符串
+B. Counter记录线程栈
+C. Timer记录耗时和次数，Counter记录累计事件数
+D. 二者都只能记录内存
 
 ### EXT-214（单选题）
 
 @DynamicPropertySource适合什么场景？
 
-A. 在测试运行时动态注册属性
-B. 修改生产配置
-C. 创建Nacos服务
-D. 替代所有Mock
+A. 创建Nacos服务
+B. 替代所有Mock
+C. 修改生产配置
+D. 在测试运行时动态注册属性
 
 ### EXT-215（单选题）
 
 TestRestTemplate更适合哪类测试？
 
-A. 启动真实HTTP服务器后进行端到端请求
-B. 只测试一个Repository方法
-C. 只测试配置绑定
-D. 只测试静态资源名称
+A. 只测试配置绑定
+B. 只测试静态资源名称
+C. 启动真实HTTP服务器后进行端到端请求
+D. 只测试一个Repository方法
 
 ### EXT-216（单选题）
 
 @JsonTest聚焦什么？
 
-A. JSON序列化和反序列化切片
-B. 数据库事务
-C. Gateway过滤器
+A. Gateway过滤器
+B. JSON序列化和反序列化切片
+C. 数据库事务
 D. Nacos注册
 
 ### EXT-217（单选题）
 
 server.forward-headers-strategy配置主要影响什么？
 
-A. 代理转发头的处理方式
-B. 数据库事务传播
+A. 数据库事务传播
+B. 代理转发头的处理方式
 C. Bean作用域
 D. 消息消费确认
 
@@ -1601,9 +1601,9 @@ D. 消息消费确认
 
 Actuator shutdown端点的风险主要是？
 
-A. 未授权调用可能终止应用
-B. 会自动创建用户
-C. 只影响日志颜色
+A. 只影响日志颜色
+B. 未授权调用可能终止应用
+C. 会自动创建用户
 D. 只影响前端CSS
 
 ## 多选题
@@ -1612,26 +1612,26 @@ D. 只影响前端CSS
 
 关于Boot自动配置，正确的有？
 
-A. 依赖classpath
+A. 会自动编写领域业务逻辑
 B. 检查用户已有Bean
-C. 可以被显式排除
-D. 会自动编写领域业务逻辑
+C. 依赖classpath
+D. 可以被显式排除
 
 ### EXT-130（多选题）
 
 Spring Boot配置数据机制中，合理的有？
 
-A. 可使用spring.config.import
+A. 任何配置中心都无需认证
 B. 可表达optional导入
-C. Profile可以激活特定文档
-D. 任何配置中心都无需认证
+C. 可使用spring.config.import
+D. Profile可以激活特定文档
 
 ### EXT-131（多选题）
 
 自动配置常用的条件包括哪些？
 
-A. 类路径条件
-B. Bean存在或缺失条件
+A. Bean存在或缺失条件
+B. 类路径条件
 C. 属性条件
 D. 用户浏览器颜色条件
 
@@ -1639,8 +1639,8 @@ D. 用户浏览器颜色条件
 
 类型化配置对象的收益包括？
 
-A. 集中相关配置
-B. 支持校验
+A. 支持校验
+B. 集中相关配置
 C. 改善IDE元数据提示
 D. 让错误配置自动变正确
 
@@ -1657,117 +1657,117 @@ D. 把env和shutdown匿名开放公网
 
 Boot生产可观测性通常包含哪些信号？
 
-A. 日志
-B. 指标
+A. 指标
+B. 只看启动Banner
 C. Trace
-D. 只看启动Banner
+D. 日志
 
 ### EXT-135（多选题）
 
 关于Boot测试切片，正确的有？
 
-A. WebMvcTest聚焦MVC
-B. DataJpaTest聚焦JPA层
-C. 切片通常比完整上下文更快
+A. DataJpaTest聚焦JPA层
+B. 切片通常比完整上下文更快
+C. WebMvcTest聚焦MVC
 D. 切片会自动启动所有外部依赖
 
 ### EXT-136（多选题）
 
 可执行Boot Jar的优点包括？
 
-A. 内嵌服务器
-B. 统一启动命令
-C. 减少外部容器差异
+A. 减少外部容器差异
+B. 内嵌服务器
+C. 统一启动命令
 D. 保证网络永远可用
 
 ### EXT-137（多选题）
 
 原生镜像迁移需要关注哪些内容？
 
-A. 反射提示
-B. 资源文件提示
-C. 动态代理提示
-D. 完全不需要测试第三方库
+A. 资源文件提示
+B. 反射提示
+C. 完全不需要测试第三方库
+D. 动态代理提示
 
 ### EXT-138（多选题）
 
 生产配置治理中，合理的有？
 
-A. 密钥外置
-B. 变更审计
-C. 按环境隔离
-D. 把完整环境变量暴露在Actuator响应中
+A. 变更审计
+B. 把完整环境变量暴露在Actuator响应中
+C. 密钥外置
+D. 按环境隔离
 
 ### EXT-139（多选题）
 
 应用启动慢或自动配置异常时，可以使用哪些手段？
 
-A. --debug条件报告
-B. 启动分析器
+A. 直接删除全部日志
+B. --debug条件报告
 C. 精简不必要的自动配置
-D. 直接删除全部日志
+D. 启动分析器
 
 ### EXT-140（多选题）
 
 优雅停机设计通常需要哪些配套？
 
-A. 就绪状态先摘流量
-B. 等待在途请求
-C. 设置合理超时
-D. 直接kill -9所有进程
+A. 直接kill -9所有进程
+B. 就绪状态先摘流量
+C. 等待在途请求
+D. 设置合理超时
 
 ### EXT-141（多选题）
 
 配置覆盖设计中，正确的有？
 
 A. 命令行可覆盖文件配置
-B. 环境变量适合部署注入
-C. 高优先级来源应可审计
+B. 高优先级来源应可审计
+C. 环境变量适合部署注入
 D. 把多个来源同名键交给随机选择
 
 ### EXT-142（多选题）
 
 Boot工程化能力主要帮助哪些方面？
 
-A. 依赖整合
-B. 自动配置基础设施
-C. 生产监控
-D. 替代领域建模和业务测试
+A. 替代领域建模和业务测试
+B. 生产监控
+C. 自动配置基础设施
+D. 依赖整合
 
 ### EXT-228（多选题）
 
 自定义Boot自动配置时，正确的有？
 
-A. 使用条件注解避免无条件创建Bean
+A. 直接依赖自动配置内部嵌套类作为公共API
 B. 用AutoConfiguration.imports注册
-C. 使用ApplicationContextRunner测试
-D. 直接依赖自动配置内部嵌套类作为公共API
+C. 使用条件注解避免无条件创建Bean
+D. 使用ApplicationContextRunner测试
 
 ### EXT-229（多选题）
 
 关于配置优先级，正确的有？
 
-A. 命令行可覆盖文件值
-B. 环境变量适合容器部署
-C. Profile文档可按环境激活
-D. 优先级冲突应交给随机结果
+A. Profile文档可按环境激活
+B. 命令行可覆盖文件值
+C. 优先级冲突应交给随机结果
+D. 环境变量适合容器部署
 
 ### EXT-230（多选题）
 
 Boot测试策略中，正确的有？
 
-A. 切片测试聚焦一层
+A. 动态属性适合容器端口
 B. 完整上下文测试验证装配
-C. 动态属性适合容器端口
+C. 切片测试聚焦一层
 D. 所有测试都应连接生产数据库
 
 ### EXT-231（多选题）
 
 生产运维中，合理的有？
 
-A. 管理端点最小暴露
+A. 指标和日志分别承担不同作用
 B. 健康探针与流量摘除配合
-C. 指标和日志分别承担不同作用
+C. 管理端点最小暴露
 D. 直接匿名开放shutdown
 
 ### EXT-254（多选题）
@@ -1775,80 +1775,80 @@ D. 直接匿名开放shutdown
 SpringApplication启动阶段通常会做什么？
 
 A. 准备Environment
-B. 创建ApplicationContext
+B. 自动修复所有配置错误
 C. 发布启动生命周期事件
-D. 自动修复所有配置错误
+D. 创建ApplicationContext
 
 ### EXT-255（多选题）
 
 用户覆盖自动配置时，正确的有？
 
 A. 定义自己的Bean可使MissingBean条件失效
-B. 可通过exclude排除
-C. 应避免依赖自动配置内部实现细节
-D. 覆盖后业务逻辑自动生成
+B. 应避免依赖自动配置内部实现细节
+C. 覆盖后业务逻辑自动生成
+D. 可通过exclude排除
 
 ### EXT-256（多选题）
 
 条件评估报告可以帮助判断哪些问题？
 
-A. 哪个类路径条件未满足
-B. 哪个Bean条件冲突
-C. 哪个属性值未匹配
+A. 哪个属性值未匹配
+B. 哪个类路径条件未满足
+C. 哪个Bean条件冲突
 D. 用户的业务需求是否正确
 
 ### EXT-257（多选题）
 
 配置Profile治理中，正确的有？
 
-A. 避免把生产密钥提交默认文件
-B. 可以用Profile激活差异配置
-C. Profile不是权限边界的替代品
+A. 可以用Profile激活差异配置
+B. Profile不是权限边界的替代品
+C. 避免把生产密钥提交默认文件
 D. 激活多个Profile时顺序完全无关
 
 ### EXT-258（多选题）
 
 配置导入失败排查可以检查哪些？
 
-A. 导入URL和协议
-B. 配置中心认证和网络
+A. 只检查Controller代码
+B. 导入URL和协议
 C. Profile与键名
-D. 只检查Controller代码
+D. 配置中心认证和网络
 
 ### EXT-259（多选题）
 
 Micrometer指标设计中，正确的有？
 
-A. 标签维度不宜无限高基数
-B. 计时器适合记录耗时
+A. 计时器适合记录耗时
+B. 把用户ID作为无限标签最安全
 C. 指标名称应表达稳定语义
-D. 把用户ID作为无限标签最安全
+D. 标签维度不宜无限高基数
 
 ### EXT-260（多选题）
 
 结构化日志设计中，合理的有？
 
-A. 包含traceId和业务键
-B. 敏感字段脱敏
-C. 错误保留异常类型
-D. 把完整Token写入日志便于排查
+A. 敏感字段脱敏
+B. 错误保留异常类型
+C. 把完整Token写入日志便于排查
+D. 包含traceId和业务键
 
 ### EXT-261（多选题）
 
 健康检查设计中，正确的有？
 
-A. 区分存活和就绪
-B. 关键依赖可以纳入readiness判断
-C. 检查应有超时
-D. 健康检查里执行长时间业务任务
+A. 关键依赖可以纳入readiness判断
+B. 区分存活和就绪
+C. 健康检查里执行长时间业务任务
+D. 检查应有超时
 
 ### EXT-262（多选题）
 
 Actuator管理面治理可包括？
 
-A. 独立管理端口
-B. 端点白名单暴露
-C. 网络和权限隔离
+A. 网络和权限隔离
+B. 独立管理端口
+C. 端点白名单暴露
 D. 公开env到匿名公网
 
 ### EXT-263（多选题）
@@ -1865,63 +1865,63 @@ D. 切片一定比完整测试更接近生产
 原生镜像约束通常需要关注？
 
 A. 运行时反射
-B. 资源文件
-C. 代理生成
-D. 忽略第三方库提示
+B. 代理生成
+C. 忽略第三方库提示
+D. 资源文件
 
 ### EXT-265（多选题）
 
 滚动发布配合优雅停机时，正确的有？
 
-A. 先让实例不再接收新流量
-B. 等待在途请求
-C. 设置最大等待时间
-D. 立即kill -9所有旧实例
+A. 等待在途请求
+B. 先让实例不再接收新流量
+C. 立即kill -9所有旧实例
+D. 设置最大等待时间
 
 ### EXT-266（多选题）
 
 Starter使用时，正确的有？
 
-A. 减少手工依赖声明
-B. 由Boot依赖管理统一版本
-C. 仍需检查传递依赖
-D. Starter会自动实现业务规则
+A. 仍需检查传递依赖
+B. Starter会自动实现业务规则
+C. 由Boot依赖管理统一版本
+D. 减少手工依赖声明
 
 ### EXT-267（多选题）
 
 配置启动校验的工程价值包括？
 
-A. 尽早发现非法值
-B. 避免运行到深层路径才失败
-C. 可以表达范围约束
-D. 让任何字符串自动符合业务规则
+A. 让任何字符串自动符合业务规则
+B. 可以表达范围约束
+C. 避免运行到深层路径才失败
+D. 尽早发现非法值
 
 ### EXT-268（多选题）
 
 测试替身使用时，合理的有？
 
-A. 替换远程客户端
+A. 避免测试连接真实外部系统
 B. 验证调用参数
-C. 避免测试连接真实外部系统
+C. 替换远程客户端
 D. 生产代码直接依赖测试Mock
 
 ### EXT-269（多选题）
 
 外部配置安全治理包括？
 
-A. 密钥服务
-B. 最小权限
+A. 最小权限
+B. 把所有环境变量打进前端JS
 C. 变更审计
-D. 把所有环境变量打进前端JS
+D. 密钥服务
 
 ### EXT-270（多选题）
 
 错误响应治理中，正确的有？
 
-A. 稳定错误码
-B. traceId关联
+A. 把堆栈和数据库URL返回用户
+B. 稳定错误码
 C. 内部异常详细信息留在日志
-D. 把堆栈和数据库URL返回用户
+D. traceId关联
 
 ### EXT-297（多选题）
 
@@ -1940,36 +1940,36 @@ D. 只依赖本地IDE启动
 
 微服务架构相对于单体应用最核心的拆分原则是什么？
 
-A. 按业务能力形成自治服务
-B. 按每个Java类拆成服务
-C. 按数据库字段拆成服务
+A. 按数据库字段拆成服务
+B. 按业务能力形成自治服务
+C. 按每个Java类拆成服务
 D. 按团队成员姓名拆成服务
 
 ### EXT-302（单选题）
 
 微服务中的“独立部署”主要意味着什么？
 
-A. 单个服务可以独立发布和扩展
+A. 服务不能使用网络通信
 B. 所有服务必须同时停机发布
 C. 所有服务共享同一个进程
-D. 服务不能使用网络通信
+D. 单个服务可以独立发布和扩展
 
 ### EXT-303（单选题）
 
 单体应用中一个模块资源耗尽可能拖垮整个应用，微服务主要通过什么机制缓解？
 
-A. 故障隔离
-B. 删除所有日志
-C. 强制共享线程池
-D. 取消服务边界
+A. 删除所有日志
+B. 强制共享线程池
+C. 取消服务边界
+D. 故障隔离
 
 ### EXT-304（单选题）
 
 Spring Boot 与 Spring Cloud 的定位关系，哪项最准确？
 
-A. Boot偏向单个应用基础，Cloud偏向分布式治理
-B. Boot只做数据库，Cloud只做前端
-C. Boot和Cloud是两门互斥语言
+A. Boot只做数据库，Cloud只做前端
+B. Boot和Cloud是两门互斥语言
+C. Boot偏向单个应用基础，Cloud偏向分布式治理
 D. Cloud只能替代Java虚拟机
 
 ### EXT-305（单选题）
@@ -1977,89 +1977,89 @@ D. Cloud只能替代Java虚拟机
 下列哪项最适合作为微服务统一入口？
 
 A. Spring Cloud Gateway
-B. Nacos配置文件
+B. Sentinel规则文件
 C. OpenFeign接口
-D. Sentinel规则文件
+D. Nacos配置文件
 
 ### EXT-306（单选题）
 
 课件提到传统Netflix OSS组件逐步转向哪类方案？
 
-A. Spring Cloud Alibaba体系
-B. 只使用JSP标签库
+A. 放弃服务治理
+B. Spring Cloud Alibaba体系
 C. 只使用EJB容器
-D. 放弃服务治理
+D. 只使用JSP标签库
 
 ### EXT-307（单选题）
 
 服务实例启动时向注册中心上报IP、端口等信息，这一步称为？
 
-A. 服务注册
-B. 服务熔断
-C. 请求降级
-D. 路由过滤
+A. 请求降级
+B. 路由过滤
+C. 服务熔断
+D. 服务注册
 
 ### EXT-308（单选题）
 
 消费者从Nacos获得可用服务实例列表的过程称为？
 
-A. 服务发现
-B. 服务编译
-C. 配置回滚
-D. 链路采样
+A. 链路采样
+B. 配置回滚
+C. 服务编译
+D. 服务发现
 
 ### EXT-309（单选题）
 
 注册中心通过什么方式感知临时实例是否仍然存活？
 
-A. 实例定时发送心跳
-B. 消费者修改业务表
-C. 网关随机猜测地址
-D. 编译器扫描字节码
+A. 消费者修改业务表
+B. 实例定时发送心跳
+C. 编译器扫描字节码
+D. 网关随机猜测地址
 
 ### EXT-310（单选题）
 
 课件说明消费者通常会缓存实例列表，主要收益是什么？
 
-A. 避免每次调用都远程查询注册中心
-B. 让服务永远不会下线
-C. 把所有请求改成数据库查询
-D. 取消健康检查
+A. 把所有请求改成数据库查询
+B. 避免每次调用都远程查询注册中心
+C. 取消健康检查
+D. 让服务永远不会下线
 
 ### EXT-311（单选题）
 
 Nacos在课件中被定位为哪类基础组件？
 
-A. 注册中心与配置中心一体化组件
-B. 只负责日志采集的Agent
-C. 只负责页面渲染的引擎
+A. 只负责日志采集的Agent
+B. 只负责页面渲染的引擎
+C. 注册中心与配置中心一体化组件
 D. Java编译器插件
 
 ### EXT-312（单选题）
 
 需要优先保证注册中心在网络分区下仍可提供服务列表，通常应偏向哪种取舍？
 
-A. 优先可用性和分区容错，接受短暂不一致
-B. 优先强一致并接受完全不可用
+A. 优先强一致并接受完全不可用
+B. 让消费者硬编码IP
 C. 关闭所有实例健康检查
-D. 让消费者硬编码IP
+D. 优先可用性和分区容错，接受短暂不一致
 
 ### EXT-313（单选题）
 
 Nacos临时实例因心跳超时被剔除后，最合理的解释是？
 
-A. 注册中心将其视为异常实例，不再向消费者推荐
-B. 实例的业务数据被自动删除
-C. 所有服务都被强制重启
-D. 配置中心永久删除了命名空间
+A. 所有服务都被强制重启
+B. 注册中心将其视为异常实例，不再向消费者推荐
+C. 配置中心永久删除了命名空间
+D. 实例的业务数据被自动删除
 
 ### EXT-314（单选题）
 
 OpenFeign最主要解决哪类开发痛点？
 
-A. 以声明式接口简化HTTP服务调用
-B. 替代注册中心保存实例
-C. 直接修改数据库表结构
+A. 替代注册中心保存实例
+B. 直接修改数据库表结构
+C. 以声明式接口简化HTTP服务调用
 D. 生成前端CSS
 
 ### EXT-315（单选题）
@@ -2074,27 +2074,27 @@ interface OrderClient {
 }
 ```
 
-A. @FeignClient("order-service") interface OrderClient { @GetMapping("/orders/{id}") Order get(@PathVariable Long id); }
-B. String url = "http://10.0.0.2/order";
+A. String url = "http://10.0.0.2/order";
+B. new Thread(() -> {}).start();
 C. System.out.println("order");
-D. new Thread(() -> {}).start();
+D. @FeignClient("order-service") interface OrderClient { @GetMapping("/orders/{id}") Order get(@PathVariable Long id); }
 
 ### EXT-316（单选题）
 
 Spring Cloud LoadBalancer的主要职责是什么？
 
 A. 从多个可用实例中选择请求目标
-B. 负责集中存储所有配置文本
-C. 将异常转换成业务成功
-D. 只负责采集日志
+B. 只负责采集日志
+C. 负责集中存储所有配置文本
+D. 将异常转换成业务成功
 
 ### EXT-317（单选题）
 
 轮询策略最适合哪种实例集合？
 
-A. 性能配置相近且希望均匀分发的同构实例
+A. 响应时间差异极大的异构实例
 B. 只有一个实例且不允许切换
-C. 响应时间差异极大的异构实例
+C. 性能配置相近且希望均匀分发的同构实例
 D. 没有健康状态的任意地址
 
 ### EXT-318（单选题）
@@ -2102,18 +2102,18 @@ D. 没有健康状态的任意地址
 加权响应时间策略的核心依据是什么？
 
 A. 实例历史响应时间等性能信息
-B. 服务名称字母顺序
-C. 源码文件大小
-D. 客户端屏幕分辨率
+B. 源码文件大小
+C. 客户端屏幕分辨率
+D. 服务名称字母顺序
 
 ### EXT-319（单选题）
 
 在RestTemplate上添加@LoadBalanced通常表示什么？
 
-A. 调用时使用服务名并交给客户端负载均衡解析
+A. 强制所有请求走浏览器
 B. 把RestTemplate变成数据库连接池
-C. 关闭所有实例健康检查
-D. 强制所有请求走浏览器
+C. 调用时使用服务名并交给客户端负载均衡解析
+D. 关闭所有实例健康检查
 
 ### EXT-320（单选题）
 
@@ -2121,35 +2121,35 @@ Feign调用下游服务未设置超时，最可能引发什么风险？
 
 A. 调用线程长期占用并放大级联阻塞
 B. 请求一定立即成功
-C. 注册中心自动修复业务错误
-D. 所有异常都被转换为缓存命中
+C. 所有异常都被转换为缓存命中
+D. 注册中心自动修复业务错误
 
 ### EXT-321（单选题）
 
 断路器在失败率超过阈值时进入打开状态，主要目的是什么？
 
-A. 快速拒绝后续请求，阻断故障传播
+A. 绕过鉴权直接访问下游
 B. 无限重试直到成功
 C. 清空所有业务数据
-D. 绕过鉴权直接访问下游
+D. 快速拒绝后续请求，阻断故障传播
 
 ### EXT-322（单选题）
 
 断路器半开状态通常用于做什么？
 
 A. 试探性放行少量请求以判断依赖是否恢复
-B. 永久拒绝所有请求
-C. 绕过所有限流规则
+B. 绕过所有限流规则
+C. 永久拒绝所有请求
 D. 自动删除服务实例
 
 ### EXT-323（单选题）
 
 服务降级的核心目标是什么？
 
-A. 牺牲非核心功能，优先保持核心流程可用
-B. 让所有非核心功能变成强一致事务
-C. 把错误隐藏且不记录
-D. 无限等待依赖恢复
+A. 无限等待依赖恢复
+B. 把错误隐藏且不记录
+C. 让所有非核心功能变成强一致事务
+D. 牺牲非核心功能，优先保持核心流程可用
 
 ### EXT-324（单选题）
 
@@ -2157,33 +2157,33 @@ D. 无限等待依赖恢复
 
 A. 线程长期阻塞并最终耗尽线程池
 B. 调用会自动变成异步
-C. 所有请求都会被缓存
-D. 注册中心立即删除业务代码
+C. 注册中心立即删除业务代码
+D. 所有请求都会被缓存
 
 ### EXT-325（单选题）
 
 Sentinel基于QPS或并发数限流，主要解决什么问题？
 
 A. 削峰填谷，避免瞬时流量压垮服务
-B. 自动生成服务接口
+B. 替代所有数据库事务
 C. 集中管理Git提交
-D. 替代所有数据库事务
+D. 自动生成服务接口
 
 ### EXT-326（单选题）
 
 对高频商品ID做热点参数限流，主要是在防护什么？
 
-A. 单个热点参数被高频访问导致局部过载
-B. 所有服务的版本号冲突
-C. 配置文件的字符编码
-D. JVM类加载顺序
+A. 所有服务的版本号冲突
+B. 单个热点参数被高频访问导致局部过载
+C. JVM类加载顺序
+D. 配置文件的字符编码
 
 ### EXT-327（单选题）
 
 Sentinel可依据哪类指标触发熔断降级？
 
-A. 慢调用、异常比例或异常数
-B. 代码注释行数
+A. 代码注释行数
+B. 慢调用、异常比例或异常数
 C. 数据库表字段颜色
 D. 用户头像尺寸
 
@@ -2191,55 +2191,55 @@ D. 用户头像尺寸
 
 @SentinelResource中的fallback通常用于什么？
 
-A. 指定资源发生异常或降级时的兜底逻辑
-B. 声明注册中心地址
-C. 定义Gateway路径断言
-D. 生成数据库索引
+A. 声明注册中心地址
+B. 生成数据库索引
+C. 指定资源发生异常或降级时的兜底逻辑
+D. 定义Gateway路径断言
 
 ### EXT-329（单选题）
 
 Spring Cloud Gateway中Route由什么组成？
 
-A. 唯一ID、目标URI、断言集合和过滤器链
-B. 数据库表、索引和触发器
-C. 线程池、锁和GC日志
-D. 类名、方法名和字节码
+A. 线程池、锁和GC日志
+B. 类名、方法名和字节码
+C. 唯一ID、目标URI、断言集合和过滤器链
+D. 数据库表、索引和触发器
 
 ### EXT-330（单选题）
 
 Gateway Predicate的作用是什么？
 
-A. 根据路径、方法或Header等条件判断是否匹配
+A. 记录JVM堆快照
 B. 修改数据库事务隔离级别
-C. 记录JVM堆快照
-D. 注册服务实例
+C. 注册服务实例
+D. 根据路径、方法或Header等条件判断是否匹配
 
 ### EXT-331（单选题）
 
 Gateway Filter通常可以完成哪类处理？
 
 A. 请求改写、鉴权校验和日志记录
-B. 编译Java源文件
+B. 替换操作系统内核
 C. 创建所有业务订单
-D. 替换操作系统内核
+D. 编译Java源文件
 
 ### EXT-332（单选题）
 
 路由配置StripPrefix=1的直观效果是什么？
 
-A. 转发时移除请求路径的第一段前缀
-B. 把请求复制一份发送两次
-C. 强制启用随机负载均衡
-D. 关闭所有后置过滤器
+A. 强制启用随机负载均衡
+B. 关闭所有后置过滤器
+C. 把请求复制一份发送两次
+D. 转发时移除请求路径的第一段前缀
 
 ### EXT-333（单选题）
 
 Gateway配置uri为lb://user-service，说明网关将如何寻找目标？
 
-A. 通过服务发现和负载均衡选择user-service实例
-B. 访问名为lb的本地文件
-C. 直接连接固定IP
-D. 把请求发给配置中心处理
+A. 把请求发给配置中心处理
+B. 直接连接固定IP
+C. 访问名为lb的本地文件
+D. 通过服务发现和负载均衡选择user-service实例
 
 ### EXT-334（单选题）
 
@@ -2247,25 +2247,25 @@ D. 把请求发给配置中心处理
 
 A. 在请求进入后端服务前统一拦截非法访问
 B. 让每个服务都必须复制同一套页面
-C. 取消服务间通信
-D. 避免所有日志记录
+C. 避免所有日志记录
+D. 取消服务间通信
 
 ### EXT-335（单选题）
 
 Nacos配置中心主要解决哪种运维问题？
 
 A. 集中管理多环境配置并支持动态更新
-B. 把所有请求转成RPC
-C. 替代代码版本控制
+B. 替代代码版本控制
+C. 把所有请求转成RPC
 D. 自动设计数据库范式
 
 ### EXT-336（单选题）
 
 结合@RefreshScope，配置变更后通常可以达到什么效果？
 
-A. 相关Bean重新获取配置，无需重启整个服务
-B. 所有Java类都被删除后重编译
-C. 注册中心被关闭
+A. 注册中心被关闭
+B. 相关Bean重新获取配置，无需重启整个服务
+C. 所有Java类都被删除后重编译
 D. 数据库连接永久断开
 
 ### EXT-337（单选题）
@@ -2281,18 +2281,18 @@ D. 压缩所有日志文件
 
 Nacos配置动态推送中的长轮询，主要作用是什么？
 
-A. 让客户端及时感知配置变更并重新拉取
-B. 让客户端每秒无条件重启
-C. 把配置写入业务订单表
-D. 阻止所有配置回滚
+A. 让客户端每秒无条件重启
+B. 把配置写入业务订单表
+C. 阻止所有配置回滚
+D. 让客户端及时感知配置变更并重新拉取
 
 ### EXT-339（单选题）
 
 生产环境将数据库密码放在配置中心时，最重要的配套措施是什么？
 
 A. 按环境隔离并限制访问权限
-B. 将密码打印到每条业务日志
-C. 把密码放到URL路径中
+B. 把密码放到URL路径中
+C. 将密码打印到每条业务日志
 D. 让所有匿名用户可编辑
 
 ### EXT-340（单选题）
@@ -2300,18 +2300,18 @@ D. 让所有匿名用户可编辑
 课件建议多数商品、订单业务优先接受哪种一致性模型？
 
 A. 最终一致性
-B. 所有跨服务操作都使用长时间强一致事务
-C. 完全不保存状态
-D. 只依赖客户端缓存且不落库
+B. 完全不保存状态
+C. 只依赖客户端缓存且不落库
+D. 所有跨服务操作都使用长时间强一致事务
 
 ### EXT-341（单选题）
 
 在确需跨服务事务但又要降低长事务影响时，课件建议评估什么？
 
-A. TCC或Saga等柔性事务模式
-B. 把所有服务合并成一个Controller方法
-C. 删除失败补偿
-D. 无限增加数据库锁粒度
+A. 把所有服务合并成一个Controller方法
+B. TCC或Saga等柔性事务模式
+C. 无限增加数据库锁粒度
+D. 删除失败补偿
 
 ### EXT-342（单选题）
 
@@ -2339,10 +2339,10 @@ spring:
             - StripPrefix=1
 ```
 
-A. user-service
-B. api
-C. gateway
-D. 42
+A. api
+B. user-service
+C. 42
+D. gateway
 
 ### EXT-344（单选题）
 
@@ -2353,100 +2353,100 @@ filters:
   - StripPrefix=1
 ```
 
-A. /users/42
-B. /api/users/42
-C. /42
-D. /api/
+A. /api/
+B. /42
+C. /api/users/42
+D. /users/42
 
 ### EXT-345（单选题）
 
 微服务调用出现“慢但不报错”时，优先补充哪类信息最有帮助？
 
-A. 链路追踪和响应时间指标
-B. 只看编译器警告
-C. 删除所有请求日志
-D. 只检查前端颜色
+A. 删除所有请求日志
+B. 只检查前端颜色
+C. 链路追踪和响应时间指标
+D. 只看编译器警告
 
 ### EXT-346（单选题）
 
 对一个会产生扣款动作的Feign调用配置重试时，必须优先考虑什么？
 
-A. 幂等性和重复执行风险
-B. 把重试次数设置为无限
-C. 忽略超时和熔断
-D. 每次失败都创建新订单
+A. 每次失败都创建新订单
+B. 忽略超时和熔断
+C. 把重试次数设置为无限
+D. 幂等性和重复执行风险
 
 ### EXT-347（单选题）
 
 服务注册、调用、限流、网关和配置中心共同构成了什么能力？
 
-A. 微服务全局治理链路
-B. 单个类的语法检查
-C. 前端页面布局系统
-D. 数据库备份脚本
+A. 前端页面布局系统
+B. 微服务全局治理链路
+C. 数据库备份脚本
+D. 单个类的语法检查
 
 ### EXT-348（单选题）
 
 Gateway按Header或权重进行灰度分流，主要解决什么问题？
 
-A. 让新旧版本平滑过渡并控制发布风险
-B. 让所有请求永久固定到旧版本
-C. 删除旧版本日志
-D. 把配置中心变成本地文件
+A. 把配置中心变成本地文件
+B. 删除旧版本日志
+C. 让所有请求永久固定到旧版本
+D. 让新旧版本平滑过渡并控制发布风险
 
 ### EXT-349（单选题）
 
 从单体演进到微服务时，课件建议优先依据什么拆分？
 
-A. 清晰的业务域边界
-B. 技术层级名称
-C. 代码行数绝对平均
-D. 服务器磁盘目录
+A. 服务器磁盘目录
+B. 清晰的业务域边界
+C. 技术层级名称
+D. 代码行数绝对平均
 
 ### EXT-350（单选题）
 
 健康检查将异常实例从列表中移除后，负载均衡器的直接收益是什么？
 
-A. 减少请求发往故障节点的概率
-B. 保证业务逻辑一定正确
-C. 绕过所有权限校验
-D. 自动提交分布式事务
+A. 绕过所有权限校验
+B. 减少请求发往故障节点的概率
+C. 自动提交分布式事务
+D. 保证业务逻辑一定正确
 
 ### EXT-351（单选题）
 
 订单已创建但库存服务暂时不可用，适合的设计是？
 
-A. 记录可靠事件并异步重试或补偿
-B. 同步阻塞所有用户直到库存恢复
-C. 静默丢弃订单事件
-D. 直接把库存数据库暴露给网关
+A. 静默丢弃订单事件
+B. 记录可靠事件并异步重试或补偿
+C. 直接把库存数据库暴露给网关
+D. 同步阻塞所有用户直到库存恢复
 
 ### EXT-352（单选题）
 
 如果订单服务和支付服务共享同一张业务表，最明显的架构风险是？
 
-A. 服务边界被数据库耦合，难以独立演进
-B. 两服务自动获得强隔离
+A. 两服务自动获得强隔离
+B. 注册中心不再需要
 C. 调用延迟一定为零
-D. 注册中心不再需要
+D. 服务边界被数据库耦合，难以独立演进
 
 ### EXT-353（单选题）
 
 配置中心支持版本回滚的直接价值是什么？
 
-A. 错误配置发布后可快速恢复到已知版本
+A. 所有服务一定无需验证
 B. 代码会自动回滚到上一提交
-C. 所有服务一定无需验证
+C. 错误配置发布后可快速恢复到已知版本
 D. 可以省略权限审计
 
 ### EXT-392（单选题）
 
 服务实例注册时除了地址外还可以携带什么？
 
-A. 端口和元数据
-B. 用户密码明文日志
-C. 前端DOM节点
-D. 数据库执行计划
+A. 用户密码明文日志
+B. 数据库执行计划
+C. 端口和元数据
+D. 前端DOM节点
 
 ### EXT-393（单选题）
 
@@ -2454,97 +2454,97 @@ D. 数据库执行计划
 
 A. 定期刷新或变更监听
 B. 删除所有网络调用
-C. 把实例永久写死
-D. 关闭异常摘除
+C. 关闭异常摘除
+D. 把实例永久写死
 
 ### EXT-394（单选题）
 
 临时实例和持久化实例的主要差异体现在哪方面？
 
-A. 实例健康和注册数据的持久化语义
-B. Java代码是否能编译
-C. HTTP方法数量
-D. 网关是否支持Path断言
+A. 网关是否支持Path断言
+B. 实例健康和注册数据的持久化语义
+C. Java代码是否能编译
+D. HTTP方法数量
 
 ### EXT-395（单选题）
 
 注册中心集群部署的首要目标是什么？
 
 A. 避免单点并提高服务治理可用性
-B. 让业务代码不再需要异常处理
-C. 保证每次读取都不产生网络开销
-D. 取代所有业务数据库
+B. 保证每次读取都不产生网络开销
+C. 取代所有业务数据库
+D. 让业务代码不再需要异常处理
 
 ### EXT-396（单选题）
 
 调用http://order-service/orders时，order-service最可能代表什么？
 
-A. 注册中心中的逻辑服务名
-B. 客户端本地文件名
-C. 数据库表名
-D. 网关过滤器ID
+A. 客户端本地文件名
+B. 网关过滤器ID
+C. 注册中心中的逻辑服务名
+D. 数据库表名
 
 ### EXT-397（单选题）
 
 Feign方法参数需要绑定路径变量时，常使用哪个注解？
 
 A. @PathVariable
-B. @Bean
-C. @Configuration
-D. @Repository
+B. @Configuration
+C. @Repository
+D. @Bean
 
 ### EXT-398（单选题）
 
 Feign调用中查询参数通常使用哪个注解表达？
 
-A. @RequestParam
-B. @Autowired
-C. @ComponentScan
+A. @Autowired
+B. @ComponentScan
+C. @RequestParam
 D. @Import
 
 ### EXT-399（单选题）
 
 如果提供者把/orders/{id}改为/purchases/{id}，Feign接口最需要同步什么？
 
-A. 映射路径契约
-B. 本地线程池名称
-C. 客户端屏幕尺寸
-D. Nacos命名空间显示名称
+A. 本地线程池名称
+B. Nacos命名空间显示名称
+C. 映射路径契约
+D. 客户端屏幕尺寸
 
 ### EXT-400（单选题）
 
 负载均衡器选择实例前首先应排除哪类节点？
 
-A. 被健康检查标记为不可用的节点
-B. 响应最快的节点
+A. 响应最快的节点
+B. 刚刚成功处理请求的节点
 C. 带有服务元数据的节点
-D. 刚刚成功处理请求的节点
+D. 被健康检查标记为不可用的节点
 
 ### EXT-401（单选题）
 
 随机负载策略相对于轮询的一个特点是什么？
 
 A. 不按固定顺序选择实例
-B. 一定优先选择响应最快节点
-C. 只支持单实例服务
-D. 会自动提供事务回滚
+B. 会自动提供事务回滚
+C. 一定优先选择响应最快节点
+D. 只支持单实例服务
 
 ### EXT-402（单选题）
 
 读取超时和连接超时都需要设置的原因是？
 
-A. 分别限制建立连接和等待响应的时间
-B. 让请求自动变成幂等
-C. 使注册中心无需心跳
-D. 让网关跳过鉴权
+A. 让网关跳过鉴权
+B. 使注册中心无需心跳
+C. 分别限制建立连接和等待响应的时间
+D. 让请求自动变成幂等
 
 ### EXT-403（单选题）
 
 断路器统计异常比例时，统计对象通常是哪个范围？
 
-A. 某个受保护资源或依赖调用
-B. 所有用户的浏览器版本
-C. 源码所有注释
+A. 源码所有注释
+B. 某个受保护资源或依赖调用
+C. 所有用户的浏览器版本
 D. 服务器机房名称
 
 ### EXT-404（单选题）
@@ -2552,152 +2552,152 @@ D. 服务器机房名称
 半开探测请求成功后，断路器通常会怎样？
 
 A. 逐步恢复正常转发并闭合
-B. 永久保持打开
+B. 清空配置中心
 C. 删除服务注册信息
-D. 清空配置中心
+D. 永久保持打开
 
 ### EXT-405（单选题）
 
 商品详情的推荐模块不可用时，最合适的降级返回可能是？
 
-A. 隐藏推荐并返回商品核心信息
-B. 返回数据库密码
+A. 把错误堆栈当商品名称
+B. 隐藏推荐并返回商品核心信息
 C. 阻塞整个商品页
-D. 把错误堆栈当商品名称
+D. 返回数据库密码
 
 ### EXT-406（单选题）
 
 令牌桶限流通常允许什么现象？
 
-A. 在桶内有令牌时允许一定突发流量
+A. 自动修改数据库索引
 B. 无限制接受所有突发流量
-C. 只允许定时任务访问
-D. 自动修改数据库索引
+C. 在桶内有令牌时允许一定突发流量
+D. 只允许定时任务访问
 
 ### EXT-407（单选题）
 
 并发数限流更直接保护哪类资源？
 
 A. 同时占用的线程和处理能力
-B. 配置文件版本号
-C. 服务名称长度
+B. 服务名称长度
+C. 配置文件版本号
 D. Git分支数量
 
 ### EXT-408（单选题）
 
 Sentinel系统自适应保护可参考哪些运行指标？
 
-A. CPU负载和内存水位
-B. 代码注释数量
-C. 接口命名风格
-D. 用户昵称长度
+A. 用户昵称长度
+B. 接口命名风格
+C. CPU负载和内存水位
+D. 代码注释数量
 
 ### EXT-409（单选题）
 
 Gateway Route的唯一ID主要用于什么？
 
 A. 标识和管理这条路由规则
-B. 作为数据库主键自动建表
-C. 代表下游实例IP
-D. 替代所有断言条件
+B. 代表下游实例IP
+C. 替代所有断言条件
+D. 作为数据库主键自动建表
 
 ### EXT-410（单选题）
 
 前置过滤器和后置过滤器的区别主要在于什么？
 
 A. 执行时机分别位于转发前和响应后
-B. 一个运行在数据库，一个运行在浏览器
+B. 二者都只能修改数据库
 C. 一个只处理配置，一个只处理代码
-D. 二者都只能修改数据库
+D. 一个运行在数据库，一个运行在浏览器
 
 ### EXT-411（单选题）
 
 路径重写的主要价值是什么？
 
-A. 让外部API路径与内部服务路径解耦
-B. 让服务注册不再需要实例
+A. 自动生成OpenFeign接口
+B. 让外部API路径与内部服务路径解耦
 C. 保证所有业务请求幂等
-D. 自动生成OpenFeign接口
+D. 让服务注册不再需要实例
 
 ### EXT-412（单选题）
 
 把限流放在网关入口的一个优势是什么？
 
-A. 在流量进入多个后端服务前统一削峰
-B. 让后端服务无需任何监控
-C. 把所有请求改成GET
-D. 使数据库天然分库
+A. 让后端服务无需任何监控
+B. 把所有请求改成GET
+C. 使数据库天然分库
+D. 在流量进入多个后端服务前统一削峰
 
 ### EXT-413（单选题）
 
 开发和生产使用不同Namespace的主要目的是什么？
 
-A. 防止不同环境配置串用
+A. 控制Java对象生命周期
 B. 提高单个接口QPS
 C. 代替服务心跳
-D. 控制Java对象生命周期
+D. 防止不同环境配置串用
 
 ### EXT-414（单选题）
 
 Group在配置中心中更适合用来做什么？
 
-A. 对同一环境内的配置进行逻辑分组
-B. 给每个请求分配线程
-C. 替代用户认证
-D. 保存所有编译产物
+A. 保存所有编译产物
+B. 替代用户认证
+C. 对同一环境内的配置进行逻辑分组
+D. 给每个请求分配线程
 
 ### EXT-415（单选题）
 
 配置动态刷新后，哪些对象不一定会自动改变？
 
-A. 已经复制配置值且不受刷新作用域管理的对象
-B. 所有新建Bean
-C. 配置中心服务器
-D. Nacos控制台页面
+A. 所有新建Bean
+B. Nacos控制台页面
+C. 已经复制配置值且不受刷新作用域管理的对象
+D. 配置中心服务器
 
 ### EXT-416（单选题）
 
 配置灰度的“爆炸半径”指什么？
 
-A. 一次变更可能影响的实例或流量范围
-B. 配置文件的字符数
-C. 服务名称长度
-D. 网关路径层级数
+A. 配置文件的字符数
+B. 服务名称长度
+C. 网关路径层级数
+D. 一次变更可能影响的实例或流量范围
 
 ### EXT-417（单选题）
 
 最终一致性允许什么现象？
 
-A. 短时间内不同服务看到的数据暂不相同，之后趋于一致
+A. 只允许单机部署
 B. 数据永远不能一致
 C. 所有请求必须同步阻塞
-D. 只允许单机部署
+D. 短时间内不同服务看到的数据暂不相同，之后趋于一致
 
 ### EXT-418（单选题）
 
 订单服务发布事件而库存服务异步消费，主要收益是什么？
 
-A. 降低同步耦合并提升故障隔离
-B. 保证库存更新永不失败
-C. 取消所有消息重试
-D. 让两个服务共享内存
+A. 取消所有消息重试
+B. 降低同步耦合并提升故障隔离
+C. 让两个服务共享内存
+D. 保证库存更新永不失败
 
 ### EXT-419（单选题）
 
 TCC模式中的Try阶段通常负责什么？
 
 A. 预留或检查业务资源
-B. 直接忽略业务失败
-C. 只打印日志不改变状态
-D. 永久提交最终结果
+B. 永久提交最终结果
+C. 直接忽略业务失败
+D. 只打印日志不改变状态
 
 ### EXT-420（单选题）
 
 Saga适合哪类分布式业务？
 
 A. 可拆成多个步骤并允许补偿的长流程
-B. 必须一个数据库锁住所有服务的场景
-C. 没有任何状态变化的查询
+B. 没有任何状态变化的查询
+C. 必须一个数据库锁住所有服务的场景
 D. 只读静态网页
 
 ### EXT-421（单选题）
@@ -2705,35 +2705,35 @@ D. 只读静态网页
 判断服务边界时，以下哪项是坏指标？
 
 A. 为了凑数量而要求每个服务大小完全相同
-B. 业务职责是否内聚
+B. 调用频率和故障影响范围
 C. 数据和团队边界是否清晰
-D. 调用频率和故障影响范围
+D. 业务职责是否内聚
 
 ### EXT-422（单选题）
 
 TraceId最主要用于什么？
 
-A. 把一次请求跨多个服务的日志和调用串联起来
-B. 为数据库生成自增主键
-C. 替代服务名
-D. 控制限流阈值
+A. 替代服务名
+B. 把一次请求跨多个服务的日志和调用串联起来
+C. 控制限流阈值
+D. 为数据库生成自增主键
 
 ### EXT-423（单选题）
 
 服务P95延迟突然升高，最应先关注什么？
 
-A. 请求耗时分位数及对应下游调用
-B. 代码文件名排序
-C. 前端按钮颜色
-D. Git分支数量
+A. 前端按钮颜色
+B. Git分支数量
+C. 代码文件名排序
+D. 请求耗时分位数及对应下游调用
 
 ### EXT-424（单选题）
 
 记录远程调用失败日志时，最有价值的上下文组合是什么？
 
 A. 服务名、路径、TraceId、耗时和错误码
-B. 只记录“失败”两个字
-C. 记录用户密码和完整Token
+B. 记录用户密码和完整Token
+C. 只记录“失败”两个字
 D. 只记录本地时间不记录请求标识
 
 ### EXT-425（单选题）
@@ -2742,24 +2742,24 @@ Spring Cloud版本升级前最重要的第一步是什么？
 
 A. 阅读兼容矩阵和迁移说明
 B. 直接替换所有依赖版本
-C. 删除测试后部署生产
-D. 忽略Boot版本
+C. 忽略Boot版本
+D. 删除测试后部署生产
 
 ### EXT-426（单选题）
 
 数据库密码配置在Nacos中时，哪种做法更合适？
 
 A. 使用权限控制和安全存储，并避免日志泄露
-B. 把密码放在公开README
+B. 在Gateway响应头返回密码
 C. 让所有服务账号都可编辑
-D. 在Gateway响应头返回密码
+D. 把密码放在公开README
 
 ### EXT-427（单选题）
 
 核心支付调用失败而推荐服务失败时，降级策略应优先保住什么？
 
-A. 支付结果和订单状态
-B. 推荐列表完整性
+A. 推荐列表完整性
+B. 支付结果和订单状态
 C. 所有图片质量
 D. 营销文案颜色
 
@@ -2767,89 +2767,89 @@ D. 营销文案颜色
 
 异步库存扣减消息消费失败后，合理的处理包括什么？
 
-A. 重试、死信记录和人工或自动补偿
-B. 静默丢弃消息
-C. 无限高速重试
+A. 无限高速重试
+B. 重试、死信记录和人工或自动补偿
+C. 静默丢弃消息
 D. 直接修改消费者数据库而不留记录
 
 ### EXT-429（单选题）
 
 服务自治最不希望出现的情况是什么？
 
-A. 一个服务必须修改另一个服务的内部表才能完成发布
-B. 通过稳定API协作
-C. 拥有独立部署流水线
-D. 按业务域维护自己的数据边界
+A. 通过稳定API协作
+B. 拥有独立部署流水线
+C. 按业务域维护自己的数据边界
+D. 一个服务必须修改另一个服务的内部表才能完成发布
 
 ### EXT-450（单选题）
 
 当消费者本地缓存的实例列表长期不更新时，最直接的风险是什么？
 
-A. 请求继续发往已经失效的地址
-B. 所有请求自动获得更高权限
-C. 配置中心自动创建新服务
-D. 网关会把请求改成静态资源
+A. 网关会把请求改成静态资源
+B. 配置中心自动创建新服务
+C. 所有请求自动获得更高权限
+D. 请求继续发往已经失效的地址
 
 ### EXT-451（单选题）
 
 在促销活动前，为保护订单服务最应该先做什么？
 
-A. 根据容量设置入口限流和并发上限
-B. 关闭健康检查以减少开销
-C. 取消所有超时
-D. 把所有请求同步重试十次
+A. 取消所有超时
+B. 把所有请求同步重试十次
+C. 根据容量设置入口限流和并发上限
+D. 关闭健康检查以减少开销
 
 ### EXT-452（单选题）
 
 一条路由同时配置Path和Method断言时，请求何时会被转发？
 
 A. 同时满足这些断言条件
-B. 满足任意一个条件即可
+B. 只要Header存在即可
 C. 只要目标服务在线即可
-D. 只要Header存在即可
+D. 满足任意一个条件即可
 
 ### EXT-453（单选题）
 
 配置中心的本地缓存主要用于什么？
 
-A. 在网络短暂异常时保留最近可用配置
+A. 永久替代配置版本管理
 B. 绕过所有权限控制
-C. 永久替代配置版本管理
-D. 把配置自动编译成Java类
+C. 把配置自动编译成Java类
+D. 在网络短暂异常时保留最近可用配置
 
 ### EXT-454（单选题）
 
 熔断打开后仍继续向同一故障依赖发起大量探测请求，会造成什么问题？
 
 A. 保护效果被削弱，故障依赖仍承受压力
-B. 一定能更快恢复且无副作用
+B. 请求会自动变成本地缓存
 C. 注册中心会自动扩容数据库
-D. 请求会自动变成本地缓存
+D. 一定能更快恢复且无副作用
 
 ### EXT-455（单选题）
 
 Provider与Consumer在实战路线中分别更接近什么角色？
 
-A. Provider提供服务，Consumer发现并调用服务
-B. Provider只负责前端，Consumer只负责数据库
-C. 二者都必须是注册中心
-D. 二者不能通过网络通信
+A. 二者不能通过网络通信
+B. Provider提供服务，Consumer发现并调用服务
+C. Provider只负责前端，Consumer只负责数据库
+D. 二者都必须是注册中心
 
 ### EXT-456（单选题）
 
 引入Spring Cloud组件时，最稳妥的版本选择方式是什么？
 
-A. 按官方兼容矩阵选择与Spring Boot匹配的发行列车
+A. 完全忽略JDK和Boot版本
 B. 只看某个博客的最新单个依赖版本
 C. 混用任意主版本
-D. 完全忽略JDK和Boot版本
+D. 按官方兼容矩阵选择与Spring Boot匹配的发行列车
 
 ### EXT-459（单选题）
 
 负载均衡中的实例权重通常表达什么？
 
-A. 希望该实例承担的相对流量比例
-B. 实例的数据库密码
+A. 实例的数据库密码
+B. 希望该实例承担的相对流量比例
 C. 网关的路径前缀
 D. 日志保留天数
 
@@ -2857,98 +2857,98 @@ D. 日志保留天数
 
 降级逻辑最不应该做什么？
 
-A. 把不可用依赖的错误伪装成已完成的扣款
+A. 记录受控的异常上下文
 B. 返回明确的默认值
-C. 使用缓存展示非核心信息
-D. 记录受控的异常上下文
+C. 把不可用依赖的错误伪装成已完成的扣款
+D. 使用缓存展示非核心信息
 
 ### EXT-461（单选题）
 
 网关统一鉴权后，后端服务是否仍应保护敏感接口？
 
-A. 应继续按服务边界做必要授权校验
-B. 不需要任何权限控制
+A. 不需要任何权限控制
+B. 把权限写进URL明文
 C. 只检查请求颜色
-D. 把权限写进URL明文
+D. 应继续按服务边界做必要授权校验
 
 ### EXT-462（单选题）
 
 外部化配置相对硬编码的主要优点是什么？
 
 A. 同一制品可以适配不同环境
-B. 所有配置不再需要版本管理
-C. 业务规则自动生成
-D. 配置一定不会出错
+B. 业务规则自动生成
+C. 配置一定不会出错
+D. 所有配置不再需要版本管理
 
 ### EXT-463（单选题）
 
 同一业务事件可能被投递两次时，消费者首先应保证什么？
 
 A. 重复处理不会产生错误副作用
-B. 每次都创建新记录
+B. 忽略事件ID
 C. 关闭失败重试
-D. 忽略事件ID
+D. 每次都创建新记录
 
 ### EXT-464（单选题）
 
 健康检查显示UP是否等同于业务完全正常？
 
-A. 不等同，还需结合业务指标和关键依赖
-B. 等同于所有订单都成功
-C. 等同于没有任何慢请求
-D. 等同于配置一定正确
+A. 等同于配置一定正确
+B. 等同于没有任何慢请求
+C. 不等同，还需结合业务指标和关键依赖
+D. 等同于所有订单都成功
 
 ### EXT-465（单选题）
 
 Gateway灰度新版本时，最应对比哪些指标？
 
-A. 新旧版本错误率和延迟
+A. 服务名称长度
 B. 用户电脑壁纸
 C. 代码注释数量
-D. 服务名称长度
+D. 新旧版本错误率和延迟
 
 ### EXT-466（单选题）
 
 防止未授权服务注册到注册中心，可以采取什么措施？
 
-A. 认证、权限和命名空间隔离
-B. 开放匿名注册
-C. 把注册端口写进前端页面
-D. 关闭所有心跳
+A. 把注册端口写进前端页面
+B. 关闭所有心跳
+C. 认证、权限和命名空间隔离
+D. 开放匿名注册
 
 ### EXT-467（单选题）
 
 客户端缓存实例列表的一个潜在问题是什么？
 
-A. 缓存过期导致短时间使用旧地址
-B. 缓存一定比服务端更准确
-C. 缓存自动保证一致性
-D. 缓存会替代健康检查
+A. 缓存自动保证一致性
+B. 缓存会替代健康检查
+C. 缓存过期导致短时间使用旧地址
+D. 缓存一定比服务端更准确
 
 ### EXT-468（单选题）
 
 Feign收到下游5xx时，业务层最不应直接做什么？
 
 A. 把所有5xx都当作成功返回
-B. 按错误类型执行有限重试或降级
-C. 记录调用上下文
-D. 保留错误码语义
+B. 保留错误码语义
+C. 按错误类型执行有限重试或降级
+D. 记录调用上下文
 
 ### EXT-469（单选题）
 
 当系统已接近容量上限时，限流策略通常应优先保护什么？
 
-A. 核心接口和关键资源
+A. 所有请求一视同仁且无限等待
 B. 低价值的调试接口
-C. 所有请求一视同仁且无限等待
-D. 未部署的服务
+C. 未部署的服务
+D. 核心接口和关键资源
 
 ### EXT-470（单选题）
 
 在Gateway中统一添加TraceId的处理属于什么？
 
-A. 过滤器中的横切处理
-B. 业务数据库触发器
+A. 业务数据库触发器
+B. 过滤器中的横切处理
 C. Nacos实例注册
 D. LoadBalancer策略
 
@@ -2956,44 +2956,44 @@ D. LoadBalancer策略
 
 同一配置键在不同Group中可以有什么结果？
 
-A. 按Group读取时得到不同配置值
-B. 一定只能存在一个值
+A. 变成Gateway断言
+B. 按Group读取时得到不同配置值
 C. 自动合并成Java源码
-D. 变成Gateway断言
+D. 一定只能存在一个值
 
 ### EXT-472（单选题）
 
 最终一致性并不意味着什么？
 
-A. 可以无限期不处理差异
-B. 应设计可接受的收敛时间
-C. 需要失败重试和补偿
+A. 需要失败重试和补偿
+B. 可以无限期不处理差异
+C. 应设计可接受的收敛时间
 D. 需要业务方定义一致性目标
 
 ### EXT-473（单选题）
 
 把一个模块拆成远程服务后，新增的直接成本通常是什么？
 
-A. 网络序列化和调用失败处理
-B. Java语法自动简化
-C. 不再需要部署
+A. Java语法自动简化
+B. 不再需要部署
+C. 网络序列化和调用失败处理
 D. 数据库自动扩容
 
 ### EXT-474（单选题）
 
 告警的目的主要是什么？
 
-A. 在异常影响扩大前提醒并触发处置
-B. 替代所有测试
-C. 自动保证业务正确
+A. 自动保证业务正确
+B. 在异常影响扩大前提醒并触发处置
+C. 替代所有测试
 D. 隐藏系统故障
 
 ### EXT-475（单选题）
 
 使用Docker Compose启动Nacos练习环境的价值是什么？
 
-A. 快速复现基础设施环境
-B. 让服务无需配置就能互相发现
+A. 让服务无需配置就能互相发现
+B. 快速复现基础设施环境
 C. 替代所有生产部署方案
 D. 删除版本差异
 
@@ -3002,16 +3002,16 @@ D. 删除版本差异
 遇到Spring Cloud版本兼容疑问时，最可靠的第一手资料是？
 
 A. 项目官方文档和兼容说明
-B. 随机搜索结果的标题
-C. 旧课件中的错误命令
+B. 旧课件中的错误命令
+C. 随机搜索结果的标题
 D. 未注明版本的代码截图
 
 ### EXT-477（单选题）
 
 模拟下游超时时，验证上游线程是否被长期占用属于什么测试？
 
-A. 超时与故障隔离测试
-B. UI颜色测试
+A. UI颜色测试
+B. 超时与故障隔离测试
 C. 数据库建模测试
 D. 编译器语法测试
 
@@ -3019,18 +3019,18 @@ D. 编译器语法测试
 
 配置中心暂时不可用时，服务保留最近一次有效配置可以帮助什么？
 
-A. 降低短暂配置网络故障对运行的影响
-B. 让错误配置永远生效
-C. 跳过所有安全校验
-D. 自动修改业务代码
+A. 让错误配置永远生效
+B. 降低短暂配置网络故障对运行的影响
+C. 自动修改业务代码
+D. 跳过所有安全校验
 
 ### EXT-490（单选题）
 
 注册中心中的服务目录最像什么？
 
-A. 动态通讯录
-B. 静态网页模板
-C. 数据库索引页
+A. 静态网页模板
+B. 数据库索引页
+C. 动态通讯录
 D. 编译器错误列表
 
 ### EXT-491（单选题）
@@ -3038,9 +3038,9 @@ D. 编译器错误列表
 熔断器打开后最先保护的通常是哪类资源？
 
 A. 调用方线程、连接和队列
-B. 用户头像文件
+B. 开发者电脑磁盘
 C. 源代码注释
-D. 开发者电脑磁盘
+D. 用户头像文件
 
 ## 多选题
 
@@ -3048,64 +3048,64 @@ D. 开发者电脑磁盘
 
 OpenFeign调用设计中，正确的有？
 
-A. 接口表达HTTP契约
-B. 可接入LoadBalancer
-C. 可配置超时
-D. 把远程调用当作本地调用而不处理失败
+A. 可接入LoadBalancer
+B. 把远程调用当作本地调用而不处理失败
+C. 接口表达HTTP契约
+D. 可配置超时
 
 ### EXT-281（多选题）
 
 LoadBalancer策略选择时，正确的有？
 
-A. 轮询适合同质实例
+A. 健康实例应先过滤
 B. 权重适合能力差异
-C. 健康实例应先过滤
-D. 固定第一台实例最可靠
+C. 固定第一台实例最可靠
+D. 轮询适合同质实例
 
 ### EXT-282（多选题）
 
 Gateway路由设计中，正确的有？
 
-A. Route包含目标URI
-B. Predicate决定是否匹配
-C. Filter可改写请求
-D. 把领域事务写进网关过滤器
+A. Predicate决定是否匹配
+B. Route包含目标URI
+C. 把领域事务写进网关过滤器
+D. Filter可改写请求
 
 ### EXT-283（多选题）
 
 配置中心客户端设计中，正确的有？
 
-A. 启动时拉取配置
-B. 监听变更
-C. 更新本地缓存
-D. 配置变更一定无需任何验证
+A. 配置变更一定无需任何验证
+B. 更新本地缓存
+C. 启动时拉取配置
+D. 监听变更
 
 ### EXT-284（多选题）
 
 远程依赖保护可组合哪些机制？
 
-A. 超时
-B. 熔断
-C. 限流
-D. 无限重试
+A. 熔断
+B. 限流
+C. 无限重试
+D. 超时
 
 ### EXT-285（多选题）
 
 微服务最终一致性设计中，正确的有？
 
-A. 可靠消息
-B. 幂等消费
-C. 补偿对账
-D. 直接共享所有数据库表
+A. 直接共享所有数据库表
+B. 补偿对账
+C. 幂等消费
+D. 可靠消息
 
 ### EXT-286（多选题）
 
 微服务可观测性信号包括？
 
-A. 日志
-B. 指标
-C. Trace
-D. 只看HTTP状态码
+A. Trace
+B. 只看HTTP状态码
+C. 日志
+D. 指标
 
 ### EXT-287（多选题）
 
@@ -3113,8 +3113,8 @@ D. 只看HTTP状态码
 
 A. 鉴权
 B. 管理端点隔离
-C. 配置审计
-D. 匿名公开Nacos控制台
+C. 匿名公开Nacos控制台
+D. 配置审计
 
 ### EXT-288（多选题）
 
@@ -3122,197 +3122,197 @@ D. 匿名公开Nacos控制台
 
 A. 小流量验证
 B. 观察错误和延迟
-C. 保留回滚版本
-D. 直接全量切换且没有监控
+C. 直接全量切换且没有监控
+D. 保留回滚版本
 
 ### EXT-289（多选题）
 
 服务注册发现的治理闭环包括？
 
-A. 注册
-B. 发现
-C. 健康和心跳
-D. 把地址永久写死
+A. 发现
+B. 健康和心跳
+C. 把地址永久写死
+D. 注册
 
 ### EXT-290（多选题）
 
 远程重试设计中，正确的有？
 
-A. 检查幂等性
-B. 设置最大次数
-C. 使用退避
+A. 设置最大次数
+B. 使用退避
+C. 检查幂等性
 D. 对扣款无限重试
 
 ### EXT-291（多选题）
 
 微服务拆分决策中，正确的有？
 
-A. 按业务边界
-B. 评估网络成本
+A. 服务越多越先进
+B. 按业务边界
 C. 评估故障隔离收益
-D. 服务越多越先进
+D. 评估网络成本
 
 ### EXT-292（多选题）
 
 Cloud本地联调时，正确的有？
 
-A. 先验证注册发现
-B. 再验证远程调用
-C. 最后加入容错治理
-D. 一次同时修改所有组件
+A. 再验证远程调用
+B. 一次同时修改所有组件
+C. 先验证注册发现
+D. 最后加入容错治理
 
 ### EXT-293（多选题）
 
 配置灰度发布中，正确的有？
 
 A. 小范围实例先接收
-B. 观察指标
-C. 可快速回滚
-D. 把未验证密钥直接推全量
+B. 把未验证密钥直接推全量
+C. 观察指标
+D. 可快速回滚
 
 ### EXT-294（多选题）
 
 异步消息链路设计中，正确的有？
 
-A. 生产者确认投递
+A. 消息天然 exactly-once
 B. 消费者幂等
 C. 失败进入补偿或死信
-D. 消息天然 exactly-once
+D. 生产者确认投递
 
 ### EXT-295（多选题）
 
 故障演练应观察哪些结果？
 
-A. 熔断是否打开
-B. 核心功能是否可用
-C. 恢复后是否渐进放量
+A. 核心功能是否可用
+B. 恢复后是否渐进放量
+C. 熔断是否打开
 D. 只看服务进程是否还活着
 
 ### EXT-298（多选题）
 
 微服务调用链设计的共同原则包括？
 
-A. 明确服务契约
-B. 设置超时和容错
-C. 建立链路观测
+A. 设置超时和容错
+B. 建立链路观测
+C. 明确服务契约
 D. 把远程调用隐藏成无失败本地方法
 
 ### EXT-354（多选题）
 
 微服务架构通常具备哪些特征？
 
-A. 服务独立部署
+A. 服务间通过轻量协议通信
 B. 围绕单一业务能力
-C. 服务间通过轻量协议通信
-D. 所有模块必须共享一个进程
+C. 所有模块必须共享一个进程
+D. 服务独立部署
 
 ### EXT-355（多选题）
 
 相对于传统单体，微服务可能带来哪些收益？
 
-A. 独立扩展
+A. 团队并行交付
 B. 局部故障隔离
-C. 团队并行交付
-D. 天然消除所有分布式复杂度
+C. 天然消除所有分布式复杂度
+D. 独立扩展
 
 ### EXT-356（多选题）
 
 关于Spring Boot和Spring Cloud，正确的有？
 
 A. Boot提供应用基础设施
-B. Cloud提供分布式治理组件
-C. Cloud通常建立在Spring生态之上
+B. Cloud通常建立在Spring生态之上
+C. Cloud提供分布式治理组件
 D. Boot会自动替代所有业务设计
 
 ### EXT-357（多选题）
 
 下列哪些属于课件列出的Spring Cloud治理方向？
 
-A. 服务注册发现
-B. API网关
+A. 前端图片裁剪
+B. 服务注册发现
 C. 熔断限流
-D. 前端图片裁剪
+D. API网关
 
 ### EXT-358（多选题）
 
 服务注册与发现链路通常包含哪些动作？
 
-A. 提供者注册地址和元数据
-B. 消费者拉取实例列表
-C. 实例发送心跳续约
-D. 消费者把IP永久硬编码
+A. 实例发送心跳续约
+B. 消费者把IP永久硬编码
+C. 消费者拉取实例列表
+D. 提供者注册地址和元数据
 
 ### EXT-359（多选题）
 
 注册中心能够为微服务提供哪些基础能力？
 
 A. 集中管理地址
-B. 感知实例上下线
+B. 自动修复任意业务Bug
 C. 支持故障转移基础
-D. 自动修复任意业务Bug
+D. 感知实例上下线
 
 ### EXT-360（多选题）
 
 课件强调Nacos的哪些能力？
 
-A. 注册中心与配置中心一体化
-B. 可视化管控台
-C. 临时与持久化实例模式
-D. 只能单机且不支持生态集成
+A. 可视化管控台
+B. 临时与持久化实例模式
+C. 只能单机且不支持生态集成
+D. 注册中心与配置中心一体化
 
 ### EXT-361（多选题）
 
 关于实例心跳和健康检查，正确的有？
 
-A. 心跳超时可触发实例摘除
-B. 摘除后应避免继续向该实例转发流量
-C. 健康检查能替代所有业务监控
-D. 心跳只在编译期执行一次
+A. 心跳只在编译期执行一次
+B. 健康检查能替代所有业务监控
+C. 心跳超时可触发实例摘除
+D. 摘除后应避免继续向该实例转发流量
 
 ### EXT-362（多选题）
 
 使用OpenFeign相比手写RestTemplate模板代码，通常可以获得哪些收益？
 
-A. 接口即契约
-B. 减少URL拼接错误
-C. 便于和服务发现及负载均衡整合
+A. 减少URL拼接错误
+B. 便于和服务发现及负载均衡整合
+C. 接口即契约
 D. 自动保证下游业务永不失败
 
 ### EXT-363（多选题）
 
 Spring Cloud LoadBalancer可以支持哪些策略或能力？
 
-A. 轮询
+A. 按响应时间调整权重
 B. 随机选择
-C. 按响应时间调整权重
-D. 把所有请求固定到第一个实例
+C. 把所有请求固定到第一个实例
+D. 轮询
 
 ### EXT-364（多选题）
 
 生产环境设计Feign远程调用时，合理的治理措施包括哪些？
 
-A. 设置连接和读取超时
-B. 结合熔断或降级
-C. 记录调用耗时和错误上下文
-D. 失败后无限重试
+A. 记录调用耗时和错误上下文
+B. 失败后无限重试
+C. 结合熔断或降级
+D. 设置连接和读取超时
 
 ### EXT-365（多选题）
 
 针对下游变慢导致的线程耗尽，哪些措施有助于防护？
 
-A. 设置合理超时
-B. 熔断快速失败
-C. 对非核心功能降级
-D. 让请求无限排队等待
+A. 对非核心功能降级
+B. 设置合理超时
+C. 让请求无限排队等待
+D. 熔断快速失败
 
 ### EXT-366（多选题）
 
 Sentinel可以从哪些维度进行流量治理？
 
-A. QPS限流
-B. 并发线程数限流
+A. 修改Java语法树
+B. QPS限流
 C. 热点参数限流
-D. 修改Java语法树
+D. 并发线程数限流
 
 ### EXT-367（多选题）
 
@@ -3327,28 +3327,28 @@ D. 会自动修复下游业务逻辑
 
 为受保护资源设计fallback时，哪些返回方式是合理的？
 
-A. 返回本地缓存快照
-B. 返回稳定默认值
-C. 给用户友好提示并记录上下文
-D. 把异常堆栈直接返回公网
+A. 返回稳定默认值
+B. 把异常堆栈直接返回公网
+C. 返回本地缓存快照
+D. 给用户友好提示并记录上下文
 
 ### EXT-369（多选题）
 
 Gateway一条Route的基础匹配定义通常包含哪些元素？
 
-A. 唯一ID
-B. 目标URI
-C. Predicate断言集合
+A. 目标URI
+B. Predicate断言集合
+C. 唯一ID
 D. 数据库事务隔离级别
 
 ### EXT-370（多选题）
 
 统一API网关常见的职责包括哪些？
 
-A. 认证鉴权
-B. 限流防刷
-C. 访问日志和监控
-D. 编写每个领域服务的核心算法
+A. 限流防刷
+B. 编写每个领域服务的核心算法
+C. 认证鉴权
+D. 访问日志和监控
 
 ### EXT-371（多选题）
 
@@ -3356,25 +3356,25 @@ Gateway Predicate可以基于哪些条件匹配请求？
 
 A. Path路径
 B. HTTP Method
-C. Header
-D. 数据库订单金额字段（未在请求中提供）
+C. 数据库订单金额字段（未在请求中提供）
+D. Header
 
 ### EXT-372（多选题）
 
 Gateway Filter适合实现哪些横切逻辑？
 
-A. 改写请求路径
-B. 在响应阶段补充处理
-C. 鉴权和审计
-D. 直接替代订单服务的领域模型
+A. 鉴权和审计
+B. 直接替代订单服务的领域模型
+C. 在响应阶段补充处理
+D. 改写请求路径
 
 ### EXT-373（多选题）
 
 Nacos配置中心支持哪些工程能力？
 
-A. 集中化存储
+A. 配置版本追溯与回滚
 B. Namespace/Group环境隔离
-C. 配置版本追溯与回滚
+C. 集中化存储
 D. 自动生成所有业务代码
 
 ### EXT-374（多选题）
@@ -3383,79 +3383,79 @@ D. 自动生成所有业务代码
 
 A. 服务启动时拉取配置
 B. 客户端监听变更通知
-C. 重新拉取并更新本地缓存
-D. 必须停止全部实例后才能生效
+C. 必须停止全部实例后才能生效
+D. 重新拉取并更新本地缓存
 
 ### EXT-375（多选题）
 
 集中化配置在生产环境还需要哪些安全措施？
 
-A. 最小权限访问
-B. 敏感配置脱敏和审计
-C. 按环境隔离
-D. 把管理控制台匿名暴露公网
+A. 敏感配置脱敏和审计
+B. 把管理控制台匿名暴露公网
+C. 最小权限访问
+D. 按环境隔离
 
 ### EXT-376（多选题）
 
 关于微服务场景的CAP取舍，合理的有？
 
-A. 分区容错是分布式系统必须面对的约束
-B. 注册发现通常更关注可用性
-C. 多数业务可以接受最终一致性
-D. 任何金融和非金融场景都必须使用同一种一致性方案
+A. 注册发现通常更关注可用性
+B. 多数业务可以接受最终一致性
+C. 任何金融和非金融场景都必须使用同一种一致性方案
+D. 分区容错是分布式系统必须面对的约束
 
 ### EXT-377（多选题）
 
 减少跨服务强一致事务的常见方式包括哪些？
 
 A. 消息异步解耦
-B. 补偿机制
-C. TCC或Saga柔性事务
+B. TCC或Saga柔性事务
+C. 补偿机制
 D. 把所有服务数据库账号设为同一个超级用户
 
 ### EXT-378（多选题）
 
 微服务拆分时哪些做法更稳妥？
 
-A. 先识别核心业务边界
-B. 从单体验证业务后逐步拆分
+A. 从单体验证业务后逐步拆分
+B. 为了追求数量而把每个类都拆成服务
 C. 评估网络和运维成本
-D. 为了追求数量而把每个类都拆成服务
+D. 先识别核心业务边界
 
 ### EXT-379（多选题）
 
 设计跨服务重试时，哪些条件应同时考虑？
 
-A. 请求是否幂等
-B. 超时和退避策略
-C. 熔断和最大重试次数
-D. 失败后无条件重复扣款
+A. 熔断和最大重试次数
+B. 请求是否幂等
+C. 失败后无条件重复扣款
+D. 超时和退避策略
 
 ### EXT-380（多选题）
 
 微服务可观测性建设中，哪些信息具有定位价值？
 
-A. TraceId或链路标识
+A. 错误码和异常上下文
 B. 各服务响应耗时
-C. 错误码和异常上下文
+C. TraceId或链路标识
 D. 只记录最终页面颜色
 
 ### EXT-381（多选题）
 
 课件建议的微服务动手路线包含哪些阶段？
 
-A. 容器化拉起Nacos
-B. 构建Provider与Consumer
-C. 通过Feign进行远程调用
-D. 先做复杂分布式事务再验证服务注册
+A. 先做复杂分布式事务再验证服务注册
+B. 通过Feign进行远程调用
+C. 构建Provider与Consumer
+D. 容器化拉起Nacos
 
 ### EXT-382（多选题）
 
 对于lb://user-service与Path=/api/users/**的配置，正确理解包括哪些？
 
-A. 目标是逻辑服务user-service
-B. Path断言限制匹配路径
-C. 网关可结合注册中心选实例
+A. 网关可结合注册中心选实例
+B. 目标是逻辑服务user-service
+C. Path断言限制匹配路径
 D. lb://表示固定IP地址
 
 ### EXT-383（多选题）
@@ -3463,116 +3463,116 @@ D. lb://表示固定IP地址
 在课件范围内，Spring Cloud组件之间的合理协作包括哪些？
 
 A. Nacos提供注册发现和配置
-B. Feign负责声明式调用
-C. Sentinel负责流控熔断降级
+B. Sentinel负责流控熔断降级
+C. Feign负责声明式调用
 D. Gateway负责持久化订单明细
 
 ### EXT-384（多选题）
 
 下列哪些设计有助于避免非核心依赖拖垮核心流程？
 
-A. 为依赖设置超时
+A. 为非核心功能提供缓存或默认值
 B. 使用舱壁或线程池隔离
-C. 为非核心功能提供缓存或默认值
-D. 把所有依赖调用放在一个无限等待线程里
+C. 把所有依赖调用放在一个无限等待线程里
+D. 为依赖设置超时
 
 ### EXT-385（多选题）
 
 配置灰度发布时，哪些做法更安全？
 
-A. 先对小范围实例生效
-B. 观察指标和错误率
-C. 保留可回滚的版本
-D. 直接让所有生产实例同时接收未经验证的配置
+A. 观察指标和错误率
+B. 直接让所有生产实例同时接收未经验证的配置
+C. 先对小范围实例生效
+D. 保留可回滚的版本
 
 ### EXT-386（多选题）
 
 网关作为统一入口时，哪些安全策略合理？
 
 A. 统一校验Token和权限
-B. 限制管理接口暴露范围
-C. 记录访问审计
-D. 把内部服务地址直接返回给匿名用户
+B. 把内部服务地址直接返回给匿名用户
+C. 限制管理接口暴露范围
+D. 记录访问审计
 
 ### EXT-387（多选题）
 
 发现调用偶发打到已下线实例时，排查方向包括哪些？
 
-A. 检查心跳超时与摘除延迟
-B. 检查消费者本地实例缓存刷新
+A. 直接把所有地址写死到代码
+B. 检查心跳超时与摘除延迟
 C. 检查健康状态和网络分区
-D. 直接把所有地址写死到代码
+D. 检查消费者本地实例缓存刷新
 
 ### EXT-388（多选题）
 
 Feign接口设计中，哪些做法更利于维护？
 
-A. 明确HTTP方法和路径
-B. 使用@PathVariable等注解表达参数
-C. 对错误和超时定义统一治理策略
-D. 把服务地址散落在每个调用方法的字符串中
+A. 使用@PathVariable等注解表达参数
+B. 把服务地址散落在每个调用方法的字符串中
+C. 明确HTTP方法和路径
+D. 对错误和超时定义统一治理策略
 
 ### EXT-389（多选题）
 
 课件示例中出现组件名称拼写异常时，命题应如何处理？
 
-A. 不把明显拼写错误作为正确知识点
-B. 按当前官方组件名称纠正
-C. 在解析中说明纠错依据
-D. 照抄错误拼写并要求学生记忆
+A. 照抄错误拼写并要求学生记忆
+B. 在解析中说明纠错依据
+C. 不把明显拼写错误作为正确知识点
+D. 按当前官方组件名称纠正
 
 ### EXT-390（多选题）
 
 评价微服务方案时，哪些问题值得同时衡量？
 
-A. 业务边界是否清晰
-B. 网络调用和运维成本
-C. 一致性与可用性取舍
-D. 服务数量是否越多越先进
+A. 网络调用和运维成本
+B. 一致性与可用性取舍
+C. 服务数量是否越多越先进
+D. 业务边界是否清晰
 
 ### EXT-391（多选题）
 
 完成一次Cloud实战后，哪些复盘内容有价值？
 
-A. 故障传播路径
-B. 限流和降级是否保护核心
-C. 配置变更是否可追溯
-D. 只统计写了多少行代码
+A. 只统计写了多少行代码
+B. 故障传播路径
+C. 限流和降级是否保护核心
+D. 配置变更是否可追溯
 
 ### EXT-430（多选题）
 
 服务注册信息中通常可能包含哪些内容？
 
-A. IP地址
-B. 端口
-C. 实例元数据
-D. 用户界面CSS文件
+A. 用户界面CSS文件
+B. IP地址
+C. 端口
+D. 实例元数据
 
 ### EXT-431（多选题）
 
 排查消费者发现不到服务时，哪些方向合理？
 
-A. 服务名、Namespace和Group是否一致
+A. 网络和权限是否允许访问Nacos
 B. 提供者是否成功注册并发送心跳
-C. 网络和权限是否允许访问Nacos
+C. 服务名、Namespace和Group是否一致
 D. 只检查消费者Controller代码格式
 
 ### EXT-432（多选题）
 
 声明式Feign接口中通常应明确哪些信息？
 
-A. 目标服务名
-B. HTTP方法和路径
-C. 路径或查询参数绑定
-D. 本地数据库索引定义
+A. 路径或查询参数绑定
+B. 本地数据库索引定义
+C. HTTP方法和路径
+D. 目标服务名
 
 ### EXT-433（多选题）
 
 选择负载策略时应考虑哪些因素？
 
 A. 实例性能是否同质
-B. 是否希望严格均匀分发
-C. 是否需要感知响应时间
+B. 是否需要感知响应时间
+C. 是否希望严格均匀分发
 D. 只看策略名字是否流行
 
 ### EXT-434（多选题）
@@ -3580,44 +3580,44 @@ D. 只看策略名字是否流行
 Feign调用的容错设计可以包括哪些内容？
 
 A. 连接/读取超时
-B. 熔断和降级
+B. 无条件吞掉所有异常
 C. 幂等重试
-D. 无条件吞掉所有异常
+D. 熔断和降级
 
 ### EXT-435（多选题）
 
 Sentinel规则可以围绕哪些对象制定？
 
-A. 资源QPS
-B. 并发数
-C. 热点参数
-D. 源代码缩进空格数
+A. 热点参数
+B. 源代码缩进空格数
+C. 并发数
+D. 资源QPS
 
 ### EXT-436（多选题）
 
 熔断或降级后，合理的用户体验可能包括哪些？
 
-A. 返回缓存快照
+A. 直接展示完整堆栈和数据库连接串
 B. 返回默认值
 C. 提示稍后重试并保留核心功能
-D. 直接展示完整堆栈和数据库连接串
+D. 返回缓存快照
 
 ### EXT-437（多选题）
 
 Gateway配置中的uri、predicates和filters分别描述什么？
 
 A. 目标地址
-B. 匹配条件
+B. 数据库事务隔离级别
 C. 请求/响应处理
-D. 数据库事务隔离级别
+D. 匹配条件
 
 ### EXT-438（多选题）
 
 Gateway实现灰度发布时可以依据哪些条件？
 
-A. Header
-B. Cookie
-C. 权重
+A. Cookie
+B. 权重
+C. Header
 D. 用户数据库密码
 
 ### EXT-439（多选题）
@@ -3625,71 +3625,71 @@ D. 用户数据库密码
 配置热更新的完整链路可能包括哪些环节？
 
 A. 客户端初始拉取
-B. 服务端变更通知
+B. 每次变更都重新打包镜像
 C. 客户端更新本地缓存
-D. 每次变更都重新打包镜像
+D. 服务端变更通知
 
 ### EXT-440（多选题）
 
 配置中心审计日志至少应帮助回答哪些问题？
 
-A. 谁修改了配置
-B. 何时修改以及改了什么
-C. 能否回滚到哪个版本
-D. 用户今天看了哪部电影
+A. 用户今天看了哪部电影
+B. 谁修改了配置
+C. 何时修改以及改了什么
+D. 能否回滚到哪个版本
 
 ### EXT-441（多选题）
 
 选择最终一致性方案时，需要补齐哪些工程措施？
 
-A. 可靠消息投递
-B. 幂等消费
-C. 失败补偿和对账
-D. 只依赖网络最终一定成功
+A. 失败补偿和对账
+B. 可靠消息投递
+C. 只依赖网络最终一定成功
+D. 幂等消费
 
 ### EXT-442（多选题）
 
 决定一个模块是否拆成独立服务时可以考察哪些因素？
 
-A. 业务边界和团队 ownership
-B. 独立扩展或发布需求
-C. 故障隔离收益
-D. 类名是否足够短
+A. 独立扩展或发布需求
+B. 类名是否足够短
+C. 业务边界和团队 ownership
+D. 故障隔离收益
 
 ### EXT-443（多选题）
 
 微服务监控通常应同时关注哪些维度？
 
-A. 日志
-B. 指标
-C. 分布式链路追踪
-D. 代码编辑器主题颜色
+A. 代码编辑器主题颜色
+B. 分布式链路追踪
+C. 指标
+D. 日志
 
 ### EXT-444（多选题）
 
 Spring Cloud服务发布流程中哪些做法更稳妥？
 
-A. 先在测试环境验证
-B. 小流量灰度
+A. 直接跳过回滚预案
+B. 先在测试环境验证
 C. 观察健康与业务指标
-D. 直接跳过回滚预案
+D. 小流量灰度
 
 ### EXT-445（多选题）
 
 Nacos和Gateway管理面安全治理可以包括哪些措施？
 
-A. 最小权限账号
-B. 管理接口网络隔离
+A. 把管理端口与业务端口一起匿名暴露
+B. 最小权限账号
 C. 敏感操作审计
-D. 把管理端口与业务端口一起匿名暴露
+D. 管理接口网络隔离
 
 ### EXT-446（多选题）
 
 当下游服务不稳定时，上游可以采用哪些保护组合？
 
-A. 超时
+A. 限流
 B. 熔断
-C. 限流
+C. 超时
 D. 无限同步等待
 
 ### EXT-447（多选题）
@@ -3697,18 +3697,18 @@ D. 无限同步等待
 课件总结的微服务避坑建议包括哪些？
 
 A. 避免为了拆分而拆分
-B. 务实处理CAP取舍
-C. 慎用跨服务强一致事务
+B. 慎用跨服务强一致事务
+C. 务实处理CAP取舍
 D. 服务越细越先进
 
 ### EXT-448（多选题）
 
 搭建Cloud练习环境时，哪些步骤适合作为基础验证？
 
-A. 启动Nacos
-B. 让Provider注册
-C. 让Consumer发现并调用
-D. 先模拟全链路断网再写代码
+A. 让Consumer发现并调用
+B. 启动Nacos
+C. 先模拟全链路断网再写代码
+D. 让Provider注册
 
 ### EXT-449（多选题）
 
@@ -3716,206 +3716,206 @@ D. 先模拟全链路断网再写代码
 
 A. Spring Cloud官方项目页面
 B. 对应发行列车兼容矩阵
-C. Spring Cloud Alibaba版本说明
-D. 未经验证的随机代码片段
+C. 未经验证的随机代码片段
+D. Spring Cloud Alibaba版本说明
 
 ### EXT-457（多选题）
 
 为突发流量设计服务保护时，哪些措施可以组合使用？
 
-A. 网关限流
+A. 非核心接口降级
 B. 服务内部并发控制
-C. 非核心接口降级
-D. 让每个下游都无限扩容
+C. 让每个下游都无限扩容
+D. 网关限流
 
 ### EXT-458（多选题）
 
 配置动态更新上线前，哪些验证步骤更合理？
 
 A. 在测试或小范围环境验证
-B. 观察健康、错误率和延迟指标
-C. 保留旧版本回滚路径
-D. 直接修改生产配置且不留审计记录
+B. 保留旧版本回滚路径
+C. 直接修改生产配置且不留审计记录
+D. 观察健康、错误率和延迟指标
 
 ### EXT-479（多选题）
 
 客户端负载均衡器在选择节点时可以利用哪些信息？
 
-A. 实例健康状态
-B. 实例权重或元数据
-C. 历史响应时间
-D. 客户端显示器大小
+A. 实例权重或元数据
+B. 历史响应时间
+C. 客户端显示器大小
+D. 实例健康状态
 
 ### EXT-480（多选题）
 
 远程调用失败后的处理策略可以包括哪些？
 
-A. 有限重试
-B. 熔断或降级
-C. 记录并告警
-D. 无限递归调用自身
+A. 记录并告警
+B. 无限递归调用自身
+C. 有限重试
+D. 熔断或降级
 
 ### EXT-481（多选题）
 
 统一网关入口可以集中处理哪些横切关注点？
 
-A. 认证
+A. 订单库存扣减的领域规则
 B. 限流
 C. 路由
-D. 订单库存扣减的领域规则
+D. 认证
 
 ### EXT-482（多选题）
 
 多环境配置隔离的收益包括哪些？
 
-A. 避免测试参数误用于生产
-B. 限制不同环境的访问权限
-C. 支持环境独立发布配置
-D. 让所有环境共享同一个明文密码
+A. 限制不同环境的访问权限
+B. 支持环境独立发布配置
+C. 让所有环境共享同一个明文密码
+D. 避免测试参数误用于生产
 
 ### EXT-483（多选题）
 
 跨服务业务流程要降低事务耦合，可以采用哪些设计？
 
-A. 事件驱动
+A. 所有服务共享同一个全局锁
 B. 补偿动作
 C. TCC/Saga等柔性事务
-D. 所有服务共享同一个全局锁
+D. 事件驱动
 
 ### EXT-484（多选题）
 
 评价拆分是否成功，可以看哪些结果？
 
-A. 服务职责是否清晰
+A. 拆出了多少个服务不论效果
 B. 发布和扩展是否更独立
-C. 跨服务调用和运维成本是否可接受
-D. 拆出了多少个服务不论效果
+C. 服务职责是否清晰
+D. 跨服务调用和运维成本是否可接受
 
 ### EXT-485（多选题）
 
 一次请求的可观测数据可以来自哪些来源？
 
-A. 网关访问日志
+A. IDE撤销次数
 B. 服务指标
-C. 分布式Trace
-D. IDE撤销次数
+C. 网关访问日志
+D. 分布式Trace
 
 ### EXT-486（多选题）
 
 灰度发布时，哪些控制手段可以限制新版本流量？
 
-A. 按权重分流
+A. 把所有请求同时切换
 B. 按Header或Cookie匹配
-C. 按实例标签选择
-D. 把所有请求同时切换
+C. 按权重分流
+D. 按实例标签选择
 
 ### EXT-487（多选题）
 
 维护Nacos配置时，哪些操作应有审计？
 
-A. 新建或修改配置
+A. 修改Namespace/Group权限
 B. 删除或回滚配置
-C. 修改Namespace/Group权限
+C. 新建或修改配置
 D. 修改个人桌面壁纸
 
 ### EXT-488（多选题）
 
 验证熔断降级时可以注入哪些故障？
 
-A. 下游超时
-B. 下游返回异常
-C. 网络短暂不可达
-D. 修改题库字体大小
+A. 下游返回异常
+B. 修改题库字体大小
+C. 下游超时
+D. 网络短暂不可达
 
 ### EXT-489（多选题）
 
 Cloud入门实践中，哪些顺序更利于定位问题？
 
-A. 先验证注册发现
-B. 再验证Feign调用
-C. 再加入限流熔断
-D. 一开始同时改动所有治理组件
+A. 再验证Feign调用
+B. 先验证注册发现
+C. 一开始同时改动所有治理组件
+D. 再加入限流熔断
 
 ### EXT-492（多选题）
 
 注册中心通常不负责哪些事情？
 
-A. 编写订单领域规则
-B. 渲染前端页面
-C. 代替业务数据库事务
+A. 渲染前端页面
+B. 代替业务数据库事务
+C. 编写订单领域规则
 D. 维护实例地址和健康信息
 
 ### EXT-493（多选题）
 
 远程调用结果处理时，哪些状态值得区分？
 
-A. 成功响应
-B. 业务失败响应
-C. 网络或超时异常
-D. 把所有结果都映射为null
+A. 把所有结果都映射为null
+B. 成功响应
+C. 业务失败响应
+D. 网络或超时异常
 
 ### EXT-494（多选题）
 
 流量高峰时，合理的组合策略包括哪些？
 
 A. 入口限流
-B. 热点参数保护
+B. 关闭所有健康检查
 C. 非核心接口降级
-D. 关闭所有健康检查
+D. 热点参数保护
 
 ### EXT-495（多选题）
 
 哪些逻辑更适合留在后端业务服务而非Gateway？
 
-A. 订单状态机
-B. 库存扣减规则
-C. 支付幂等校验
-D. 通用Token预校验
+A. 通用Token预校验
+B. 支付幂等校验
+C. 订单状态机
+D. 库存扣减规则
 
 ### EXT-496（多选题）
 
 配置中心客户端为了提高可靠性可以保留哪些能力？
 
-A. 最近有效配置缓存
+A. 收到任何配置都立即覆盖且不校验
 B. 变更版本和回滚信息
 C. 配置拉取失败告警
-D. 收到任何配置都立即覆盖且不校验
+D. 最近有效配置缓存
 
 ### EXT-497（多选题）
 
 跨服务流程采用最终一致性时，哪些边界需要明确？
 
-A. 事件何时发布
-B. 失败如何补偿
+A. 失败如何补偿
+B. 完全不定义超时和人工兜底
 C. 何时认为业务收敛
-D. 完全不定义超时和人工兜底
+D. 事件何时发布
 
 ### EXT-498（多选题）
 
 Cloud服务上线后，哪些观察结果可以支持是否扩大灰度？
 
-A. 错误率没有异常上升
-B. P95延迟在可接受范围
-C. 核心业务成功率稳定
-D. 只看部署命令是否执行完
+A. 只看部署命令是否执行完
+B. 核心业务成功率稳定
+C. 错误率没有异常上升
+D. P95延迟在可接受范围
 
 ### EXT-499（多选题）
 
 下游恢复后，容错系统还应验证哪些事项？
 
-A. 半开探测能逐步恢复
+A. 恢复后永久保持打开
 B. 降级数据不会覆盖真实数据
-C. 重试不会形成新洪峰
-D. 恢复后永久保持打开
+C. 半开探测能逐步恢复
+D. 重试不会形成新洪峰
 
 ### EXT-500（多选题）
 
 从单体走向微服务时，哪些做法符合渐进式原则？
 
-A. 先明确业务边界
-B. 先验证核心链路再逐步治理
-C. 根据故障和扩展需求调整拆分
-D. 一次性把所有模块拆成独立服务
+A. 根据故障和扩展需求调整拆分
+B. 先明确业务边界
+C. 一次性把所有模块拆成独立服务
+D. 先验证核心链路再逐步治理
 
 # 第4部分：Spring Cloud Alibaba 组件实践
 
@@ -3925,82 +3925,82 @@ D. 一次性把所有模块拆成独立服务
 
 Spring Cloud Alibaba 2025.1.x配置Nacos时，官方不再推荐依赖什么？
 
-A. Spring Cloud Bootstrap机制
+A. 配置版本管理
 B. spring.config.import
-C. application.yml
-D. 配置版本管理
+C. Spring Cloud Bootstrap机制
+D. application.yml
 
 ### EXT-144（单选题）
 
 Nacos配置导入的典型starter artifactId是？
 
-A. spring-cloud-starter-alibaba-nacos-config
-B. spring-boot-starter-nacos-web
-C. nacos-spring-old-bootstrap
-D. spring-cloud-starter-gateway-only
+A. spring-boot-starter-nacos-web
+B. spring-cloud-starter-gateway-only
+C. spring-cloud-starter-alibaba-nacos-config
+D. nacos-spring-old-bootstrap
 
 ### EXT-145（单选题）
 
 Nacos服务发现starter的典型artifactId是？
 
-A. spring-cloud-starter-alibaba-nacos-discovery
-B. spring-cloud-starter-alibaba-nacos-config-only
-C. nacos-client-test
-D. spring-boot-discovery-jdbc
+A. spring-cloud-starter-alibaba-nacos-config-only
+B. spring-cloud-starter-alibaba-nacos-discovery
+C. spring-boot-discovery-jdbc
+D. nacos-client-test
 
 ### EXT-146（单选题）
 
 配置导入URL中refreshEnabled=true主要表达什么？
 
-A. 允许该配置来源参与刷新
-B. 关闭Nacos连接
-C. 强制删除旧配置
+A. 强制删除旧配置
+B. 允许该配置来源参与刷新
+C. 关闭Nacos连接
 D. 启用数据库事务
 
 ### EXT-147（单选题）
 
 spring.cloud.nacos.discovery.server-addr主要配置什么？
 
-A. Nacos Server地址
-B. 业务服务端口
+A. 业务服务端口
+B. RocketMQ消费者组
 C. Gateway目标URI
-D. RocketMQ消费者组
+D. Nacos Server地址
 
 ### EXT-148（单选题）
 
 使用Namespace隔离开发与生产的核心收益是？
 
-A. 减少配置和服务实例串环境
-B. 自动提高QPS
+A. 自动提高QPS
+B. 把服务变成单体
 C. 替代权限系统
-D. 把服务变成单体
+D. 减少配置和服务实例串环境
 
 ### EXT-149（单选题）
 
 2025.0.x起Nacos模块HealthIndicator默认行为有何变化？
 
-A. 默认关闭，需要显式开启
-B. 默认永久开启且不能关闭
+A. 默认永久开启且不能关闭
+B. 只对Gateway有效
 C. 只在JDK8开启
-D. 只对Gateway有效
+D. 默认关闭，需要显式开启
 
 ### EXT-150（单选题）
 
 使用public空Namespace且升级到Spring Cloud Alibaba 2025.0.x时，官方提示还需关注什么？
 
-A. Nacos Server 3.x兼容要求
-B. 必须改用Eureka
-C. 必须关闭所有配置刷新
-D. 必须删除服务发现
+A. 必须改用Eureka
+B. Nacos Server 3.x兼容要求
+C. 必须删除服务发现
+D. 必须关闭所有配置刷新
 
 ### EXT-151（单选题）
 
 长轮询配置监听的直接价值是？
 
-A. 变更时及时通知客户端而非高频空轮询
-B. 每次变更都重启JVM
-C. 自动创建Topic
-D. 绕过认证
+A. 绕过认证
+B. 自动创建Topic
+C. 变更时及时通知客户端而非高频空轮询
+D. 每次变更都重启JVM
 
 ### EXT-152（单选题）
 
@@ -4008,124 +4008,124 @@ Nacos Group主要解决什么？
 
 A. 对同一Namespace内配置或服务进行逻辑分组
 B. 设置JVM堆大小
-C. 替代Gateway断言
-D. 定义Java包名
+C. 定义Java包名
+D. 替代Gateway断言
 
 ### EXT-153（单选题）
 
 @EnableDiscoveryClient的典型作用是？
 
 A. 启用服务注册与发现能力
-B. 开启事务回滚
-C. 开启Feign客户端扫描
-D. 生成数据库Schema
+B. 开启Feign客户端扫描
+C. 生成数据库Schema
+D. 开启事务回滚
 
 ### EXT-154（单选题）
 
 服务实例权重通常影响什么？
 
 A. 负载均衡时的流量分配
-B. 配置文件加密算法
+B. 日志格式
 C. 事务隔离级别
-D. 日志格式
+D. 配置文件加密算法
 
 ### EXT-155（单选题）
 
 Sentinel中的Resource名称主要用于什么？
 
-A. 标识被保护的业务资源
-B. 定义数据库连接串
-C. 标识Git分支
-D. 命名Nacos namespace
+A. 定义数据库连接串
+B. 标识被保护的业务资源
+C. 命名Nacos namespace
+D. 标识Git分支
 
 ### EXT-156（单选题）
 
 Sentinel QPS规则直接限制什么？
 
-A. 单位时间内资源请求数
-B. 单个请求体大小
-C. 数据库表行数
-D. 日志字符数
+A. 日志字符数
+B. 数据库表行数
+C. 单个请求体大小
+D. 单位时间内资源请求数
 
 ### EXT-157（单选题）
 
 并发线程数规则更适合保护什么？
 
-A. 同时执行资源的线程容量
-B. 单日配置发布次数
-C. HTTP Header长度
-D. 数据库字段名称
+A. HTTP Header长度
+B. 同时执行资源的线程容量
+C. 数据库字段名称
+D. 单日配置发布次数
 
 ### EXT-158（单选题）
 
 热点参数规则相对普通QPS规则的优势是？
 
 A. 可以针对特定参数值限流
-B. 只限制网络带宽
+B. 自动把热点数据写入数据库
 C. 只能用于配置中心
-D. 自动把热点数据写入数据库
+D. 只限制网络带宽
 
 ### EXT-159（单选题）
 
 Sentinel慢调用比例降级关注什么？
 
-A. 调用耗时超过阈值的比例
-B. 代码行数比例
-C. 日志级别比例
-D. 数据库表大小比例
+A. 代码行数比例
+B. 调用耗时超过阈值的比例
+C. 数据库表大小比例
+D. 日志级别比例
 
 ### EXT-160（单选题）
 
 异常比例规则主要根据什么判断？
 
-A. 资源调用异常占比
-B. CPU品牌占比
-C. 用户地区占比
-D. 服务名称长度
+A. 服务名称长度
+B. 资源调用异常占比
+C. CPU品牌占比
+D. 用户地区占比
 
 ### EXT-161（单选题）
 
 Sentinel系统自适应保护可能参考哪些指标？
 
-A. CPU、负载和内存等系统状态
-B. Git提交次数
-C. 前端DOM节点数
-D. 数据库字段排序
+A. 数据库字段排序
+B. CPU、负载和内存等系统状态
+C. Git提交次数
+D. 前端DOM节点数
 
 ### EXT-162（单选题）
 
 fallback方法最适合返回什么？
 
-A. 缓存、默认值或友好提示
-B. 数据库密码
-C. 完整堆栈给前端
-D. 另一个无限重试
+A. 另一个无限重试
+B. 完整堆栈给前端
+C. 数据库密码
+D. 缓存、默认值或友好提示
 
 ### EXT-163（单选题）
 
 Seata AT模式更依赖什么机制？
 
-A. 基于数据库日志和全局事务协调的自动补偿
-B. 只依赖HTTP重定向
-C. 只依赖前端缓存
-D. 只依赖手工Excel
+A. 只依赖手工Excel
+B. 只依赖前端缓存
+C. 只依赖HTTP重定向
+D. 基于数据库日志和全局事务协调的自动补偿
 
 ### EXT-164（单选题）
 
 TCC模式要求业务方显式提供哪组方法？
 
-A. Try、Confirm、Cancel
+A. Open、Read、Close
 B. Begin、Compile、Delete
-C. Open、Read、Close
+C. Try、Confirm、Cancel
 D. Start、Stop、Pause
 
 ### EXT-165（单选题）
 
 Saga模式的核心思想是？
 
-A. 长流程拆成步骤并为已完成步骤提供补偿
-B. 用一个全局锁锁住所有服务
-C. 禁止任何异步操作
+A. 用一个全局锁锁住所有服务
+B. 禁止任何异步操作
+C. 长流程拆成步骤并为已完成步骤提供补偿
 D. 只支持单表查询
 
 ### EXT-166（单选题）
@@ -4133,43 +4133,43 @@ D. 只支持单表查询
 XA模式更强调什么？
 
 A. 数据库资源管理器参与的强一致两阶段提交
-B. 完全不使用事务
-C. 只在浏览器执行
-D. 只针对缓存
+B. 只在浏览器执行
+C. 只针对缓存
+D. 完全不使用事务
 
 ### EXT-167（单选题）
 
 RocketMQ事务消息主要解决什么？
 
-A. 本地事务与消息发送的一致性协调
+A. Bean作用域
 B. HTTP静态资源压缩
 C. 网关路径匹配
-D. Bean作用域
+D. 本地事务与消息发送的一致性协调
 
 ### EXT-168（单选题）
 
 消息消费失败时，合理的默认策略是什么？
 
 A. 受控重试并最终进入死信或人工处理
-B. 无限高速重试
+B. 把失败标为成功
 C. 静默丢弃
-D. 把失败标为成功
+D. 无限高速重试
 
 ### EXT-169（单选题）
 
 Spring Cloud Alibaba版本选择时最应核对什么？
 
-A. 与Spring Boot和Spring Cloud的兼容矩阵
-B. 只看artifactId长度
-C. 只看博客发布日期
-D. 只看JDK厂商
+A. 只看artifactId长度
+B. 与Spring Boot和Spring Cloud的兼容矩阵
+C. 只看JDK厂商
+D. 只看博客发布日期
 
 ### EXT-170（单选题）
 
 从旧Bootstrap迁移到Config Data时，应优先验证什么？
 
-A. 配置导入顺序、profile和刷新语义
-B. 只改类名
+A. 只改类名
+B. 配置导入顺序、profile和刷新语义
 C. 只改日志格式
 D. 只改前端路由
 
@@ -4177,19 +4177,19 @@ D. 只改前端路由
 
 临时实例心跳超时后通常怎样处理？
 
-A. 从可用列表摘除
-B. 永久写入配置文件
-C. 自动变成持久实例
-D. 自动修改业务代码
+A. 永久写入配置文件
+B. 自动变成持久实例
+C. 自动修改业务代码
+D. 从可用列表摘除
 
 ### EXT-172（单选题）
 
 配置中心中的dataId主要表达什么？
 
-A. 一份配置数据的标识
+A. 用户权限角色
 B. 服务实例端口
-C. 用户权限角色
-D. Gateway断言类型
+C. Gateway断言类型
+D. 一份配置数据的标识
 
 ### EXT-173（单选题）
 
@@ -4197,15 +4197,15 @@ D. Gateway断言类型
 
 A. 认证、最小权限和管理网络隔离
 B. 匿名暴露到公网
-C. 把密码写入dataId
-D. 关闭所有审计
+C. 关闭所有审计
+D. 把密码写入dataId
 
 ### EXT-174（单选题）
 
 生产环境Sentinel规则不应只存在内存，通常还要考虑什么？
 
-A. 规则持久化和变更审计
-B. 把规则写入前端Cookie
+A. 把规则写入前端Cookie
+B. 规则持久化和变更审计
 C. 每次请求重新编译规则
 D. 删除控制台
 
@@ -4213,54 +4213,54 @@ D. 删除控制台
 
 BlockExceptionHandler的职责更接近什么？
 
-A. 把限流或熔断结果转换为应用响应
-B. 负责数据库迁移
-C. 负责注册实例
-D. 负责编译Java
+A. 负责数据库迁移
+B. 负责注册实例
+C. 负责编译Java
+D. 把限流或熔断结果转换为应用响应
 
 ### EXT-176（单选题）
 
 Sentinel链路流控关注什么？
 
-A. 从特定入口调用资源的流量
-B. 所有数据库DDL
-C. 日志文件大小
-D. JVM类名顺序
+A. 所有数据库DDL
+B. 从特定入口调用资源的流量
+C. JVM类名顺序
+D. 日志文件大小
 
 ### EXT-177（单选题）
 
 Seata补偿动作设计时最重要的工程要求之一是？
 
 A. 幂等和可重入
-B. 无限递归
-C. 忽略业务状态
+B. 忽略业务状态
+C. 无限递归
 D. 依赖用户刷新页面
 
 ### EXT-178（单选题）
 
 需要保证同一订单事件顺序时，通常应使用什么设计？
 
-A. 让同一业务键路由到同一队列并顺序消费
-B. 随机发到所有队列
+A. 关闭消费确认
+B. 让同一业务键路由到同一队列并顺序消费
 C. 只看消息时间戳
-D. 关闭消费确认
+D. 随机发到所有队列
 
 ### EXT-179（单选题）
 
 RocketMQ至少一次投递意味着消费者必须考虑什么？
 
 A. 重复消息的幂等处理
-B. 消息绝不会重复
-C. 可以取消业务唯一键
+B. 可以取消业务唯一键
+C. 消息绝不会重复
 D. 只在前端去重
 
 ### EXT-180（单选题）
 
 同一键同时来自本地和远程配置时，命题时应优先依据什么？
 
-A. 当前版本官方加载顺序和应用实际配置
+A. 配置文件字母顺序
 B. 经验猜测
-C. 配置文件字母顺序
+C. 当前版本官方加载顺序和应用实际配置
 D. 随机选择
 
 ### EXT-181（单选题）
@@ -4268,27 +4268,27 @@ D. 随机选择
 Spring Cloud Alibaba的价值主要是？
 
 A. 把Alibaba中间件能力接入Spring Cloud编程模型
-B. 替代Spring Framework
+B. 只提供JVM
 C. 只提供前端组件
-D. 只提供JVM
+D. 替代Spring Framework
 
 ### EXT-219（单选题）
 
 Nacos配置的namespace与group同时变化时，客户端可能怎样？
 
-A. 读取不到原配置，因为定位键已改变
-B. 自动合并所有环境
-C. 自动回退到任意配置
-D. 只改变日志级别
+A. 只改变日志级别
+B. 读取不到原配置，因为定位键已改变
+C. 自动合并所有环境
+D. 自动回退到任意配置
 
 ### EXT-220（单选题）
 
 Sentinel入口流控和链路流控的主要差别是？
 
-A. 后者可按调用入口区分同一资源
-B. 前者只保护数据库
-C. 后者只保护JVM
-D. 二者都只看代码行数
+A. 后者只保护JVM
+B. 后者可按调用入口区分同一资源
+C. 二者都只看代码行数
+D. 前者只保护数据库
 
 ### EXT-221（单选题）
 
@@ -4303,19 +4303,19 @@ D. 记录JVM堆栈
 
 RocketMQ消费线程数配置不当可能导致什么？
 
-A. 并发过高时下游或数据库被压垮
-B. 消息自动变成有序
-C. 所有消息只消费一次
-D. 配置中心停止刷新
+A. 消息自动变成有序
+B. 配置中心停止刷新
+C. 并发过高时下游或数据库被压垮
+D. 所有消息只消费一次
 
 ### EXT-223（单选题）
 
 升级Spring Cloud Alibaba前执行mvn dependency:tree的价值是？
 
-A. 发现依赖版本冲突和传递依赖
-B. 自动升级所有版本
-C. 清空本地仓库
-D. 创建Nacos namespace
+A. 自动升级所有版本
+B. 发现依赖版本冲突和传递依赖
+C. 创建Nacos namespace
+D. 清空本地仓库
 
 ## 多选题
 
@@ -4323,8 +4323,8 @@ D. 创建Nacos namespace
 
 关于Nacos Config，正确的有？
 
-A. 可通过starter接入
-B. 可使用spring.config.import
+A. 可使用spring.config.import
+B. 可通过starter接入
 C. 可以配置刷新
 D. 不需要任何认证和权限
 
@@ -4333,178 +4333,178 @@ D. 不需要任何认证和权限
 关于Nacos Discovery，正确的有？
 
 A. 实例可注册地址和元数据
-B. 消费者可以发现实例列表
-C. 心跳用于健康感知
-D. 发现后必须把IP永久写死
+B. 心跳用于健康感知
+C. 发现后必须把IP永久写死
+D. 消费者可以发现实例列表
 
 ### EXT-184（多选题）
 
 Nacos环境治理可使用哪些维度？
 
-A. Namespace
-B. Group
-C. dataId
-D. 把密码作为服务名
+A. dataId
+B. 把密码作为服务名
+C. Group
+D. Namespace
 
 ### EXT-185（多选题）
 
 从旧版本Nacos配置迁移时，正确的有？
 
-A. 核对当前Alibaba版本
-B. 关注Bootstrap到Config Data迁移
-C. 验证刷新和优先级
-D. 只改依赖版本不做运行验证
+A. 只改依赖版本不做运行验证
+B. 验证刷新和优先级
+C. 关注Bootstrap到Config Data迁移
+D. 核对当前Alibaba版本
 
 ### EXT-186（多选题）
 
 Sentinel流控规则可以基于哪些维度？
 
-A. QPS
-B. 并发线程数
+A. Git提交作者
+B. QPS
 C. 热点参数
-D. Git提交作者
+D. 并发线程数
 
 ### EXT-187（多选题）
 
 Sentinel降级可以关注哪些信号？
 
-A. 慢调用比例
-B. 异常比例
-C. 异常数
-D. 代码注释行数
+A. 异常比例
+B. 异常数
+C. 代码注释行数
+D. 慢调用比例
 
 ### EXT-188（多选题）
 
 Sentinel资源的fallback设计可以包括？
 
-A. 缓存快照
+A. 友好错误提示
 B. 稳定默认值
-C. 友好错误提示
-D. 把堆栈返回给匿名用户
+C. 把堆栈返回给匿名用户
+D. 缓存快照
 
 ### EXT-189（多选题）
 
 生产Sentinel规则管理应具备哪些能力？
 
 A. 持久化
-B. 变更审计
+B. 每次请求随机改变阈值
 C. 灰度或版本回滚
-D. 每次请求随机改变阈值
+D. 变更审计
 
 ### EXT-190（多选题）
 
 Seata的事务模式各有不同取舍，正确的有？
 
-A. AT降低业务侵入
-B. TCC要求Try/Confirm/Cancel
+A. 所有模式都不需要幂等
+B. AT降低业务侵入
 C. Saga依赖补偿动作
-D. 所有模式都不需要幂等
+D. TCC要求Try/Confirm/Cancel
 
 ### EXT-191（多选题）
 
 事务消息设计中，正确的有？
 
-A. 本地事务先执行并返回状态
-B. Broker可通过回查确认未知状态
-C. 消费者仍需幂等
-D. 发送失败就静默丢弃
+A. Broker可通过回查确认未知状态
+B. 发送失败就静默丢弃
+C. 本地事务先执行并返回状态
+D. 消费者仍需幂等
 
 ### EXT-192（多选题）
 
 可靠RocketMQ消费者通常需要哪些措施？
 
-A. 消费确认
-B. 受控重试
-C. 死信队列
-D. 失败消息直接标记成功
+A. 死信队列
+B. 失败消息直接标记成功
+C. 消费确认
+D. 受控重试
 
 ### EXT-193（多选题）
 
 Alibaba中间件生产治理中，正确的有？
 
-A. 控制Nacos权限
+A. 把管理端口匿名暴露公网
 B. 保护Sentinel控制台
-C. 审计Seata/RocketMQ管理操作
-D. 把管理端口匿名暴露公网
+C. 控制Nacos权限
+D. 审计Seata/RocketMQ管理操作
 
 ### EXT-232（多选题）
 
 Nacos配置定位通常涉及哪些维度？
 
-A. namespace
-B. group
-C. dataId
-D. 随机线程名
+A. dataId
+B. namespace
+C. 随机线程名
+D. group
 
 ### EXT-233（多选题）
 
 Sentinel生产治理合理做法包括？
 
-A. 规则持久化
+A. 无限重试被拒请求
 B. 对热点参数限流
-C. 为降级提供兜底
-D. 无限重试被拒请求
+C. 规则持久化
+D. 为降级提供兜底
 
 ### EXT-234（多选题）
 
 分布式事务补偿设计应包括？
 
-A. 幂等
+A. 把所有服务锁成一个长事务
 B. 状态机或业务状态记录
 C. 失败重试和人工兜底
-D. 把所有服务锁成一个长事务
+D. 幂等
 
 ### EXT-235（多选题）
 
 RocketMQ可靠消息消费需要哪些能力？
 
-A. 消费重试
-B. 死信或失败转移
-C. 业务幂等
-D. 把异常吞掉并确认成功
+A. 把异常吞掉并确认成功
+B. 业务幂等
+C. 死信或失败转移
+D. 消费重试
 
 ### EXT-271（多选题）
 
 Nacos当前配置方式迁移中，正确的有？
 
-A. 优先阅读当前版本Breaking Changes
-B. 使用spring.config.import
-C. 验证不再使用Bootstrap的启动链
-D. 只改文件名不测启动
+A. 使用spring.config.import
+B. 优先阅读当前版本Breaking Changes
+C. 只改文件名不测启动
+D. 验证不再使用Bootstrap的启动链
 
 ### EXT-272（多选题）
 
 Nacos配置安全治理包括？
 
-A. namespace隔离
-B. 账号权限
-C. 配置审计
-D. 匿名编辑生产配置
+A. 配置审计
+B. 匿名编辑生产配置
+C. namespace隔离
+D. 账号权限
 
 ### EXT-273（多选题）
 
 Sentinel资源保护策略可组合哪些？
 
 A. QPS限流
-B. 并发限流
-C. 异常比例降级
-D. 让拒绝请求无限重试
+B. 异常比例降级
+C. 让拒绝请求无限重试
+D. 并发限流
 
 ### EXT-274（多选题）
 
 热点参数保护设计中，正确的有？
 
-A. 识别高频参数值
-B. 针对热点值设置更严阈值
+A. 把所有参数都视为热点并无限限流
+B. 识别高频参数值
 C. 防止单个用户或商品拖垮服务
-D. 把所有参数都视为热点并无限限流
+D. 针对热点值设置更严阈值
 
 ### EXT-275（多选题）
 
 选择Seata事务模式时应衡量哪些因素？
 
-A. 一致性目标
-B. 业务侵入性
+A. 业务侵入性
+B. 一致性目标
 C. 补偿复杂度和性能
 D. 只看模式名称是否流行
 
@@ -4512,43 +4512,43 @@ D. 只看模式名称是否流行
 
 TCC补偿实现中，正确的有？
 
-A. Try应可重入或幂等
-B. Confirm和Cancel可能被重复调用
+A. 把Cancel实现成无条件删除所有数据
+B. Try应可重入或幂等
 C. 需要记录业务状态
-D. 把Cancel实现成无条件删除所有数据
+D. Confirm和Cancel可能被重复调用
 
 ### EXT-277（多选题）
 
 RocketMQ顺序消费设计中，正确的有？
 
-A. 同一业务键路由到同一队列
-B. 消费者按队列顺序处理
-C. 并发扩展要保持分片语义
-D. 把相关消息随机到任意队列
+A. 消费者按队列顺序处理
+B. 并发扩展要保持分片语义
+C. 把相关消息随机到任意队列
+D. 同一业务键路由到同一队列
 
 ### EXT-278（多选题）
 
 RocketMQ重试治理应包括？
 
-A. 重试间隔或退避
-B. 最大重试次数
-C. 死信处理
+A. 最大重试次数
+B. 死信处理
+C. 重试间隔或退避
 D. 失败立即无限并发重投
 
 ### EXT-279（多选题）
 
 Alibaba组件升级前应做哪些准备？
 
-A. 核对Release Train兼容性
-B. 执行依赖树分析
-C. 阅读迁移说明
-D. 直接覆盖所有传递版本
+A. 阅读迁移说明
+B. 直接覆盖所有传递版本
+C. 执行依赖树分析
+D. 核对Release Train兼容性
 
 ### EXT-299（多选题）
 
 Spring Cloud Alibaba生产落地应同时关注哪些方面？
 
-A. Nacos配置与发现安全
-B. Sentinel流量保护
-C. Seata或RocketMQ的一致性策略
-D. 只复制课件中的旧版本命令
+A. Seata或RocketMQ的一致性策略
+B. 只复制课件中的旧版本命令
+C. Sentinel流量保护
+D. Nacos配置与发现安全
