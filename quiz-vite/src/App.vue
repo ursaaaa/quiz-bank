@@ -68,7 +68,7 @@ const homeBanks = computed(() => {
 })
 
 function answerValues(q) {
-  return Array.isArray(q.answer) ? q.answer : [q.answer]
+  return Array.isArray(q.answer) ? [...q.answer].sort() : [q.answer]
 }
 
 function optionsFor(q) {
@@ -91,7 +91,11 @@ function stageLabel(q) {
 }
 
 function questionAnswer(q) {
-  return answerValues(q).join('、')
+  return [...answerValues(q)].sort().join('、')
+}
+
+function optionExplanationEntries(q) {
+  return Object.entries(q.optionExplanations || {}).sort(([a], [b]) => a.localeCompare(b))
 }
 
 function resetAttempt() {
@@ -298,8 +302,8 @@ onMounted(() => {
         <pre v-if="q.code" class="code">{{ q.code }}</pre>
         <fieldset :disabled="state.submitted"><legend class="sr-only">选择答案</legend><label v-for="option in optionsFor(q)" :key="option.value" class="option"><input :type="q.type === 'multiple' ? 'checkbox' : 'radio'" :name="q.id" :checked="selected(q, option.value)" @change="answer(q, option.value)" /><span><b v-if="q.type !== 'judge'">{{ option.value }}. </b>{{ option.label }}</span></label></fieldset>
         <div class="peekbar"><button type="button" class="peek" @click="peek(q)">{{ state.peeked[q.id] ? '收起答案' : '偷瞄答案' }}</button><span v-if="state.peeked[q.id]">已偷瞄，不影响提交与得分</span></div>
-        <div v-if="state.peeked[q.id] && !state.submitted" class="peek-answer"><b>正确答案：{{ questionAnswer(q) }}</b><p>{{ q.explanation }}</p><p v-for="([key, text]) in Object.entries(q.optionExplanations || {})" :key="key"><b>{{ key }}：</b>{{ text }}</p></div>
-        <div v-if="state.submitted" class="result"><b>{{ isCorrect(q) ? '✓ 正确' : '✗ 错误' }}　答案：{{ questionAnswer(q) }}</b><p>{{ q.explanation }}</p><p v-for="([key, text]) in Object.entries(q.optionExplanations || {})" :key="key"><b>{{ key }}：</b>{{ text }}</p></div>
+        <div v-if="state.peeked[q.id] && !state.submitted" class="peek-answer"><b>正确答案：{{ questionAnswer(q) }}</b><p>{{ q.explanation }}</p><p v-for="([key, text]) in optionExplanationEntries(q)" :key="key"><b>{{ key }}：</b>{{ text }}</p></div>
+        <div v-if="state.submitted" class="result"><b>{{ isCorrect(q) ? '✓ 正确' : '✗ 错误' }}　答案：{{ questionAnswer(q) }}</b><p>{{ q.explanation }}</p><p v-for="([key, text]) in optionExplanationEntries(q)" :key="key"><b>{{ key }}：</b>{{ text }}</p></div>
       </article>
       <div v-if="!state.current.length" class="empty">没有符合条件的题目，请调整筛选条件。</div>
     </section>
